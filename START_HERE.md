@@ -57,27 +57,26 @@ This is your primary execution guide with:
 
 ## Next Action
 
-**Open terminal and execute Step 1** from `20_MINUTE_DEPLOYMENT.md`:
+**Phase 1 (GitHub) is complete.** Code is at: https://github.com/rwc5196/vertical-edge-landing
 
-```bash
-cd "c:\Users\Ryan\Documents\Claude 4.5\!!! AI Network - MVP !!!\Landing Page 1.28.26\Landing Page x Cursor Guide"
+**Do this next** (≈2 min):
 
-git init
-git add .
-git commit -m "Initial commit: Vertical Edge AI landing page"
-```
+1. Open **https://app.netlify.com**
+2. **Add new site** → **Import an existing project** → **Deploy with GitHub**
+3. Pick repository: **vertical-edge-landing**
+4. Click **Deploy site**
 
-Then follow the remaining steps in `20_MINUTE_DEPLOYMENT.md`.
+Full steps → **[`NEXT_STEP.md`](NEXT_STEP.md)**
 
 ---
 
 ## Verdict
 
-**Ship it. You're 20 minutes from a live landing page.**
+**Ship it.** Connect the repo to Netlify and the site goes live at `https://[something].netlify.app` in ~60 seconds.
 
 **Confidence**: 100%  
 **Status**: ✅ GREEN LIGHT — EXECUTE  
-**Next**: Open `20_MINUTE_DEPLOYMENT.md` → Execute Step 1
+**Next**: Open `NEXT_STEP.md` → Connect to Netlify
 
 ---
 

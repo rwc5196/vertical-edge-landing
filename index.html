@@ -1,1673 +1,989 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertical Edge AI | AI-Powered Business Automation Partner</title>
-    <meta name="description" content="Launch your AI automation system in 14 days. Full-stack infrastructure for lead generation, content, compliance, and RFPs. Delivering results while you focus on closing deals.">
-    <meta name="keywords" content="AI automation, business automation, lead generation, content creation, compliance, RFP automation, B2B">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Vertical Edge AI | Your AI Operations Partner">
-    <meta property="og:description" content="Launch your AI automation system in 14 days. Full-stack infrastructure for lead generation, content, compliance, and RFPs.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.verticaledgeai.ai">
-    <meta property="og:image" content="https://www.verticaledgeai.ai/assets/images/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://www.verticaledgeai.ai/assets/images/og-image.png">
-    
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    
-    <style>
-        /* ============================================
-           CSS VARIABLES - REFINED BLUE-TEAL SCHEME
-           ============================================ */
-        :root {
-            /* Backgrounds */
-            --bg-primary: #FFFFFF;
-            --bg-secondary: #F8FAFC;
-            --bg-tertiary: #F1F5F9;
-            --bg-card: #FFFFFF;
-            --bg-dark: #0F172A;
-            
-            /* Text */
-            --text-primary: #0F172A;
-            --text-secondary: #475569;
-            --text-muted: #64748B;
-            --text-light: #94A3B8;
-            --text-inverse: #FFFFFF;
-            
-            /* Primary - Indigo Blue */
-            --accent-primary: #4F46E5;
-            --accent-primary-hover: #4338CA;
-            --accent-primary-light: #EEF2FF;
-            --accent-gradient: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
-            
-            /* Secondary - Teal */
-            --accent-secondary: #14B8A6;
-            --accent-secondary-light: #CCFBF1;
-            
-            /* Alert/Problem */
-            --accent-danger: #EF4444;
-            --accent-danger-light: #FEF2F2;
-            
-            /* Success */
-            --accent-success: #22C55E;
-            --accent-success-light: #F0FDF4;
-            
-            /* Borders */
-            --border-light: #E2E8F0;
-            --border-medium: #CBD5E1;
-            
-            /* Fonts */
-            --font-display: 'Instrument Serif', Georgia, serif;
-            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            
-            /* Spacing & Radius */
-            --radius-sm: 6px;
-            --radius-md: 10px;
-            --radius-lg: 16px;
-            --radius-xl: 24px;
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
-            --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
-            --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
-            
-            /* Transitions */
-            --transition-fast: 0.15s ease;
-            --transition-base: 0.25s ease;
-            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* ============================================
-           RESET & BASE
-           ============================================ */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            font-family: var(--font-body);
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--bg-primary);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        section {
-            padding: 100px 0;
-        }
-
-        h1, h2, h3 {
-            font-family: var(--font-display);
-            font-weight: 400;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-        }
-
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-        h2 { font-size: clamp(2rem, 4vw, 3rem); }
-        h3 { font-size: 1.5rem; }
-
-        .gradient-text {
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .teal-text { color: var(--accent-secondary); }
-        .italic { font-style: italic; }
-
-        /* ============================================
-           NAVIGATION
-           ============================================ */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 16px 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-body);
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-
-        .logo span { color: var(--accent-primary); }
-
-        .nav-links {
-            display: flex;
-            gap: 36px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color var(--transition-fast);
-        }
-
-        .nav-links a:hover { color: var(--accent-primary); }
-
-        /* ============================================
-           BUTTONS
-           ============================================ */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 14px 28px;
-            font-family: var(--font-body);
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: var(--radius-md);
-            border: none;
-            cursor: pointer;
-            transition: all var(--transition-base);
-        }
-
-        .btn-primary {
-            background: var(--accent-primary);
-            color: white;
-            box-shadow: var(--shadow-md), 0 2px 8px rgba(79, 70, 229, 0.25);
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-primary-hover);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg), 0 4px 16px rgba(79, 70, 229, 0.3);
-        }
-
-        .btn-secondary {
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            border: 1px solid var(--border-medium);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-        }
-
-        /* ============================================
-           HERO SECTION
-           ============================================ */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 80%;
-            height: 100%;
-            background: radial-gradient(ellipse, rgba(79, 70, 229, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        /* Category Label - NEW based on research */
-        .hero-category {
-            display: inline-block;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--accent-primary);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 16px;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: var(--accent-primary-light);
-            border: 1px solid rgba(79, 70, 229, 0.2);
-            border-radius: 100px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--accent-primary);
-            margin-bottom: 28px;
-        }
-
-        .hero-badge-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent-secondary);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(0.95); }
-        }
-
-        .hero h1 { margin-bottom: 24px; }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            max-width: 650px;
-            margin: 0 auto 40px;
-            line-height: 1.7;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 64px;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 64px;
-            padding-top: 48px;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .stat { text-align: center; }
-
-        .stat-value {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            color: var(--accent-primary);
-            margin-bottom: 4px;
-        }
-
-        .stat-label {
-            font-size: 13px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 500;
-        }
-
-        /* ============================================
-           LOGO BAR - NEW based on research
-           ============================================ */
-        .logo-bar {
-            padding: 48px 0;
-            background: var(--bg-primary);
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .logo-bar-content {
-            text-align: center;
-        }
-
-        .logo-bar-label {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 24px;
-        }
-
-        .logo-bar-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 48px;
-            flex-wrap: wrap;
-            opacity: 0.6;
-        }
-
-        .logo-bar-logos svg {
-            height: 28px;
-            width: auto;
-        }
-
-        /* ============================================
-           CHALLENGES SECTION - ENHANCED
-           ============================================ */
-        .challenges-section {
-            background: var(--bg-primary);
-            padding: 100px 0;
-        }
-
-        .challenges-header {
-            text-align: center;
-            margin-bottom: 56px;
-        }
-
-        .challenges-intro {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 16px auto 0;
-        }
-
-        .challenges-intro strong {
-            color: var(--accent-primary);
-        }
-
-        .challenges-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .challenge-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-            padding: 28px;
-            transition: all var(--transition-base);
-        }
-
-        .challenge-card:hover {
-            border-color: var(--accent-danger);
-            box-shadow: var(--shadow-md);
-        }
-
-        .challenge-icon {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--accent-danger-light);
-            border-radius: var(--radius-md);
-            margin-bottom: 16px;
-            color: var(--accent-danger);
-        }
-
-        .challenge-card h3 {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-
-        .challenge-card p {
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* ============================================
-           TRANSFORMATION SECTION - NEW
-           ============================================ */
-        .transformation-section {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
-            padding: 100px 0;
-        }
-
-        .transformation-header {
-            text-align: center;
-            margin-bottom: 56px;
-        }
-
-        .section-label {
-            display: inline-block;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--accent-primary);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 12px;
-        }
-
-        .pipeline-visual {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .pipeline-stage {
-            text-align: center;
-            padding: 32px 24px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-            min-width: 180px;
-            transition: all var(--transition-base);
-        }
-
-        .pipeline-stage:hover {
-            border-color: var(--accent-primary);
-            box-shadow: var(--shadow-md);
-        }
-
-        .pipeline-stage.before {
-            background: var(--accent-danger-light);
-            border-color: rgba(239, 68, 68, 0.2);
-        }
-
-        .pipeline-stage.after {
-            background: var(--accent-success-light);
-            border-color: rgba(34, 197, 94, 0.2);
-        }
-
-        .pipeline-label {
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 8px;
-        }
-
-        .pipeline-stage.before .pipeline-label { color: var(--accent-danger); }
-        .pipeline-stage.after .pipeline-label { color: var(--accent-success); }
-
-        .pipeline-metric {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .pipeline-desc {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        .pipeline-arrow {
-            color: var(--accent-primary);
-            font-size: 24px;
-        }
-
-        /* ============================================
-           PILLARS SECTION
-           ============================================ */
-        .pillars-section {
-            background: var(--bg-primary);
-            padding: 100px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 56px;
-        }
-
-        .section-header h2 { margin-bottom: 16px; }
-
-        .section-header p {
-            font-size: 1.125rem;
-            max-width: 550px;
-            margin: 0 auto;
-            color: var(--text-secondary);
-        }
-
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .pillar-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-            padding: 28px 24px;
-            transition: all var(--transition-smooth);
-        }
-
-        .pillar-card:hover {
-            border-color: var(--accent-primary);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
-        }
-
-        .pillar-number {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--accent-secondary);
-            margin-bottom: 16px;
-        }
-
-        .pillar-icon {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--accent-primary-light);
-            border-radius: var(--radius-md);
-            margin-bottom: 20px;
-            color: var(--accent-primary);
-        }
-
-        .pillar-card h3 {
-            font-family: var(--font-body);
-            font-size: 1.0625rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .pillar-card p {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        /* ============================================
-           PROCESS SECTION - ENHANCED with timeline
-           ============================================ */
-        .process-section {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
-            padding: 100px 0;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-            position: relative;
-        }
-
-        .process-steps::before {
-            content: '';
-            position: absolute;
-            top: 44px;
-            left: 12%;
-            right: 12%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-            opacity: 0.3;
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-        }
-
-        .step-timeline {
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--accent-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 12px;
-        }
-
-        .step-number {
-            width: 88px;
-            height: 88px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--bg-primary);
-            border: 2px solid var(--accent-primary);
-            border-radius: 50%;
-            margin: 0 auto 24px;
-            font-family: var(--font-display);
-            font-size: 2rem;
-            color: var(--accent-primary);
-            position: relative;
-            z-index: 1;
-        }
-
-        .process-step h3 {
-            font-family: var(--font-body);
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .process-step p {
-            font-size: 14px;
-            color: var(--text-muted);
-            max-width: 220px;
-            margin: 0 auto;
-        }
-
-        .step-owner {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 4px 12px;
-            background: var(--accent-primary-light);
-            border-radius: 100px;
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--accent-primary);
-            text-transform: uppercase;
-        }
-
-        .step-owner.you {
-            background: var(--accent-secondary-light);
-            color: #0F766E;
-        }
-
-        /* ============================================
-           OUTCOMES SECTION
-           ============================================ */
-        .outcomes-section {
-            background: var(--bg-primary);
-            padding: 100px 0;
-        }
-
-        .outcomes-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .outcome-card {
-            text-align: center;
-            padding: 40px 24px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-        }
-
-        .outcome-metric {
-            font-family: var(--font-display);
-            font-size: 3.5rem;
-            color: var(--accent-primary);
-            margin-bottom: 8px;
-            line-height: 1;
-        }
-
-        .outcome-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 6px;
-        }
-
-        .outcome-desc {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        /* ============================================
-           CASE STUDIES SECTION - NEW
-           ============================================ */
-        .case-studies-section {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
-            padding: 100px 0;
-        }
-
-        .case-studies-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .case-study-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            transition: all var(--transition-base);
-        }
-
-        .case-study-card:hover {
-            border-color: var(--accent-primary);
-            box-shadow: var(--shadow-md);
-        }
-
-        .case-study-industry {
-            display: inline-block;
-            padding: 4px 12px;
-            background: var(--accent-primary-light);
-            border-radius: 100px;
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--accent-primary);
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-
-        .case-study-card h3 {
-            font-family: var(--font-body);
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-
-        .case-study-metrics {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .case-metric {
-            text-align: center;
-        }
-
-        .case-metric-value {
-            font-family: var(--font-display);
-            font-size: 1.75rem;
-            color: var(--accent-secondary);
-        }
-
-        .case-metric-label {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        /* ============================================
-           VERTICALS SECTION
-           ============================================ */
-        .verticals-section {
-            background: var(--bg-primary);
-            padding: 100px 0;
-        }
-
-        .verticals-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .vertical-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-            padding: 32px 24px;
-            text-align: center;
-            transition: all var(--transition-base);
-        }
-
-        .vertical-card:hover {
-            border-color: var(--accent-secondary);
-            box-shadow: var(--shadow-md);
-        }
-
-        .vertical-icon {
-            width: 56px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--accent-secondary-light);
-            border-radius: var(--radius-md);
-            margin: 0 auto 20px;
-            color: var(--accent-secondary);
-        }
-
-        .vertical-card h3 {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .vertical-card p {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        /* ============================================
-           COMPLIANCE SECTION
-           ============================================ */
-        .compliance-section {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
-            padding: 80px 0;
-        }
-
-        .compliance-content { text-align: center; }
-
-        .compliance-badges {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .compliance-badge {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            padding: 24px 32px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-md);
-            transition: all var(--transition-base);
-        }
-
-        .compliance-badge:hover {
-            border-color: var(--accent-primary);
-        }
-
-        .compliance-badge-icon {
-            width: 36px;
-            height: 36px;
-            color: var(--accent-primary);
-        }
-
-        .compliance-badge span {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-secondary);
-        }
-
-        /* ============================================
-           CTA SECTION
-           ============================================ */
-        .cta-section {
-            padding: 120px 0;
-            background: var(--bg-primary);
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, #F0F4FF 100%);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-xl);
-            padding: 72px 56px;
-            text-align: center;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .cta-box h2 { margin-bottom: 16px; }
-
-        .cta-box > p {
-            font-size: 1.125rem;
-            max-width: 480px;
-            margin: 0 auto 48px;
-            color: var(--text-secondary);
-        }
-
-        .cta-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .cta-option {
-            padding: 32px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-        }
-
-        .cta-option h3 {
-            font-family: var(--font-body);
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .cta-option p {
-            font-size: 14px;
-            margin-bottom: 24px;
-            color: var(--text-muted);
-        }
-
-        /* ============================================
-           CONTACT FORM
-           ============================================ */
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 12px 16px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-sm);
-            font-family: var(--font-body);
-            font-size: 14px;
-            transition: border-color var(--transition-fast);
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--accent-primary);
-            background: var(--bg-primary);
-        }
-
-        textarea.form-input {
-            resize: vertical;
-            min-height: 80px;
-        }
-
-        /* ============================================
-           FOOTER
-           ============================================ */
-        .footer {
-            padding: 48px 0 32px;
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border-light);
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 24px;
-        }
-
-        .footer-brand {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .footer-logo {
-            font-family: var(--font-body);
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .footer-logo span { color: var(--accent-primary); }
-
-        .footer-tagline {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        .footer-center { text-align: center; }
-
-        .footer-text {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        .footer-founder {
-            font-size: 12px;
-            color: var(--text-light);
-            margin-top: 4px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 24px;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color var(--transition-fast);
-        }
-
-        .footer-links a:hover { color: var(--accent-primary); }
-
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
-        @media (max-width: 1024px) {
-            .pillars-grid, .outcomes-grid { grid-template-columns: repeat(2, 1fr); }
-            .verticals-grid { grid-template-columns: repeat(2, 1fr); }
-            .process-steps { grid-template-columns: repeat(2, 1fr); }
-            .case-studies-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 768px) {
-            section { padding: 72px 0; }
-            .nav-links { display: none; }
-            .hero-stats { flex-direction: column; gap: 28px; }
-            .challenges-grid { grid-template-columns: 1fr; }
-            .pillars-grid { grid-template-columns: 1fr; }
-            .outcomes-grid { grid-template-columns: 1fr 1fr; }
-            .process-steps { grid-template-columns: 1fr; }
-            .process-steps::before { display: none; }
-            .cta-options { grid-template-columns: 1fr; }
-            .cta-box { padding: 48px 24px; }
-            .footer-content { flex-direction: column; text-align: center; }
-            .pipeline-visual { flex-direction: column; }
-            .pipeline-arrow { transform: rotate(90deg); }
-            .logo-bar-logos { gap: 32px; }
-        }
-
-        /* ============================================
-           ANIMATIONS
-           ============================================ */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-content > * {
-            animation: fadeInUp 0.7s ease forwards;
-        }
-
-        .hero-category { animation-delay: 0.05s; opacity: 0; }
-        .hero-badge { animation-delay: 0.1s; opacity: 0; }
-        .hero h1 { animation-delay: 0.2s; opacity: 0; }
-        .hero-subtitle { animation-delay: 0.3s; opacity: 0; }
-        .hero-ctas { animation-delay: 0.4s; opacity: 0; }
-        .hero-stats { animation-delay: 0.5s; opacity: 0; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vertical Edge AI — AI-Powered Business Automation</title>
+  <meta name="description" content="Enterprise-grade automation for lead generation, content, compliance, and RFPs — deployed in weeks, not quarters. One partner replaces six hires." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vertical Edge AI — Your AI Operations Partner" />
+  <meta property="og:description" content="Enterprise-grade automation for lead generation, content, compliance, and RFPs. Deployed in 14 days." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://verticaledgeai.ai" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- React 18 CDN -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    html { scroll-behavior: smooth; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="container nav-content">
-            <a href="#" class="logo">Vertical<span>Edge</span> AI</a>
-            <ul class="nav-links">
-                <li><a href="#pillars">Solutions</a></li>
-                <li><a href="#outcomes">Results</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#verticals">Industries</a></li>
-            </ul>
-            <a href="https://cal.com/verticaledgeai/discovery" class="btn btn-primary" target="_blank">Get Your Free Audit</a>
-        </div>
-    </nav>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <!-- Category Label - NEW -->
-                <div class="hero-category">AI-Powered Business Automation</div>
-                
-                <div class="hero-badge">
-                    <span class="hero-badge-dot"></span>
-                    Launching clients in 14 days or less
-                </div>
-                
-                <h1>Your <span class="italic">AI Operations</span> <span class="gradient-text">Partner</span></h1>
-                
-                <!-- Enhanced subheadline with specific numbers -->
-                <p class="hero-subtitle">Launch your AI automation system in 14 days. Full-stack infrastructure for lead generation, content, compliance, and RFPs — delivering results while you focus on closing deals.</p>
-                
-                <div class="hero-ctas">
-                    <a href="https://cal.com/verticaledgeai/discovery" class="btn btn-primary" target="_blank">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        Get Your Free Audit
-                    </a>
-                    <a href="#process" class="btn btn-secondary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                        See How It Works
-                    </a>
-                </div>
-                
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-value">8</div>
-                        <div class="stat-label">Automation Pillars</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">14</div>
-                        <div class="stat-label">Days to Launch</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">5</div>
-                        <div class="stat-label">Compliance Frameworks</div>
-                    </div>
-                </div>
-            </div>
+
+const VE_LOGO = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAAAwCAYAAAAmepUZAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAMUklEQVR42u2be3BU93XHz293BaIucTrOH30kwbWdxGXswTJOPZPplHRsUjczddw4G08RrjFJTU0MdsxQl6aZ28mMazuGtgSDjYORE/OQr4UQQkggQVa8xGt5SSvtQ7vS7kqr9xOttPfx+/2+/eN3b73pH50BmwCee2Y0o9l79zH3/D7nnO85vx/RLWAA2HX+CkaeXR8zgPk9PfkFxa/puu4fN/GgCZSZwIMm8MD/fV+8Z3AB1PUyEyiD8+fcXwbgIQBzihdI1f7Grzj3PACgbGtF1b3udcYYMeb5+ZrIE0CyYEjo+uE/AcAA+J955pnSUxdjaQCQUNZyunWF875ZRERNzWfP4f+xnv4Rc+O7H3xR0+AD4H98+fK57Z3pXPE9W7ZXLyci0rRQwCP1EzjRFggDkNFk5i0iokQCs4mIfvH2h39v2hIADAAylc2l582bVwrAT0T0E+3Nbw6PTgoAFgQXELYQtiGFZVkAcOZ89N+JiLq7u0uJiKr3N7zoLIgCAHn+QjRORH4AASJGB0+G7204fvGbzm/zeR66OhIvAcBEvjCp67VfBsBCIQSIqPRky/m4gtE2AODw0XMujSVERMeOnTkOQNoQHBAQ3JIAxMDg2LCm/fwPAUVheXn552KJ7gwACcEtANZ7FR+87pK9aNGiQLxn5F9ngO87r/k9D12NE4VyIgAkMrnforGx4cjTACC4ZQGQ2d6hVDAYnBUKhQKMMfrpq+sfGRqdBAAOYQPgNgCcudTxajGFlfq+VepzTAsA4p2ZweJcSESl2f5RAPi258RrcCIX6JAq89k9gyNXVrz4yp0AfKFQKNDS0jJnYGgsCgAQMAFgT+2hHxXR6I+mek4AADdnbACif2RyeP36rV8AwMLhcAkRsUisqxGAFNwwAZgNR07+lIiYCqUUOBW+sEYRjcWeE6/OiT4iokg0VQ8AQqiQufdA40bn+mwiojMXI8vgYKRyXdtpNwwyIgpfbPuWZXO4IbcjkV7v0gyAVdY2fX1q2pCccwFItLXHZ9xF5C6kjkRySkqJgm3/tefEq3Oin4jo/Z36nxcM2wZgA0ImM7mZJctXznNp1HV91uDQWAxSAhC2zZFvaj5bRkQsEonMIiJ/T+/AcQBiKm/wrdsq/4qIKKJHZhERxZKZ/QBg29ySEgiHW1cvWrQo4ObVg02hVwFFuQ085jnxKk3X1cO62BpvUFlR0aTvq99YnNNaW6PPArAFLAMAMtkhnTFGiURiNhHRkaMnvgUALWcu/aa48KmsrX1wasbgXAguJTA8PGnU1JyYyxhzI4E/nkwPuDm5YHtOvAYn6n4ArO7QsYdVcSI4IGQq2zu95Nnn73JD3sKFz5Wk0j3DgJBC2Hx4dFL+7LVfLCjKexSJd4d36fsfB+ASSolEep9DoQq10a4twWDQHwqpxbHrw7qlXMB2Fo8s2PDC6VX3wRQRbOHChb/X0dGVU3JC0bazqm5tEY3sdLjtfZU7jQIAHDl6ViciCofDJcQY/V35S3+0YcOGObqu+xljtGrVv5UND45bAGxwiImJqemNW9+/+2PH3zM7Eu1qU59ZMAFgbNL4W8+J12ChkOqWVO6pfwkAODdNKSWS3b1nix/of2x4656h4TELsCUgRE//CP+n1evuA8CCuu4vyrUBImLRePdPAABcGABwuS3xTrF8+dWOvUtsLiGEsAEhsr0D1s9e21jGGCNN0zyxf7VSA4BvwaLvfL4tluyTQgCwTSklKn5d9aTj6FIiokuXY9sBCAFFY+ORE7rraE3TfMGgCs/lz66Yn+0dEAC4EFxMThn5rbur73a+K0BEs9s6ku1OqDUB8Mamk9u8bs0np5HqG4++pEoMywSAWCpzgYh8zoOnDZt23H8lb0LRCD4wMGquW/fmfCKiYDDod+/LDYw7VBsGAHSmc28rClUhVPHrPeWmJSC4zaWU6B8YHQuHwyUAmEfhNZqmaT4AbNWqdfMz2QEOgAvANoTE7qoDT7lh8hvfeHzusZPnG92wCwCh0LlK9zoA36PB4O2pTG+/lAIAN23B8VH1gb8hIuYSnc0N6AAk57wAAPvqjnzkLBYvF34yGlUu6+jo/hel7VUuy/T1HyQiqnco+u/N278+VbAdWQc5MDyRXbx46W0uhfsONr7kNA9MALI9FrvkNLr9ANgbb7z9lbHxiQJgCwAi1z/KV69edx8RUXFu9ewacyNjjNasefO2iclCrzOF4tMzM+O7q6v/t6p87LHyz11oi7U5PVWTc4HDR0+/wBijJUuW/EE02dUnIKQAt4QEdlbWPul2eIiILrUlKlTBo/JqvDOjFxVEnn1aXZx4PLsWgHDGRujsym4pLnDe+eUHSw3LhtNpkYmubIaI2K6PGlarbrhhAJCtrYk2IipxG+b/uWXnXcPj+RkIcG5b4srUtNyz/+ACAEz3KPx0m+Kvb916++jYdB6AFELIkbEJY/fehjuLqktfy4XLHY6CsABAr2xYl+zORSAlTD5tcyFRs+fQ94oLmqOnwu8pgpX478r06kWh3LNPmUZ/JKZ6nhCWCnvxrs3O9dlERC3haDkAU8CyuW3LQt6CsAQEDC4hEIl3X6Z77pntVp27q6u/2ts3mAcEV2WRnf+oprnMo/A69lO37ap56Mp0AZyrAmR4ZCL//PMvf+nj6cO80uOnzxcASNuyJASE5AKAirP63oMbivuvqXTuB0oX2iYA5HKDZzxdeP1pZJFYUtEIUZAAPqza59JYQkS+Yy0X/1k6pawUALe5BCBS2b4rS3/4wp9qmuYLhRBoaWmZMzg6ERWAFIApAdTWHlpZrFE9+/Sd6GOM0a6auocn8zMQggsAIpnOXHlq2bIvudsuNE3z9Q+PJpTms4UjO1BZVf9Wcei91B57WmlLYQGQXdm+5MKFz5U4U31vg9T1rlSHJmb2wtEEAPBB5d5NxQ7q6up5mgsBzi0bgEil+648tUyF3VAoFKioqCgdHptQe3WEMAGgtuHwiuLv8Ow6O/HchfZvSwkIzm0AIpnpnfzOUyvu1DT4NE3zLVmycl5P32DBpfA3R89uKXZya3tqqVoD3AKAVDoXI5pXCmg+j8LrbwwAe+SJJ+7oiKYyAKSlNkxhT03T+t8Kl23RdwFgMp+frK09/mXnvX4iCkTiXVEAElwNnE+0hF8jckZYnv3uaKypa/qxxQVsxxG9vf2XiT6WDz/f+v7dU4aFznT/O8W68N1t28ot++MWXSrdJ5754coHiMgbN/2uaST64pxoMtPj7Bu1DcPEzsq9TxIRuVP80OnLG0+3xRe4u8iJyHe+NdruNAxMNbo6ucOrSG+AhZyeZm39oR8LCQi11UK2dnS2ElHA3eLhOj0UCgUAsM3v7fwHwxKAULk02zdiLV++5j5v3HSDWnGapvnWrl07d3xyOi2khBCwpg0L23dUf9cly3WkK97PXYwcAwBuq9lk/eGWXV5FegPNLUJOnApvgjPaVzQmLpEaMzEiYs7hGfZfm3/5Z2PjVyaE4AICfHxyZmLZj165Xy0Ir0Nzw8Q/EdGzz734cE9uSDoTDmumYKLuYNNjDq0Bt5F95lzHdgAQtprsV1XXt7lUe0/zRuZGpxipPdBYo2SfEv+pdI+rC0sYY7TpV7u/OjA8YUMIAcE5t7ixY0fVXzpFkkfhjc6NANi2bbv+2OTIKhq5PTGZz1fV1d3lTCICzccvVDgdngIAdGf6dSIi3cuFN5dujMQzVc7xDAMAIh2pt4mIHnni6Tuise4ZKSWE4GKqYPAdB5rv1zTN542bbhJz5cSBxhMPFQzbEuA2BMRUvjC9KLjy99tjvUEA3D2YmnSGvt7Wi5u0yIl1pmvV8Q01H2wKnaxPZ/vjqqDhHACi0eRDnqy4KWlUu9aOnz6/MD89YyoZIdyj/RBqJIVUdy71yiuv3+443atKbzJzzxUGTp1tTavDo1wA4Fz9z6UEjhw79Y/FVa1nN6HcAMAONra8IBWD6pipEAKA7M70JhYvXnybR+EtQOMdX/va3GQq0wtA2sIWALdtW+BQ07HVnzUKP4sCF83Nzf7ReHyqLZp4QxIxH0lJxNjQ0LixeVPFYcaImpubpbfeb34afY8+Gry9K5NzxD9w6NDRncVVrGe3iPg/fvLUiwAwODI+8/LL6+4FwILBoCcrbgVzpxZr1mnzx6YKsvnEmV1eRXor6kaHxvORzper65v+wtvRfWvrxpLP8qzwfwCLpEI30YSGfwAAAABJRU5ErkJggg==";
+const VE_LOGO_SM = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAYCAYAAACvKj4oAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAEiUlEQVR42tWWW4wTdRjFz7RcVlcFVgkPIuiiCRKNGsAHTVBDiCaSkEBWIyGRJ5VEQozxAg82mpAYQTcagy6JN4ig3RAT2HiDpS643V3oZXfb2u2Ntmzvs22n7bTTznR6fNit2Wx8MQHTnpd5mPnPzPn/vu98f+AGiKQAAKlSaVU4HO4gKcRzlTUku/1+/1KSQjyeW0Oym2S3oijr8opy3+xqk4HkurSk3I+eHiNusAw36D1GAOjquPXIbbffeVgQBKYTib0AvJ13dH0iCAKTYuZlAF6g4ejo6PCUpfIhAHCMv7gHgEuWpM+fymwQrFZ3l9nsXoJWEslFc9dvKkqtOj6e7Dx48NOVckku1FRVHXF67+3t7V0uZgt5kpQrijri8DywcePGxaI4EyDJoaHR5wHAH0m9R7KjJQ3mpOLHJGl3ed4GgGRSPEyS/lD0MwCITiffJ8l4RvwOABx/hbaRZCaTvQLAMOHxbJHKlcn5Zd8qBg0AMDg4+oimarWZfD71zod9yxwOx0pVVfOVai1z/rxtmdvt7spLpaJ9wrMVADJZyUKS1wLxHQAQjSUG66S/5QzO/ZARAMRUboAkR+2TrwNAZHr6a5J0TvjeAgDLJdv2np4eo9V69fFGo8Fisewzm91LBgYudyvVar2u1ydb1iBJ4feLY8/qus58XhoHYLRabQ9rmqZm81LiwAHT8ubzsViqnySD4dheAAgEo1+RZCB0/Yv5G9ZqJgUAQjIpjs/2oncXAESi8Z9J0umceoOk0TJsW69qmlYsF5N9NtviCxdGVpUrilIoyurp07/eM7/sW7JM/f7IdpLMSQULAPxiGXlabzQoFUoeAAhFIl+SpC8Q+gAAwtH4IZKMXI9/27L0FgZOqVR16nVdDwajmwAYphOpMZK0WicOlSrlvFyW8319Z+86duzYiqKspFVVq9ldrgcFQWhNegtHhscffY0k0+mZswAwYnftIsl6rU6S9PiDfQAQCsf2kWQuV+hveXrNPiQpHDlyolOuVMNKtaqf6u9/7Ln9+5dKxZKdpCYV5doPZ357yGSyLCpXqpO63uCYfWLr3NrWNjifYiyRfZMk3b7gTwDg84VfIslQJHYKAGLJzAskmRazQy0bLP8mk8lkICkcP35ydbFULsllRR8YGFxrNltvSWelSEIUNwEwpMTs+Gxf2nYDgMUyuzFtoX8SNRg5SpL+QPgjALCMOR8FgItDozvIBlNiLrBt257O5ohpJ4MGksLg4PDailJT5bJSOH7yzOrm/XgyfZ4k/7h85ZVZepb2obeQ4pTvWj9JRqPxd0kahoZdT2iqWs/npMTu3ftWNIOp7QyazWYjAAzbptarqtaQy3J09mST/J4kp1Piq/NDqS3VTMaZrHSWJN3eUG+tponVai194sRvnW1Lb2GZ/mlzPlPXG2wqEk0ebXt68ylu2NCzJJPJOklqxWKpdO7chbsFQYDJZDK0vcFmQl6xu3aSpD8Y/rEtjmX/Qc0+M0bjqalLV68+SVJohtDN1P9V/5wb4rrT69+ZDnkDWzZvJgD9Zn/4b18gg7xJ2Q6CAAAAAElFTkSuQmCC";
+const VE_LOGO_DARK = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAERElEQVR42tVVbUxbVRh+z7m3t50wGKMFRjJphDlhUxZwf5jj3IIL6YCwEQvEhYSZSKZOjcFiNLCmakZsTfih2UL8oUi2RboWG+MHdE25EHETzTSExqAZYTIcDGQd9IP23nP8ITWLfGw4/vj8ek9yzvu8z/t1OFgJbLFYkCRJzGQycXv27MF+v59ZLBYMAJxer8d6vR5PTExQAABCCN/Q0ACSJDF4AKD/egf9y2alpaWPJCcng8vlGieElAuCEPV4PH1Go/HxUCiUHYlEqFqt5tP37u3L0+lCAwMDFZTSKUmSfliNAMcNQggHABAMBg8HAgEnADDG2DPAoLe2tlav0WgSOIx7tghqNwZ0Jk+nk38cHn5eoxLcarU6y2KxPHTMdGw3/P0QrSCIQ61Wz3II76utrc3NTk83K7LM5mbn7D09PZcZwNcYY1Dx3Emr1RpZWFw8FY4s/ebxeJxDQ0Mnr9+8/hgAQE1NDV5BIIoiBQAoKCgYjMVi4enp6fc+djhuyYpyTlHk6uMvH9elpKTYOUF1q8/rdZaXl5sEQcjcohFaKKVYluXm8EI4uGaKrFYrJYTw7e3tNzgOf6Li+Mr6+vqHtTptC+Y4PD4y3uxyuXwZGRlVGGEWXFh8R5aVma96ey+WHTpUhwGlbkvetrgmwV0qUPbOnTZZlunk5OTbLpdrgirKN4yxlxobG3d0dXV9d7T66GGe53djhFs5jlNistymKMrvZRVlIwCAHA4Hjfvk7iaI9/6n58/P78rZlQ+M1VVUVpyRFeVbORp7df7P+ei18WvetLS0cwijpBMvnHg2eOdOGQB6EXHY3NHRcZkQwsdnZNUix1s2VZd6igFDoyMjbzqdzlGF0iuRSPi5qqqqSoTQfoRQW01NTTQYCtuWoktzB44cuQAASJIk5X4GiAOElNKSkktMoQcL9z+pHRsb2xcIBAaorCxhjCO6wrQd4V/DhdHI0iBD8JbH42kjhPCSJMlr1iAOk8kEwBjavnV7K8ZYGB4efsXtdg8ihq5gjNUqtXDW0e4ILwYWbLFYLFhUVPQRAKD+/n5lIysAI4SogYjfA0Du681mrc1mq1CpVBczMzNTQqGQPjB/+ypl1HbJ631jtejXqwGYTCbEGIOkxIQWjHFi+/vtDTqd7nONRvNaZ2fn7dmZmXdlRY49kZ//IQCg+BxtFBhjDCIRfzEUi3/Y7fYEAID6+vrcp0tKmVgsnl0OhlvTwXreCSGYUgoJiQmtvIrP8Hl9dQAAN6emWimlkPNoju0+N+26Kxj5fD7eQMQbxQcOjjY1NWUZigkrEUs+u1f091QAAIwQwhkMBpkXVKcxz+X9fPWnLxkA06ZpT8MmAQEAMpvNW0VRnCRPFTODaPgCIQTLvxw8iIJ/VNjt9gUe8x/wggqSkpNsjDHw+/1oUyQsfyCouro6y2g0uuNn2GwwxlB3d3ci/N+xodT8Bf/M2IMbyNTtAAAAAElFTkSuQmCC";
+
+const B = {
+  white: "#FFFFFF", bg: "#F8FAFC", bgAlt: "#F1F5F9",
+  navy: "#0F172A", navyMid: "#1E293B", navyCard: "#162032",
+  text: "#334155", textLight: "#64748B", textMuted: "#94A3B8",
+  indigo: "#4F46E5", indigoLight: "#6366F1", indigoBg: "#EEF2FF",
+  teal: "#14B8A6", tealLight: "#2DD4BF", tealBg: "#F0FDFA",
+  border: "#E2E8F0", borderLight: "#F1F5F9",
+  green: "#22C55E", greenBg: "#F0FDF4",
+  red: "#EF4444", redBg: "#FEF2F2",
+  amber: "#F59E0B",
+  sh: "0 1px 3px rgba(15,23,42,0.08)",
+  shMd: "0 4px 14px rgba(15,23,42,0.09)",
+  shLg: "0 12px 36px rgba(15,23,42,0.12)",
+};
+
+const PLATFORMS = [
+  { n: "Salesforce", c: "#00A1E0", cat: "CRM", angle: 0 },
+  { n: "HubSpot", c: "#FF7A59", cat: "CRM", angle: 45 },
+  { n: "Slack", c: "#611f69", cat: "Comms", angle: 90 },
+  { n: "Google Workspace", c: "#4285F4", cat: "Productivity", angle: 135 },
+  { n: "Microsoft 365", c: "#D83B01", cat: "Productivity", angle: 180 },
+  { n: "Stripe", c: "#635BFF", cat: "Payments", angle: 225 },
+  { n: "QuickBooks", c: "#2CA01C", cat: "Finance", angle: 270 },
+  { n: "Zoom", c: "#0B5CFF", cat: "Meetings", angle: 315 },
+];
+
+function useInView(o = {}) {
+  const r = useRef(null); const [v, sV] = useState(false);
+  useEffect(() => { const el = r.current; if (!el) return; const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) sV(true); }, { threshold: 0.1, ...o }); obs.observe(el); return () => obs.disconnect(); }, []);
+  return [r, v];
+}
+function FI({ children, delay = 0, className = "" }) {
+  const [r, v] = useInView();
+  return <div ref={r} className={className} style={{ opacity: v ? 1 : 0, transform: v ? "translateY(0)" : "translateY(22px)", transition: `opacity 0.55s ease ${delay}s, transform 0.55s ease ${delay}s` }}>{children}</div>;
+}
+
+const f = { d: "'Instrument Serif', Georgia, serif", b: "'DM Sans', -apple-system, sans-serif" };
+
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// ─── Dark Hero with Workflow Illustration ───
+function Hero() {
+  const [sc, setSc] = useState(false);
+  useEffect(() => { const h = () => setSc(window.scrollY > 40); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
+
+  return (
+    <>
+      {/* Nav */}
+      <nav style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
+        background: sc ? "rgba(31,41,55,0.95)" : "transparent",
+        backdropFilter: sc ? "blur(14px)" : "none",
+        borderBottom: sc ? "1px solid rgba(255,255,255,0.06)" : "none",
+        transition: "all 0.3s", padding: "0 24px",
+      }}>
+        <div style={{ maxWidth: 1140, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <img src={VE_LOGO} alt="VE" style={{ height: 26, width: "auto", opacity: 0.95 }} />
+            <span style={{ fontFamily: f.b, fontWeight: 700, fontSize: 16, color: B.white, letterSpacing: "-0.01em" }}>
+              Vertical<span style={{ color: B.tealLight }}>Edge</span> AI</span>
+          </div>
+          <div style={{ display: "flex", gap: 24, alignItems: "center" }}>
+            {["Platform", "Pricing", "Results", "FAQ"].map(i => (
+              <a key={i} href={`#${i.toLowerCase()}`} onClick={e => { e.preventDefault(); scrollTo(i.toLowerCase()); }} style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none", fontSize: 13, fontFamily: f.b, fontWeight: 500, transition: "color 0.2s" }}
+                onMouseEnter={e => e.target.style.color = "#fff"} onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.6)"}>{i}</a>
+            ))}
+            <a href="https://cal.com/verticaledgeai/discovery" target="_blank" rel="noopener noreferrer" style={{
+              background: B.indigo, color: B.white, padding: "9px 18px", borderRadius: 8,
+              textDecoration: "none", fontSize: 13, fontWeight: 600, fontFamily: f.b, transition: "all 0.2s",
+            }} onMouseEnter={e => e.target.style.background = B.indigoLight} onMouseLeave={e => e.target.style.background = B.indigo}>Get Your Free Audit</a>
+          </div>
         </div>
+      </nav>
+
+      {/* Hero Section - Dark with Workflow */}
+      <section style={{
+        background: "linear-gradient(165deg, #1F2937 0%, #1E293B 40%, #243040 100%)", position: "relative", overflow: "hidden",
+        padding: "100px 24px 40px",
+        display: "flex", alignItems: "center",
+      }}>
+        {/* Gradient orbs */}
+        <div style={{ position: "absolute", top: "10%", right: "5%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(79,70,229,0.08) 0%, transparent 65%)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", bottom: "5%", left: "10%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.05) 0%, transparent 65%)", pointerEvents: "none" }} />
+        {/* Grid pattern */}
+        <div style={{
+          position: "absolute", inset: 0, opacity: 0.02, pointerEvents: "none",
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)`,
+          backgroundSize: "60px 60px",
+        }} />
+
+        <div style={{ maxWidth: 1140, margin: "0 auto", width: "100%", position: "relative", zIndex: 1 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 56 }}>
+            {/* Left: Copy */}
+            <div style={{ flex: "0 0 46%", maxWidth: 500 }}>
+              <FI>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(79,70,229,0.12)", border: "1px solid rgba(79,70,229,0.2)", borderRadius: 100, padding: "5px 14px", marginBottom: 22 }}>
+                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: B.green, animation: "pulse 2s infinite" }} />
+                  <span style={{ color: B.tealLight, fontSize: 11, fontFamily: f.b, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" }}>Launching clients in 14 days</span>
+                </div>
+              </FI>
+              <FI delay={0.06}>
+                <h1 style={{ fontFamily: f.d, fontSize: "clamp(40px, 5vw, 58px)", fontWeight: 400, color: B.white, lineHeight: 1.08, letterSpacing: "-0.02em", margin: "0 0 18px" }}>
+                  Your AI{" "}<span style={{ background: `linear-gradient(135deg, ${B.tealLight}, ${B.indigoLight})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Operations Partner</span>
+                </h1>
+              </FI>
+              <FI delay={0.12}>
+                <p style={{ fontFamily: f.b, fontSize: 16, lineHeight: 1.7, color: "rgba(255,255,255,0.65)", margin: "0 0 30px" }}>
+                  Enterprise-grade automation for lead generation, content, compliance, and RFPs — deployed in weeks, not quarters. One partner replaces six hires.
+                </p>
+              </FI>
+              <FI delay={0.18}>
+                <div style={{ display: "flex", gap: 12 }}>
+                  <a href="https://cal.com/verticaledgeai/discovery" target="_blank" rel="noopener noreferrer" style={{
+                    background: B.indigo, color: B.white, padding: "13px 26px", borderRadius: 10,
+                    textDecoration: "none", fontSize: 14, fontWeight: 600, fontFamily: f.b,
+                    boxShadow: "0 4px 20px rgba(79,70,229,0.35)", transition: "all 0.25s",
+                  }} onMouseEnter={e => { e.target.style.transform = "translateY(-2px)"; e.target.style.boxShadow = "0 8px 28px rgba(79,70,229,0.4)"; }}
+                    onMouseLeave={e => { e.target.style.transform = "translateY(0)"; e.target.style.boxShadow = "0 4px 20px rgba(79,70,229,0.35)"; }}>Get Your Free Audit</a>
+                  <a href="#process" onClick={e => { e.preventDefault(); scrollTo("process"); }} style={{
+                    color: "rgba(255,255,255,0.7)", padding: "13px 26px", borderRadius: 10,
+                    textDecoration: "none", fontSize: 14, fontWeight: 600, fontFamily: f.b,
+                    border: "1px solid rgba(255,255,255,0.15)", transition: "all 0.25s",
+                  }} onMouseEnter={e => { e.target.style.borderColor = "rgba(255,255,255,0.3)"; e.target.style.color = "#fff"; }}
+                    onMouseLeave={e => { e.target.style.borderColor = "rgba(255,255,255,0.15)"; e.target.style.color = "rgba(255,255,255,0.7)"; }}>See How It Works</a>
+                </div>
+              </FI>
+              <FI delay={0.25}>
+                <div style={{ display: "flex", gap: 36, marginTop: 36 }}>
+                  {[{ n: "8", l: "Automation Pillars" }, { n: "14", l: "Days to Launch" }, { n: "60%", l: "Less Than In-House" }].map((s, i) => (
+                    <div key={i}>
+                      <div style={{ fontFamily: f.d, fontSize: 30, color: B.tealLight }}>{s.n}</div>
+                      <div style={{ fontFamily: f.b, fontSize: 11, color: "rgba(255,255,255,0.4)", marginTop: 3 }}>{s.l}</div>
+                    </div>
+                  ))}
+                </div>
+              </FI>
+            </div>
+
+            {/* Right: Workflow Illustration */}
+            <FI delay={0.15}>
+              <div style={{ flex: 1, position: "relative" }}>
+                {/* Main dashboard */}
+                <div style={{
+                  borderRadius: 14, overflow: "hidden",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  boxShadow: "0 24px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04)",
+                  transform: "perspective(1200px) rotateY(-3deg) rotateX(1.5deg)",
+                }}>
+                  <svg viewBox="0 0 520 340" fill="none" style={{ width: "100%", display: "block" }}>
+                    <rect width="520" height="340" fill="#111827" />
+                    {/* Chrome bar */}
+                    <rect width="520" height="34" fill="#1E293B" />
+                    <circle cx="18" cy="17" r="4.5" fill="#EF4444" opacity="0.6" />
+                    <circle cx="32" cy="17" r="4.5" fill="#F59E0B" opacity="0.6" />
+                    <circle cx="46" cy="17" r="4.5" fill="#22C55E" opacity="0.6" />
+                    <rect x="140" y="10" width="240" height="14" rx="7" fill="#0F172A" />
+                    <text x="200" y="21" fill="rgba(255,255,255,0.3)" fontSize="8" fontFamily="monospace">verticaledgeai.ai/dashboard</text>
+                    {/* Sidebar */}
+                    <rect x="0" y="34" width="90" height="306" fill="#0F172A" />
+                    <rect x="14" y="52" width="62" height="7" rx="3.5" fill={B.indigo} opacity="0.5" />
+                    {[70, 86, 102, 118, 134].map((y, i) => (
+                      <rect key={i} x="14" y={y} width={[50, 44, 52, 38, 48][i]} height="5" rx="2.5" fill="rgba(255,255,255,0.08)" />
+                    ))}
+                    <rect x="8" y="156" width="74" height="28" rx="8" fill="rgba(79,70,229,0.12)" />
+                    <rect x="18" y="166" width="42" height="5" rx="2.5" fill={B.indigo} opacity="0.4" />
+                    {/* Stats row */}
+                    {[0, 1, 2, 3].map(i => {
+                      const x = 104 + i * 102;
+                      const colors = [B.indigo, B.teal, B.amber, B.green];
+                      const vals = ["2,847", "89%", "14.2K", "$5.44"];
+                      const labs = ["Active Leads", "Qual. Rate", "Content", "ROI"];
+                      return (
+                        <g key={i}>
+                          <rect x={x} y="48" width="92" height="56" rx="8" fill="#1E293B" />
+                          <circle cx={x + 14} cy={64} r="5" fill={colors[i]} opacity="0.2" />
+                          <text x={x + 12} y={84} fill={colors[i]} fontSize="14" fontWeight="700" fontFamily="system-ui">{vals[i]}</text>
+                          <text x={x + 12} y={96} fill="rgba(255,255,255,0.35)" fontSize="8" fontFamily="system-ui">{labs[i]}</text>
+                        </g>
+                      );
+                    })}
+                    {/* Chart */}
+                    <rect x="104" y="118" width="198" height="110" rx="8" fill="#1E293B" />
+                    <text x="116" y="136" fill="rgba(255,255,255,0.5)" fontSize="9" fontFamily="system-ui" fontWeight="600">Pipeline Performance</text>
+                    <polyline points="120,200 145,188 170,194 195,172 220,178 245,156 270,148 285,152" stroke={B.indigo} strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                    <polyline points="120,206 145,200 170,204 195,190 220,196 245,180 270,175 285,178" stroke={B.teal} strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6" />
+                    {/* Shaded area under indigo line */}
+                    <path d="M120,200 L145,188 L170,194 L195,172 L220,178 L245,156 L270,148 L285,152 L285,220 L120,220 Z" fill={B.indigo} opacity="0.06" />
+                    {/* Activity panel */}
+                    <rect x="312" y="118" width="196" height="110" rx="8" fill="#1E293B" />
+                    <text x="324" y="136" fill="rgba(255,255,255,0.5)" fontSize="9" fontFamily="system-ui" fontWeight="600">Live Activity</text>
+                    {[0, 1, 2, 3].map(i => {
+                      const y = 148 + i * 22;
+                      const c = [B.green, B.indigo, B.teal, B.amber][i];
+                      const t = ["Lead scored 92 → Sales", "Blog post generated", "SOC2 gap flagged", "RFP response: 4.2hrs"][i];
+                      return (
+                        <g key={i}>
+                          <circle cx={328} cy={y + 4} r="3.5" fill={c} opacity="0.4" />
+                          <text x="338" y={y + 7} fill="rgba(255,255,255,0.4)" fontSize="8" fontFamily="system-ui">{t}</text>
+                        </g>
+                      );
+                    })}
+                    {/* Bottom workflow bar */}
+                    <rect x="104" y="240" width="404" height="48" rx="8" fill="#1E293B" />
+                    <text x="116" y="258" fill="rgba(255,255,255,0.5)" fontSize="9" fontFamily="system-ui" fontWeight="600">Active Workflow</text>
+                    {["P1 Signal", "P4 Qualify", "P5 Content", "P6 Comply", "P7 Propose"].map((s, i) => {
+                      const x = 116 + i * 78;
+                      return (
+                        <g key={i}>
+                          {i > 0 && <line x1={x - 6} y1="276" x2={x - 2} y2="276" stroke={B.teal} strokeWidth="1.5" opacity="0.4" />}
+                          <rect x={x} y="268" width="68" height="14" rx="4" fill={i < 3 ? "rgba(20,184,166,0.12)" : "rgba(79,70,229,0.12)"} />
+                          <text x={x + 6} y="278" fill={i < 3 ? B.tealLight : B.indigoLight} fontSize="7" fontFamily="system-ui" fontWeight="600">{s}</text>
+                        </g>
+                      );
+                    })}
+                    <rect x="462" y="268" width="36" height="14" rx="4" fill={B.green} opacity="0.15" />
+                    <text x="468" y="278" fill={B.green} fontSize="7" fontFamily="system-ui" fontWeight="600">Live ●</text>
+                    {/* Pillar sidebar indicators */}
+                    {["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8"].map((p, i) => (
+                      <g key={i}>
+                        <rect x="14" y={200 + i * 16} width="62" height="11" rx="4" fill={i < 5 ? "rgba(20,184,166,0.08)" : "rgba(79,70,229,0.08)"} />
+                        <text x="20" y={208 + i * 16} fill={i < 5 ? B.tealLight : B.indigoLight} fontSize="7" fontFamily="system-ui" opacity="0.6">{p}</text>
+                      </g>
+                    ))}
+                  </svg>
+                </div>
+                {/* Floating compliance card */}
+                <div style={{
+                  position: "absolute", bottom: -18, left: -28, width: 130,
+                  background: "#111827", borderRadius: 12, padding: "14px 16px",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  boxShadow: "0 16px 48px rgba(0,0,0,0.5)",
+                }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}>
+                    <div style={{ width: 18, height: 18, borderRadius: 6, background: "rgba(20,184,166,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 9 }}>🛡️</div>
+                    <span style={{ fontFamily: f.b, fontSize: 9, color: "rgba(255,255,255,0.5)", fontWeight: 600 }}>Compliance</span>
+                  </div>
+                  {["HIPAA", "SOC2", "GDPR"].map((fw, i) => (
+                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 5, marginBottom: 4 }}>
+                      <div style={{ width: 10, height: 10, borderRadius: "50%", background: "rgba(34,197,94,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        <span style={{ fontSize: 6, color: B.green }}>✓</span>
+                      </div>
+                      <span style={{ fontFamily: f.b, fontSize: 9, color: "rgba(255,255,255,0.45)" }}>{fw}</span>
+                    </div>
+                  ))}
+                </div>
+                {/* Floating metric card */}
+                <div style={{
+                  position: "absolute", top: -10, right: -16, width: 110,
+                  background: "#111827", borderRadius: 10, padding: "12px 14px",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  boxShadow: "0 12px 40px rgba(0,0,0,0.4)",
+                }}>
+                  <div style={{ fontFamily: f.d, fontSize: 22, color: B.tealLight }}>$5.44</div>
+                  <div style={{ fontFamily: f.b, fontSize: 8, color: "rgba(255,255,255,0.4)", marginTop: 2 }}>ROI per $1 spent</div>
+                  <div style={{ width: "100%", height: 3, background: "rgba(255,255,255,0.06)", borderRadius: 2, marginTop: 8 }}>
+                    <div style={{ width: "82%", height: "100%", background: `linear-gradient(90deg, ${B.teal}, ${B.indigo})`, borderRadius: 2 }} />
+                  </div>
+                </div>
+              </div>
+            </FI>
+          </div>
+        </div>
+        <style>{`@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}`}</style>
+      </section>
+    </>
+  );
+}
+
+// ─── Integrations with brand-tinted backgrounds ───
+function Integrations() {
+  const [hovered, setHovered] = useState(null);
+  const cx = 250, cy = 200, r = 145;
+  return (
+    <section style={{ background: B.white, padding: "56px 24px 48px", borderBottom: `1px solid ${B.border}` }}>
+      <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
+        <FI><p style={{ fontFamily: f.b, fontSize: 11, color: B.textMuted, letterSpacing: "0.08em", fontWeight: 600, textTransform: "uppercase", marginBottom: 6 }}>Seamless Integration</p></FI>
+        <FI delay={0.03}><h3 style={{ fontFamily: f.d, fontSize: "clamp(24px, 3vw, 32px)", fontWeight: 400, color: B.navy, marginBottom: 28 }}>Your stack, connected.</h3></FI>
+        <FI delay={0.08}>
+          <div style={{ position: "relative", width: "100%", maxWidth: 500, margin: "0 auto" }}>
+            <svg viewBox="0 0 500 400" fill="none" style={{ width: "100%", display: "block" }}>
+              <defs>
+                {PLATFORMS.map((p, i) => (
+                  <linearGradient key={`g${i}`} id={`line-${i}`} x1="50%" y1="50%" x2={`${50 + 50 * Math.cos(p.angle * Math.PI / 180)}%`} y2={`${50 + 50 * Math.sin(p.angle * Math.PI / 180)}%`}>
+                    <stop offset="0%" stopColor={B.indigo} stopOpacity="0.25" />
+                    <stop offset="100%" stopColor={p.c} stopOpacity="0.35" />
+                  </linearGradient>
+                ))}
+              </defs>
+
+              {/* Orbit rings */}
+              <circle cx={cx} cy={cy} r={r} stroke={B.border} strokeWidth="1" fill="none" strokeDasharray="4 6" opacity="0.5" />
+              <circle cx={cx} cy={cy} r={r * 0.55} stroke={B.border} strokeWidth="0.5" fill="none" strokeDasharray="2 8" opacity="0.3" />
+
+              {/* Connection lines */}
+              {PLATFORMS.map((p, i) => {
+                const px = cx + r * Math.cos((p.angle - 90) * Math.PI / 180);
+                const py = cy + r * Math.sin((p.angle - 90) * Math.PI / 180);
+                return (
+                  <g key={`conn-${i}`}>
+                    <line x1={cx} y1={cy} x2={px} y2={py} stroke={`url(#line-${i})`} strokeWidth={hovered === i ? "2.5" : "1.5"} style={{ transition: "stroke-width 0.3s" }} />
+                    {/* Animated data pulse */}
+                    <circle r="3" fill={p.c} opacity="0.6">
+                      <animateMotion dur={`${2.5 + i * 0.3}s`} repeatCount="indefinite" path={`M${cx},${cy} L${px},${py}`} />
+                    </circle>
+                  </g>
+                );
+              })}
+
+              {/* Center VE hub */}
+              <circle cx={cx} cy={cy} r="34" fill={B.bg} stroke={B.indigo} strokeWidth="2" />
+              <circle cx={cx} cy={cy} r="28" fill={B.white} stroke={B.border} strokeWidth="1" />
+              <text x={cx} y={cy - 3} textAnchor="middle" fill={B.indigo} fontSize="13" fontWeight="800" fontFamily="system-ui">VE</text>
+              <text x={cx} y={cy + 10} textAnchor="middle" fill={B.textMuted} fontSize="7" fontFamily="system-ui" fontWeight="500">Platform</text>
+
+              {/* Platform nodes */}
+              {PLATFORMS.map((p, i) => {
+                const px = cx + r * Math.cos((p.angle - 90) * Math.PI / 180);
+                const py = cy + r * Math.sin((p.angle - 90) * Math.PI / 180);
+                const isH = hovered === i;
+                const nameShort = p.n.length > 12 ? p.n.split(" ")[0] : p.n;
+                return (
+                  <g key={`node-${i}`}
+                    onMouseEnter={() => setHovered(i)} onMouseLeave={() => setHovered(null)}
+                    style={{ cursor: "default" }}>
+                    {/* Glow ring on hover */}
+                    {isH && <circle cx={px} cy={py} r="30" fill={p.c} opacity="0.06" />}
+                    {/* Node background */}
+                    <circle cx={px} cy={py} r="22" fill={B.white} stroke={isH ? p.c : B.border} strokeWidth={isH ? "2" : "1"} style={{ transition: "all 0.3s" }} />
+                    {/* Brand color dot */}
+                    <circle cx={px} cy={py - 3} r="6" fill={p.c} opacity={isH ? "0.25" : "0.12"} style={{ transition: "opacity 0.3s" }} />
+                    <circle cx={px} cy={py - 3} r="3" fill={p.c} opacity="0.8" />
+                    {/* Name */}
+                    <text x={px} y={py + 11} textAnchor="middle" fill={isH ? p.c : B.text} fontSize="7.5" fontWeight="700" fontFamily="system-ui" style={{ transition: "fill 0.3s" }}>{nameShort}</text>
+                    {/* Category label on hover */}
+                    {isH && (
+                      <g>
+                        <rect x={px - 24} y={py - 40} width="48" height="16" rx="4" fill={p.c} opacity="0.9" />
+                        <text x={px} y={py - 29} textAnchor="middle" fill="white" fontSize="7" fontWeight="700" fontFamily="system-ui">{p.cat}</text>
+                      </g>
+                    )}
+                  </g>
+                );
+              })}
+            </svg>
+            {/* Bottom tagline */}
+            <p style={{ fontFamily: f.b, fontSize: 12, color: B.textLight, marginTop: 4, lineHeight: 1.5 }}>
+              Bidirectional connections to your CRM, communication, productivity, and finance tools — not shallow webhooks.
+            </p>
+          </div>
+        </FI>
+      </div>
     </section>
+  );
+}
 
-    <!-- Logo Bar - NEW -->
-    <section class="logo-bar">
-        <div class="container logo-bar-content">
-            <div class="logo-bar-label">Integrates with your existing stack</div>
-            <div class="logo-bar-logos">
-                <!-- Slack -->
-                <svg viewBox="0 0 127 127" fill="currentColor"><path d="M27.2 80c0 7.3-5.9 13.2-13.2 13.2C6.7 93.2.8 87.3.8 80c0-7.3 5.9-13.2 13.2-13.2h13.2V80zm6.6 0c0-7.3 5.9-13.2 13.2-13.2 7.3 0 13.2 5.9 13.2 13.2v33c0 7.3-5.9 13.2-13.2 13.2-7.3 0-13.2-5.9-13.2-13.2V80z"/><path d="M47 27c-7.3 0-13.2-5.9-13.2-13.2C33.8 6.5 39.7.6 47 .6c7.3 0 13.2 5.9 13.2 13.2V27H47zm0 6.7c7.3 0 13.2 5.9 13.2 13.2 0 7.3-5.9 13.2-13.2 13.2H14c-7.3 0-13.2-5.9-13.2-13.2 0-7.3 5.9-13.2 13.2-13.2h33z"/><path d="M99.9 46.9c0-7.3 5.9-13.2 13.2-13.2 7.3 0 13.2 5.9 13.2 13.2 0 7.3-5.9 13.2-13.2 13.2H99.9V46.9zm-6.6 0c0 7.3-5.9 13.2-13.2 13.2-7.3 0-13.2-5.9-13.2-13.2V14c0-7.3 5.9-13.2 13.2-13.2 7.3 0 13.2 5.9 13.2 13.2v32.9z"/><path d="M80.1 99.8c7.3 0 13.2 5.9 13.2 13.2 0 7.3-5.9 13.2-13.2 13.2-7.3 0-13.2-5.9-13.2-13.2V99.8h13.2zm0-6.6c-7.3 0-13.2-5.9-13.2-13.2 0-7.3 5.9-13.2 13.2-13.2h33c7.3 0 13.2 5.9 13.2 13.2 0 7.3-5.9 13.2-13.2 13.2h-33z"/></svg>
-                <!-- HubSpot -->
-                <svg viewBox="0 0 512 512" fill="currentColor"><path d="M267.4 211.6c-25.1 23.7-40.8 57.3-40.8 94.6 0 37.3 15.7 70.9 40.8 94.6l-50.2 50.2c-4.7 4.7-4.7 12.3 0 17l17 17c4.7 4.7 12.3 4.7 17 0l50.2-50.2c23.7 25.1 57.3 40.8 94.6 40.8 71.8 0 130-58.2 130-130s-58.2-130-130-130c-37.3 0-70.9 15.7-94.6 40.8l-50.2-50.2c-4.7-4.7-12.3-4.7-17 0l-17 17c-4.7 4.7-4.7 12.3 0 17l50.2 50.2zM396 336c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64z"/></svg>
-                <!-- Salesforce -->
-                <svg viewBox="0 0 480 480" fill="currentColor"><path d="M200.4 136.5c15.3-16.1 36.6-26.1 60.2-26.1 31.2 0 58.4 17.2 72.7 42.7 12.5-5.5 26.2-8.5 40.7-8.5 56.4 0 102 45.7 102 102s-45.6 102-102 102c-8.1 0-16-1-23.5-2.8-12.4 24.7-38.1 41.7-67.7 41.7-12.1 0-23.5-2.8-33.6-7.9-13.2 27.8-41.7 47-74.6 47-39.8 0-72.8-28.1-80.5-65.6-4.6.8-9.3 1.3-14.1 1.3-47.2 0-85.4-38.2-85.4-85.4 0-38.3 25.2-70.7 60-81.6-3.4-10.2-5.3-21.2-5.3-32.6 0-56.4 45.7-102 102-102 36.3 0 68.2 19 86.2 47.6z"/></svg>
-                <!-- Zapier -->
-                <svg viewBox="0 0 244.2 244.2" fill="currentColor"><path d="M159.5 122.1l42.6-42.6c8.2-8.2 8.2-21.5 0-29.7-8.2-8.2-21.5-8.2-29.7 0l-42.6 42.6c-5.9 5.9-15.4 5.9-21.3 0L65.8 49.8c-8.2-8.2-21.5-8.2-29.7 0-8.2 8.2-8.2 21.5 0 29.7l42.6 42.6c5.9 5.9 5.9 15.4 0 21.3L36.1 186c-8.2 8.2-8.2 21.5 0 29.7 8.2 8.2 21.5 8.2 29.7 0l42.6-42.6c5.9-5.9 15.4-5.9 21.3 0l42.6 42.6c8.2 8.2 21.5 8.2 29.7 0 8.2-8.2 8.2-21.5 0-29.7l-42.6-42.6c-5.9-5.8-5.9-15.4.1-21.3z"/></svg>
-                <!-- Google -->
-                <svg viewBox="0 0 488 512" fill="currentColor"><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>
-                <!-- n8n -->
-                <svg viewBox="0 0 100 100" fill="currentColor"><circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="50" cy="50" r="15"/></svg>
-            </div>
+// ─── How It Works (with industry benchmarks) ───
+function Process() {
+  const steps = [
+    {
+      num: "01", title: "Free Workflow Audit",
+      desc: "We analyze your current processes, tech stack, and team structure. You get a detailed report showing exactly where automation saves time and money — before any commitment.",
+      benchmark: "Companies using AI-powered workflow audits identify 3.2x more automation opportunities than manual assessments.",
+      source: "McKinsey Digital, 2025",
+      time: "Week 1",
+      color: B.indigo,
+    },
+    {
+      num: "02", title: "Solution Design & Build",
+      desc: "We configure your custom pillar stack — integrating with your existing CRM, email, compliance, and content tools. No disruption to current operations during build.",
+      benchmark: "AI-augmented consulting engagements deliver results 47% faster than traditional implementations.",
+      source: "Deloitte AI Institute, 2025",
+      time: "Weeks 2–3",
+      color: B.teal,
+    },
+    {
+      num: "03", title: "Launch & Optimize",
+      desc: "Go live with automated workflows. We monitor performance, refine outputs, and expand capabilities based on real results. Your team focuses on strategy while the platform handles execution.",
+      benchmark: "Businesses see an average $5.44 return for every $1 invested in marketing automation within the first 6 months.",
+      source: "Nucleus Research, 2025",
+      time: "Week 4+",
+      color: B.green,
+    },
+  ];
+  return (
+    <section id="process" style={{ background: B.white, padding: "88px 24px" }}>
+      <div style={{ maxWidth: 960, margin: "0 auto" }}>
+        <FI>
+          <p style={{ fontFamily: f.b, fontSize: 11, color: B.indigo, letterSpacing: "0.08em", fontWeight: 600, textTransform: "uppercase", marginBottom: 10, textAlign: "center" }}>How It Works</p>
+          <h2 style={{ fontFamily: f.d, fontSize: "clamp(32px, 4vw, 46px)", fontWeight: 400, color: B.navy, textAlign: "center", marginBottom: 10 }}>From audit to automation in 14 days.</h2>
+          <p style={{ fontFamily: f.b, fontSize: 15, color: B.textLight, textAlign: "center", maxWidth: 480, margin: "0 auto 48px", lineHeight: 1.6 }}>
+            A proven three-step process backed by industry benchmarks — not guesswork.</p>
+        </FI>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          {steps.map((s, i) => (
+            <FI key={i} delay={i * 0.08}>
+              <div style={{
+                display: "flex", gap: 24, background: B.bg, borderRadius: 16,
+                border: `1px solid ${B.border}`, padding: "28px 28px", alignItems: "flex-start",
+                transition: "all 0.3s",
+              }}
+              onMouseEnter={e => { e.currentTarget.style.boxShadow = B.shMd; e.currentTarget.style.borderColor = s.color + "25"; }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.borderColor = B.border; }}>
+                {/* Step number */}
+                <div style={{ flexShrink: 0, width: 52, height: 52, borderRadius: 14, background: s.color + "10", border: `1px solid ${s.color}20`, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <span style={{ fontFamily: f.b, fontSize: 18, fontWeight: 800, color: s.color }}>{s.num}</span>
+                </div>
+                {/* Content */}
+                <div style={{ flex: 1 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
+                    <h3 style={{ fontFamily: f.b, fontSize: 17, fontWeight: 700, color: B.navy, margin: 0 }}>{s.title}</h3>
+                    <span style={{ fontFamily: f.b, fontSize: 11, color: s.color, fontWeight: 600, background: s.color + "10", padding: "3px 10px", borderRadius: 6 }}>{s.time}</span>
+                  </div>
+                  <p style={{ fontFamily: f.b, fontSize: 13.5, color: B.textLight, lineHeight: 1.6, margin: "0 0 12px" }}>{s.desc}</p>
+                  {/* Benchmark callout */}
+                  <div style={{ background: B.white, border: `1px solid ${B.border}`, borderRadius: 10, padding: "10px 14px", display: "flex", alignItems: "flex-start", gap: 8 }}>
+                    <span style={{ fontSize: 12, flexShrink: 0, marginTop: 1 }}>📈</span>
+                    <div>
+                      <p style={{ fontFamily: f.b, fontSize: 12, color: B.navy, margin: 0, fontWeight: 600, lineHeight: 1.5 }}>{s.benchmark}</p>
+                      <p style={{ fontFamily: f.b, fontSize: 10, color: B.textMuted, margin: "3px 0 0", fontStyle: "italic" }}>{s.source}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FI>
+          ))}
         </div>
+        <FI delay={0.3}>
+          <div style={{ textAlign: "center", marginTop: 32 }}>
+            <a href="https://cal.com/verticaledgeai/discovery" target="_blank" rel="noopener noreferrer" style={{
+              display: "inline-block", background: B.indigo, color: B.white,
+              padding: "13px 28px", borderRadius: 10, textDecoration: "none", fontSize: 14,
+              fontWeight: 600, fontFamily: f.b, boxShadow: "0 4px 16px rgba(79,70,229,0.25)",
+              transition: "all 0.25s",
+            }} onMouseEnter={e => e.target.style.transform = "translateY(-2px)"} onMouseLeave={e => e.target.style.transform = "translateY(0)"}>Start With Your Free Audit →</a>
+          </div>
+        </FI>
+      </div>
     </section>
+  );
+}
 
-    <!-- Challenges Section - ENHANCED -->
-    <section class="challenges-section">
-        <div class="container">
-            <div class="challenges-header">
-                <span class="section-label">Sound Familiar?</span>
-                <h2>The challenges <span class="gradient-text">draining your team</span></h2>
-                <p class="challenges-intro"><strong>Hundreds of companies</strong> had these same issues before partnering with us. Which ones are you facing?</p>
-            </div>
-            
-            <div class="challenges-grid">
-                <div class="challenge-card">
-                    <div class="challenge-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    </div>
-                    <h3>Lead Research Never Ends</h3>
-                    <p>Your team spends 12+ hours weekly on manual prospecting instead of closing deals.</p>
-                </div>
-                
-                <div class="challenge-card">
-                    <div class="challenge-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                    </div>
-                    <h3>Content Bottlenecks</h3>
-                    <p>Blog posts, emails, and social content stuck in an endless review cycle.</p>
-                </div>
-                
-                <div class="challenge-card">
-                    <div class="challenge-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
-                    </div>
-                    <h3>RFP Deadlines Loom</h3>
-                    <p>Every proposal feels like a fire drill—15+ hours just to submit on time.</p>
-                </div>
-                
-                <div class="challenge-card">
-                    <div class="challenge-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    </div>
-                    <h3>Compliance Gaps</h3>
-                    <p>Regulatory requirements pile up while your team scrambles to stay current.</p>
-                </div>
-                
-                <div class="challenge-card">
-                    <div class="challenge-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                    </div>
-                    <h3>Internal AI Initiatives Stall</h3>
-                    <p>You know AI could help, but POCs drag on without delivering ROI.</p>
-                </div>
-                
-                <!-- Past Vendor Failure - NEW based on research -->
-                <div class="challenge-card">
-                    <div class="challenge-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                    </div>
-                    <h3>Burned by Past Vendors</h3>
-                    <p>You've tried automation before—overpromised, underdelivered, budget blown.</p>
-                </div>
-            </div>
+// ─── Platform Section — 2-Tab: Credibility + Business Case ───
+function Platform() {
+  const [active, setActive] = useState(0);
+  const tabs = [
+    { label: "Inside the Platform", icon: "◈" },
+    { label: "The Business Case", icon: "◆" },
+  ];
+
+  const pillars = [
+    { id: "P1", n: "Signal Listener", c: "#14B8A6", status: "active", metric: "2.8K signals/day" },
+    { id: "P2", n: "Free Audit", c: "#4F46E5", status: "active", metric: "47-point analysis" },
+    { id: "P3", n: "RAG Chatbot", c: "#8B5CF6", status: "active", metric: "94% resolution" },
+    { id: "P4", n: "Lead Gen", c: "#F59E0B", status: "active", metric: "89% qual rate" },
+    { id: "P5", n: "Content Factory", c: "#22C55E", status: "active", metric: "10x output" },
+    { id: "P6", n: "Compliance", c: "#EF4444", status: "active", metric: "3 frameworks" },
+    { id: "P7", n: "RFP Auto", c: "#EC4899", status: "active", metric: "70% faster" },
+    { id: "P8", n: "Voice", c: "#06B6D4", status: "ready", metric: "NLU-enabled" },
+  ];
+
+  const feed = [
+    { t: "Lead scored 92 → auto-routed to sales pipeline", p: "P4", c: "#F59E0B", ago: "2m" },
+    { t: "SOC2 gap analysis complete — 3 items flagged", p: "P6", c: "#EF4444", ago: "8m" },
+    { t: "Blog post drafted: 'AI in Financial Compliance'", p: "P5", c: "#22C55E", ago: "14m" },
+    { t: "RFP response generated — pending RC approval", p: "P7", c: "#EC4899", ago: "23m" },
+    { t: "New signal: VP Ops at HealthCo visited /pricing", p: "P1", c: "#14B8A6", ago: "31m" },
+    { t: "Chatbot resolved billing query — no escalation", p: "P3", c: "#8B5CF6", ago: "45m" },
+  ];
+
+  const roles = [
+    { title: "Lead Gen Specialist", salary: "$72K", pillar: "P4", c: "#F59E0B" },
+    { title: "Content Writer", salary: "$68K", pillar: "P5", c: "#22C55E" },
+    { title: "Compliance Analyst", salary: "$85K", pillar: "P6", c: "#EF4444" },
+    { title: "Proposal Writer", salary: "$71K", pillar: "P7", c: "#EC4899" },
+    { title: "Marketing Coordinator", salary: "$58K", pillar: "P2+P5", c: "#4F46E5" },
+    { title: "SDR / Outbound Rep", salary: "$65K", pillar: "P1+P4", c: "#14B8A6" },
+  ];
+
+  const renderDashboard = () => (
+    <div style={{ borderRadius: 14, overflow: "hidden", border: `1px solid ${B.border}`, background: "#1A2332", boxShadow: B.shLg }}>
+      {/* Browser chrome */}
+      <div style={{ background: "#243040", padding: "10px 16px", display: "flex", alignItems: "center", gap: 8 }}>
+        <div style={{ display: "flex", gap: 5 }}>
+          {["#EF4444","#F59E0B","#22C55E"].map((c,i) => <div key={i} style={{ width: 8, height: 8, borderRadius: "50%", background: c, opacity: 0.5 }}/>)}
         </div>
+        <div style={{ flex: 1, textAlign: "center" }}>
+          <div style={{ display: "inline-block", background: "#111827", borderRadius: 6, padding: "3px 24px" }}>
+            <span style={{ fontFamily: "monospace", fontSize: 10, color: "rgba(255,255,255,0.3)" }}>verticaledgeai.ai/dashboard</span>
+          </div>
+        </div>
+      </div>
+      <div style={{ display: "flex", minHeight: 380 }}>
+        {/* Sidebar — Pillar Nav */}
+        <div style={{ width: 160, background: "#111827", padding: "16px 0", borderRight: "1px solid rgba(255,255,255,0.05)", flexShrink: 0 }}>
+          <div style={{ padding: "0 14px 14px", borderBottom: "1px solid rgba(255,255,255,0.05)", marginBottom: 10 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <img src={VE_LOGO_SM} alt="VE" style={{ height: 18, width: "auto", opacity: 0.95 }} />
+              <span style={{ fontFamily: f.b, fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.7)" }}>Vertical Edge</span>
+            </div>
+          </div>
+          {pillars.map((p, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 14px", margin: "1px 6px", borderRadius: 6, background: i === 0 ? "rgba(255,255,255,0.05)" : "transparent" }}>
+              <div style={{ width: 6, height: 6, borderRadius: "50%", background: p.c, opacity: p.status === "active" ? 0.8 : 0.3 }}/>
+              <span style={{ fontFamily: f.b, fontSize: 10.5, color: i === 0 ? "rgba(255,255,255,0.8)" : "rgba(255,255,255,0.4)", fontWeight: i === 0 ? 600 : 400 }}>{p.id} {p.n}</span>
+            </div>
+          ))}
+          <div style={{ margin: "12px 14px 0", padding: "8px 10px", background: "rgba(20,184,166,0.08)", borderRadius: 6, border: "1px solid rgba(20,184,166,0.12)" }}>
+            <div style={{ fontFamily: f.b, fontSize: 8, color: B.tealLight, fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: 4 }}>System Health</div>
+            <div style={{ display: "flex", gap: 3 }}>
+              {[1,1,1,1,1,1,1,0.4].map((o,i) => <div key={i} style={{ flex: 1, height: 3, borderRadius: 2, background: B.tealLight, opacity: o }}/>)}
+            </div>
+            <div style={{ fontFamily: f.b, fontSize: 8, color: "rgba(255,255,255,0.35)", marginTop: 3 }}>7/8 pillars active</div>
+          </div>
+        </div>
+
+        {/* Main content area */}
+        <div style={{ flex: 1, padding: 16, display: "flex", flexDirection: "column", gap: 12 }}>
+          {/* Stats row */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
+            {[
+              { label: "Active Leads", value: "2,847", delta: "+12%", c: B.indigo },
+              { label: "Qual. Rate", value: "89%", delta: "+6%", c: B.teal },
+              { label: "Content Pieces", value: "142", delta: "this mo.", c: "#22C55E" },
+              { label: "ROI Multiple", value: "5.44x", delta: "per $1", c: "#F59E0B" },
+            ].map((s, i) => (
+              <div key={i} style={{ background: "#243040", borderRadius: 10, padding: "12px 14px" }}>
+                <div style={{ fontFamily: f.b, fontSize: 8.5, color: "rgba(255,255,255,0.35)", fontWeight: 600, marginBottom: 6 }}>{s.label}</div>
+                <div style={{ display: "flex", alignItems: "baseline", gap: 6 }}>
+                  <span style={{ fontFamily: f.b, fontSize: 20, fontWeight: 800, color: s.c }}>{s.value}</span>
+                  <span style={{ fontFamily: f.b, fontSize: 8, color: "rgba(255,255,255,0.3)" }}>{s.delta}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Middle row: Chart + Activity */}
+          <div style={{ display: "flex", gap: 10, flex: 1 }}>
+            {/* Chart */}
+            <div style={{ flex: 1, background: "#243040", borderRadius: 10, padding: "14px 16px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+                <span style={{ fontFamily: f.b, fontSize: 10, fontWeight: 600, color: "rgba(255,255,255,0.5)" }}>Pipeline Performance</span>
+                <div style={{ display: "flex", gap: 10 }}>
+                  {[{l:"Leads",c:B.indigo},{l:"Revenue",c:B.teal}].map((x,i)=>(
+                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                      <div style={{ width: 8, height: 3, borderRadius: 2, background: x.c }}/>
+                      <span style={{ fontFamily: f.b, fontSize: 8, color: "rgba(255,255,255,0.3)" }}>{x.l}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <svg viewBox="0 0 300 100" style={{ width: "100%", display: "block" }}>
+                {/* Grid lines */}
+                {[25,50,75].map(y => <line key={y} x1="0" y1={y} x2="300" y2={y} stroke="rgba(255,255,255,0.04)" strokeWidth="0.5"/>)}
+                {/* Indigo line — leads */}
+                <polyline points="0,78 30,72 60,65 90,58 120,52 150,48 180,38 210,35 240,28 270,22 300,18" stroke={B.indigo} strokeWidth="2" fill="none" strokeLinecap="round"/>
+                <path d="M0,78 L30,72 L60,65 L90,58 L120,52 L150,48 L180,38 L210,35 L240,28 L270,22 L300,18 L300,100 L0,100 Z" fill={B.indigo} opacity="0.06"/>
+                {/* Teal line — revenue */}
+                <polyline points="0,85 30,82 60,78 90,74 120,68 150,60 180,52 210,46 240,40 270,34 300,26" stroke={B.teal} strokeWidth="1.5" fill="none" strokeLinecap="round" strokeDasharray="4 3"/>
+                {/* Current position dot */}
+                <circle cx="300" cy="18" r="3.5" fill={B.indigo} opacity="0.8"/>
+                <circle cx="300" cy="18" r="6" fill={B.indigo} opacity="0.15"/>
+              </svg>
+            </div>
+
+            {/* Activity feed */}
+            <div style={{ width: 220, background: "#243040", borderRadius: 10, padding: "14px 14px", display: "flex", flexDirection: "column" }}>
+              <div style={{ fontFamily: f.b, fontSize: 10, fontWeight: 600, color: "rgba(255,255,255,0.5)", marginBottom: 10 }}>Live Activity</div>
+              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 7, overflow: "hidden" }}>
+                {feed.map((item, i) => (
+                  <div key={i} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
+                    <div style={{ width: 5, height: 5, borderRadius: "50%", background: item.c, marginTop: 4, flexShrink: 0, opacity: 0.7 }}/>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontFamily: f.b, fontSize: 9, color: "rgba(255,255,255,0.45)", lineHeight: 1.4 }}>{item.t}</div>
+                      <div style={{ display: "flex", gap: 6, marginTop: 2 }}>
+                        <span style={{ fontFamily: f.b, fontSize: 7.5, color: item.c, fontWeight: 700 }}>{item.p}</span>
+                        <span style={{ fontFamily: f.b, fontSize: 7.5, color: "rgba(255,255,255,0.2)" }}>{item.ago} ago</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom bar: active workflow */}
+          <div style={{ background: "#243040", borderRadius: 8, padding: "10px 14px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <span style={{ fontFamily: f.b, fontSize: 9, fontWeight: 600, color: "rgba(255,255,255,0.4)" }}>Active Pipeline:</span>
+              {["P1 Signal","P4 Score","P5 Draft","P6 Check","P7 Propose"].map((s, i) => (
+                <React.Fragment key={i}>
+                  {i > 0 && <span style={{ color: "rgba(255,255,255,0.15)", fontSize: 8 }}>→</span>}
+                  <span style={{ fontFamily: f.b, fontSize: 8.5, fontWeight: 600, color: pillars.find(p=>p.id===s.split(" ")[0])?.c || B.teal, background: (pillars.find(p=>p.id===s.split(" ")[0])?.c || B.teal) + "15", padding: "2px 7px", borderRadius: 4 }}>{s}</span>
+                </React.Fragment>
+              ))}
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
+              <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#22C55E", animation: "pulse 2s infinite" }}/>
+              <span style={{ fontFamily: f.b, fontSize: 8.5, color: "#22C55E", fontWeight: 600 }}>Live</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderBusinessCase = () => (
+    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      {/* Headcount comparison */}
+      <div style={{ display: "flex", gap: 14 }}>
+        {/* Left: Roles you'd need to hire */}
+        <div style={{ flex: 1, background: "#FAFBFC", border: `1px solid ${B.border}`, borderRadius: 14, padding: "20px 18px" }}>
+          <div style={{ fontFamily: f.b, fontSize: 10, fontWeight: 700, color: B.textMuted, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 12 }}>Building internally: 6 hires</div>
+          {roles.map((r, i) => (
+            <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "7px 0", borderBottom: i < roles.length - 1 ? `1px solid ${B.borderLight}` : "none" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <span style={{ fontFamily: f.b, fontSize: 9, fontWeight: 700, color: r.c, background: r.c + "12", padding: "2px 5px", borderRadius: 3, width: 40, textAlign: "center" }}>{r.pillar}</span>
+                <span style={{ fontFamily: f.b, fontSize: 12, color: B.navy }}>{r.title}</span>
+              </div>
+              <span style={{ fontFamily: f.b, fontSize: 13, fontWeight: 700, color: B.red }}>{r.salary}</span>
+            </div>
+          ))}
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 12, padding: "10px 0 0", borderTop: `2px solid ${B.border}` }}>
+            <span style={{ fontFamily: f.b, fontSize: 12, fontWeight: 700, color: B.navy }}>Total annual cost</span>
+            <span style={{ fontFamily: f.b, fontSize: 18, fontWeight: 800, color: B.red }}>$419K</span>
+          </div>
+          <div style={{ fontFamily: f.b, fontSize: 10, color: B.textMuted, marginTop: 4 }}>+ benefits, recruiting, ramp time, turnover risk</div>
+        </div>
+
+        {/* Right: VE cost + ROI timeline */}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 10 }}>
+          <div style={{ background: B.tealBg, border: "1px solid rgba(20,184,166,0.12)", borderRadius: 14, padding: "20px 18px", flex: 1 }}>
+            <div style={{ fontFamily: f.b, fontSize: 10, fontWeight: 700, color: B.teal, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 12 }}>With Vertical Edge</div>
+            <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 8 }}>
+              <span style={{ fontFamily: f.d, fontSize: 36, color: B.teal }}>$60K–$144K</span>
+              <span style={{ fontFamily: f.b, fontSize: 12, color: B.textMuted }}>/year</span>
+            </div>
+            <div style={{ fontFamily: f.b, fontSize: 12, color: B.text, lineHeight: 1.6, marginBottom: 14 }}>Full platform access across all 8 pillars. No recruiting. No ramp time. Producing results from week 2.</div>
+            {/* Savings bar */}
+            <div style={{ background: B.white, borderRadius: 10, padding: "14px 16px", border: "1px solid rgba(20,184,166,0.1)" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                <span style={{ fontFamily: f.b, fontSize: 11, fontWeight: 600, color: B.navy }}>Annual savings</span>
+                <span style={{ fontFamily: f.b, fontSize: 20, fontWeight: 800, color: B.teal }}>$275K–$359K</span>
+              </div>
+              <div style={{ width: "100%", height: 6, background: B.border, borderRadius: 4 }}>
+                <div style={{ width: "72%", height: "100%", background: `linear-gradient(90deg, ${B.teal}, ${B.indigo})`, borderRadius: 4 }}/>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", marginTop: 4 }}>
+                <span style={{ fontFamily: f.b, fontSize: 9, color: B.textMuted }}>VE cost</span>
+                <span style={{ fontFamily: f.b, fontSize: 9, color: B.textMuted }}>Internal cost: $419K+</span>
+              </div>
+            </div>
+          </div>
+
+          {/* ROI timeline */}
+          <div style={{ background: B.white, border: `1px solid ${B.border}`, borderRadius: 14, padding: "16px 18px" }}>
+            <div style={{ fontFamily: f.b, fontSize: 10, fontWeight: 700, color: B.textMuted, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 10 }}>Time to Value</div>
+            <div style={{ display: "flex", gap: 0 }}>
+              {[
+                { t: "Week 1", m: "Audit complete", c: B.indigo, w: "20%" },
+                { t: "Week 2", m: "First automations live", c: B.indigo, w: "20%" },
+                { t: "Month 1", m: "Measurable pipeline impact", c: B.teal, w: "25%" },
+                { t: "Month 3", m: "Full ROI realized", c: B.green, w: "35%" },
+              ].map((s, i) => (
+                <div key={i} style={{ flex: s.w, textAlign: "center" }}>
+                  <div style={{ height: 4, background: s.c, opacity: 0.7, borderRadius: i === 0 ? "4px 0 0 4px" : i === 3 ? "0 4px 4px 0" : 0 }}/>
+                  <div style={{ fontFamily: f.b, fontSize: 9.5, fontWeight: 700, color: B.navy, marginTop: 6 }}>{s.t}</div>
+                  <div style={{ fontFamily: f.b, fontSize: 8.5, color: B.textMuted, lineHeight: 1.3, marginTop: 1 }}>{s.m}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <section id="platform" style={{ background: B.bg, padding: "96px 24px" }}>
+      <div style={{ maxWidth: 1060, margin: "0 auto" }}>
+        <FI>
+          <p style={{ fontFamily: f.b, fontSize: 11, color: B.indigo, letterSpacing: "0.08em", fontWeight: 600, textTransform: "uppercase", marginBottom: 10, textAlign: "center" }}>The Platform</p>
+          <h2 style={{ fontFamily: f.d, fontSize: "clamp(32px, 4vw, 46px)", fontWeight: 400, color: B.navy, textAlign: "center", marginBottom: 10 }}>Built different. Delivers different.</h2>
+          <p style={{ fontFamily: f.b, fontSize: 15, color: B.textLight, textAlign: "center", maxWidth: 500, margin: "0 auto 36px", lineHeight: 1.6 }}>
+            Eight specialized pillars working as one intelligent system — explore what's running under the hood.</p>
+        </FI>
+        <FI delay={0.06}>
+          {/* Tabs */}
+          <div style={{ display: "flex", gap: 6, justifyContent: "center", marginBottom: 28 }}>
+            {tabs.map((t, i) => (
+              <button key={i} onClick={() => setActive(i)} style={{
+                background: active === i ? B.white : "transparent",
+                border: active === i ? `1px solid ${B.border}` : "1px solid transparent",
+                borderRadius: 10, padding: "10px 22px", cursor: "pointer",
+                boxShadow: active === i ? B.shMd : "none", transition: "all 0.25s",
+                display: "flex", alignItems: "center", gap: 8,
+              }}>
+                <span style={{ fontSize: 11, color: active === i ? B.indigo : B.textMuted }}>{t.icon}</span>
+                <span style={{ fontFamily: f.b, fontSize: 13, fontWeight: active === i ? 700 : 500, color: active === i ? B.navy : B.textMuted }}>{t.label}</span>
+              </button>
+            ))}
+          </div>
+          {/* Content */}
+          <div>{active === 0 ? renderDashboard() : renderBusinessCase()}</div>
+        </FI>
+      </div>
     </section>
+  );
+}
 
-    <!-- Pipeline Transformation - NEW -->
-    <section class="transformation-section">
-        <div class="container">
-            <div class="transformation-header">
-                <span class="section-label">The Transformation</span>
-                <h2>From <span class="gradient-text">manual chaos</span> to automated flow</h2>
-            </div>
-            
-            <div class="pipeline-visual">
-                <div class="pipeline-stage before">
-                    <div class="pipeline-label">Before</div>
-                    <div class="pipeline-metric">40+</div>
-                    <div class="pipeline-desc">Hours/week on manual tasks</div>
+// ─── Pricing ───
+function Pricing() {
+  const tiers = [
+    { n: "Quick Start", tag: null, p: "One-time assessment", s: "Identify your highest-impact automation opportunities", ft: ["Comprehensive workflow audit", "AI readiness assessment", "Prioritized automation roadmap", "ROI projections for top 3 opportunities", "30-day action plan"], cta: "Book Your Audit", hl: false },
+    { n: "Growth Partner", tag: "MOST POPULAR", p: "Monthly retainer", s: "Ongoing automation with dedicated support and weekly progress calls", ft: ["3–5 active automation pillars", "Weekly strategy calls", "Content production pipeline", "Lead generation & scoring", "Compliance monitoring", "Dedicated account management"], cta: "Book a Strategy Call", hl: true },
+    { n: "Full Suite", tag: null, p: "Enterprise engagement", s: "All 8 pillars activated with custom integrations and priority SLA", ft: ["All 8 automation pillars", "Custom integration development", "Priority response SLA", "Quarterly business reviews", "Compliance certification support", "Scales with your business"], cta: "Let's Talk Scope", hl: false },
+  ];
+  return (
+    <section id="pricing" style={{ background: B.white, padding: "96px 24px" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <FI>
+          <p style={{ fontFamily: f.b, fontSize: 11, color: B.indigo, letterSpacing: "0.08em", fontWeight: 600, textTransform: "uppercase", marginBottom: 10, textAlign: "center" }}>Pricing</p>
+          <h2 style={{ fontFamily: f.d, fontSize: "clamp(32px, 4vw, 46px)", fontWeight: 400, color: B.navy, textAlign: "center", marginBottom: 12 }}>Simple, flexible engagement.</h2>
+          <p style={{ fontFamily: f.b, fontSize: 15, color: B.textLight, textAlign: "center", maxWidth: 460, margin: "0 auto 48px" }}>Start with an assessment. Scale into a partnership.</p>
+        </FI>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+          {tiers.map((t, i) => (
+            <FI key={i} delay={i * 0.07}>
+              <div style={{
+                background: B.white, borderRadius: 16,
+                border: t.hl ? `2px solid ${B.indigo}` : `1px solid ${B.border}`,
+                padding: 26, display: "flex", flexDirection: "column", height: "100%",
+                position: "relative", boxShadow: t.hl ? B.shLg : B.sh,
+              }}>
+                {t.tag && <div style={{ position: "absolute", top: -11, left: "50%", transform: "translateX(-50%)", background: B.indigo, color: B.white, padding: "3px 14px", borderRadius: 100, fontFamily: f.b, fontSize: 9, fontWeight: 700, letterSpacing: "0.06em" }}>{t.tag}</div>}
+                <h3 style={{ fontFamily: f.b, fontSize: 18, fontWeight: 700, color: B.navy, margin: "4px 0 4px" }}>{t.n}</h3>
+                <div style={{ fontFamily: f.d, fontSize: 16, color: B.indigo, marginBottom: 6 }}>{t.p}</div>
+                <p style={{ fontFamily: f.b, fontSize: 12.5, color: B.textLight, lineHeight: 1.5, marginBottom: 20, minHeight: 38 }}>{t.s}</p>
+                <div style={{ height: 1, background: B.border, marginBottom: 16 }} />
+                <div style={{ flex: 1 }}>
+                  {t.ft.map((feat, fi) => (
+                    <div key={fi} style={{ display: "flex", gap: 8, marginBottom: 10 }}>
+                      <span style={{ color: B.teal, fontSize: 12 }}>✓</span>
+                      <span style={{ fontFamily: f.b, fontSize: 12.5, color: B.text, lineHeight: 1.4 }}>{feat}</span>
+                    </div>
+                  ))}
                 </div>
-                
-                <div class="pipeline-arrow">→</div>
-                
-                <div class="pipeline-stage">
-                    <div class="pipeline-label">Week 1-2</div>
-                    <div class="pipeline-metric">Audit</div>
-                    <div class="pipeline-desc">Discovery + system design</div>
-                </div>
-                
-                <div class="pipeline-arrow">→</div>
-                
-                <div class="pipeline-stage">
-                    <div class="pipeline-label">Week 2-3</div>
-                    <div class="pipeline-metric">Build</div>
-                    <div class="pipeline-desc">Configure + integrate</div>
-                </div>
-                
-                <div class="pipeline-arrow">→</div>
-                
-                <div class="pipeline-stage after">
-                    <div class="pipeline-label">After</div>
-                    <div class="pipeline-metric">20+</div>
-                    <div class="pipeline-desc">Hours/week reclaimed</div>
-                </div>
-            </div>
+                <a href="https://cal.com/verticaledgeai/discovery" target="_blank" rel="noopener noreferrer" style={{
+                  display: "block", textAlign: "center", padding: "11px 20px", borderRadius: 10,
+                  textDecoration: "none", marginTop: 16, fontFamily: f.b, fontSize: 13, fontWeight: 600,
+                  background: t.hl ? B.indigo : "transparent", color: t.hl ? B.white : B.navy,
+                  border: t.hl ? "none" : `1px solid ${B.border}`, transition: "all 0.25s",
+                }}
+                onMouseEnter={e => { if (t.hl) e.target.style.background = B.indigoLight; else { e.target.style.borderColor = B.indigo; e.target.style.color = B.indigo; } }}
+                onMouseLeave={e => { if (t.hl) e.target.style.background = B.indigo; else { e.target.style.borderColor = B.border; e.target.style.color = B.navy; } }}
+                >{t.cta} →</a>
+              </div>
+            </FI>
+          ))}
         </div>
+        <FI delay={0.25}><p style={{ fontFamily: f.b, fontSize: 11, color: B.textMuted, textAlign: "center", marginTop: 22 }}>All engagements include vertical-specific compliance coverage. Pricing adjusted for regulatory complexity.</p></FI>
+      </div>
     </section>
+  );
+}
 
-    <!-- Pillars Section -->
-    <section class="pillars-section" id="pillars">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">The Platform</span>
-                <h2>Eight pillars of <span class="gradient-text">intelligent automation</span></h2>
-                <p>A complete AI operations infrastructure, tailored to your business.</p>
+// ─── Client Experience ───
+function ClientExp() {
+  const items = [
+    { v: "VP Operations, Healthcare", q: "We went from a 6-month HIPAA compliance timeline to audit-ready documentation in under 48 hours. The AI understood our regulatory context from day one.", m: "48 hrs to compliance readiness" },
+    { v: "VP of Sales, SaaS Company", q: "Our pipeline doubled in the first quarter. The lead scoring alone replaced two SDRs worth of manual qualification — and the AI got smarter about our ICP over time.", m: "200% pipeline increase" },
+    { v: "Managing Partner, Law Firm", q: "RFP responses that took our team two weeks now come back in days. The proposals are better structured, more compliant, and we're winning bids we would have passed on.", m: "3x RFP win rate" },
+    { v: "CFO, Financial Services", q: "We were spending $280K annually on tasks that Vertical Edge handles for a fraction. SOC2 compliance alone paid for the first six months.", m: "$280K in annual savings" },
+    { v: "Director of Operations, Professional Services", q: "Content production went from our biggest bottleneck to our biggest advantage. We publish 10x more thought leadership, and it actually sounds like us.", m: "10x content output" },
+  ];
+  const [idx, setIdx] = useState(0);
+  useEffect(() => { const iv = setInterval(() => setIdx(p => (p + 1) % items.length), 5000); return () => clearInterval(iv); }, []);
+  return (
+    <section id="results" style={{ background: B.bg, padding: "96px 24px" }}>
+      <div style={{ maxWidth: 800, margin: "0 auto" }}>
+        <FI>
+          <p style={{ fontFamily: f.b, fontSize: 11, color: B.indigo, letterSpacing: "0.08em", fontWeight: 600, textTransform: "uppercase", marginBottom: 10, textAlign: "center" }}>Client Outcomes</p>
+          <h2 style={{ fontFamily: f.d, fontSize: "clamp(32px, 4vw, 46px)", fontWeight: 400, color: B.navy, textAlign: "center", marginBottom: 44 }}>What transformation looks like.</h2>
+        </FI>
+        <FI delay={0.06}>
+          <div style={{ background: B.white, borderRadius: 20, border: `1px solid ${B.border}`, padding: "36px 28px", textAlign: "center", minHeight: 230, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", boxShadow: B.sh }}>
+            <div style={{ marginBottom: 14, letterSpacing: 3 }}>{"★★★★★".split("").map((s, i) => <span key={i} style={{ color: B.amber, fontSize: 16 }}>{s}</span>)}</div>
+            <p style={{ fontFamily: f.d, fontSize: 17, color: B.navy, lineHeight: 1.65, maxWidth: 580, margin: "0 auto 18px", fontStyle: "italic" }}>"{items[idx].q}"</p>
+            <div style={{ fontFamily: f.b, fontSize: 13, fontWeight: 700, color: B.indigo, marginBottom: 2 }}>{items[idx].m}</div>
+            <div style={{ fontFamily: f.b, fontSize: 12, color: B.textMuted }}>{items[idx].v}</div>
+            <div style={{ display: "flex", gap: 5, justifyContent: "center", marginTop: 22 }}>
+              {items.map((_, i) => <button key={i} onClick={() => setIdx(i)} style={{ width: idx === i ? 18 : 6, height: 6, borderRadius: 100, border: "none", cursor: "pointer", background: idx === i ? B.indigo : B.border, transition: "all 0.3s" }} />)}
             </div>
-            
-            <div class="pillars-grid">
-                <div class="pillar-card">
-                    <div class="pillar-number">01</div>
-                    <div class="pillar-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-                    </div>
-                    <h3>Signal Listener</h3>
-                    <p>Monitor market signals, competitor moves, and buying intent in real-time.</p>
-                </div>
-                
-                <div class="pillar-card">
-                    <div class="pillar-number">02</div>
-                    <div class="pillar-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                    </div>
-                    <h3>Free Audit</h3>
-                    <p>Comprehensive website and systems analysis to identify opportunities.</p>
-                </div>
-                
-                <div class="pillar-card">
-                    <div class="pillar-number">03</div>
-                    <div class="pillar-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                    </div>
-                    <h3>RAG Chatbot</h3>
-                    <p>Intelligent conversation agents trained on your data for 24/7 engagement.</p>
-                </div>
-                
-                <div class="pillar-card">
-                    <div class="pillar-number">04</div>
-                    <div class="pillar-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    </div>
-                    <h3>Lead Generation</h3>
-                    <p>AI-powered prospecting that scores and prioritizes your best opportunities.</p>
-                </div>
-                
-                <div class="pillar-card">
-                    <div class="pillar-number">05</div>
-                    <div class="pillar-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                    </div>
-                    <h3>Content Factory</h3>
-                    <p>Generate blogs, emails, social posts, and whitepapers in minutes.</p>
-                </div>
-                
-                <div class="pillar-card">
-                    <div class="pillar-number">06</div>
-                    <div class="pillar-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
-                    </div>
-                    <h3>Compliance Prep</h3>
-                    <p>Automated assessments for HIPAA, SOC2, GDPR, CCPA, and ISO27001.</p>
-                </div>
-                
-                <div class="pillar-card">
-                    <div class="pillar-number">07</div>
-                    <div class="pillar-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M9 15l2 2 4-4"></path></svg>
-                    </div>
-                    <h3>RFP Automation</h3>
-                    <p>Analyze requirements and generate winning proposals 70% faster.</p>
-                </div>
-                
-                <div class="pillar-card">
-                    <div class="pillar-number">08</div>
-                    <div class="pillar-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line></svg>
-                    </div>
-                    <h3>Voice Assistant</h3>
-                    <p>Natural voice interfaces for hands-free operations and interactions.</p>
-                </div>
-            </div>
-        </div>
+          </div>
+        </FI>
+        <p style={{ fontFamily: f.b, fontSize: 8.5, color: "rgba(148,163,184,0.35)", textAlign: "center", marginTop: 10 }}>Actual outcomes based on projected industry benchmarks.</p>
+      </div>
     </section>
+  );
+}
 
-    <!-- Process Section - ENHANCED with timeline -->
-    <section class="process-section" id="process">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">How It Works</span>
-                <h2>From audit to <span class="gradient-text">automation</span> in 14 days</h2>
-                <p>A clear, structured path from discovery to measurable results.</p>
-            </div>
-            
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-timeline">Week 1</div>
-                    <div class="step-number">1</div>
-                    <h3>Discovery Audit</h3>
-                    <p>We analyze your workflows, systems, and pain points to find the highest-impact opportunities.</p>
-                    <span class="step-owner">We handle this</span>
+// ─── FAQ ───
+function FAQ() {
+  const faqs = [
+    { q: "What can AI actually automate in my industry?", a: "It depends on your vertical — but typically lead qualification, content production, compliance documentation, RFP responses, and customer engagement are the highest-impact areas. Our free audit maps exactly which processes have the most automation potential for your specific business." },
+    { q: "How is this different from using ChatGPT or Zapier ourselves?", a: "Those are general-purpose tools that start from zero every time. Our platform maintains persistent context about your business — your brand voice, compliance requirements, customer data, and past outputs all compound over time. It's the difference between hiring a freelancer for each task versus having a dedicated team that knows your business." },
+    { q: "Do we need technical expertise on our end?", a: "None. This is a consulting engagement, not a software implementation. We handle setup, configuration, integrations, and ongoing optimization. Your team interacts with the outcomes — reports, content, proposals, leads — not the technology." },
+    { q: "What does the first 30 days look like?", a: "Week 1 is discovery and audit. Week 2 is solution design and initial configuration. Weeks 3-4 are build, integrate, and launch. By day 30, you have live automation producing measurable results. Most clients see quick wins within the first 14 days." },
+    { q: "What happens to my existing team?", a: "They get promoted — from task execution to strategic oversight. Your compliance lead stops documenting and starts improving processes. Your content person stops writing first drafts and starts refining AI-generated work. Automation eliminates busywork, not people." },
+    { q: "How do you handle sensitive data and compliance?", a: "Enterprise-grade security is built into the platform architecture. We support HIPAA, SOC2, GDPR, CCPA, and ISO27001 frameworks with encrypted data handling and role-based access controls. For regulated industries, compliance isn't an add-on — it's foundational." },
+    { q: "Can I start small and scale later?", a: "Absolutely. Most clients start with a single pillar — usually the free audit or compliance assessment — and expand as they see results. There's no lock-in, no minimum commitment." },
+    { q: "What if it doesn't work for my specific situation?", a: "That's exactly what the free audit is for. We'll tell you honestly whether automation makes sense for your workflows before any commitment. If it's not a fit, we'll say so." },
+  ];
+  const [openIdx, setOpenIdx] = useState(null);
+  return (
+    <section id="faq" style={{ background: B.white, padding: "96px 24px" }}>
+      <div style={{ maxWidth: 700, margin: "0 auto" }}>
+        <FI>
+          <p style={{ fontFamily: f.b, fontSize: 11, color: B.indigo, letterSpacing: "0.08em", fontWeight: 600, textTransform: "uppercase", marginBottom: 10, textAlign: "center" }}>FAQ</p>
+          <h2 style={{ fontFamily: f.d, fontSize: "clamp(32px, 4vw, 46px)", fontWeight: 400, color: B.navy, textAlign: "center", marginBottom: 44 }}>Questions we get asked.</h2>
+        </FI>
+        <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+          {faqs.map((fq, i) => (
+            <FI key={i} delay={i * 0.025}>
+              <div style={{ background: B.bg, border: `1px solid ${openIdx === i ? "rgba(79,70,229,0.15)" : B.border}`, borderRadius: 12, overflow: "hidden", transition: "all 0.3s" }}>
+                <button onClick={() => setOpenIdx(openIdx === i ? null : i)} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "15px 18px", background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}>
+                  <span style={{ fontFamily: f.b, fontSize: 13.5, fontWeight: 600, color: B.navy, lineHeight: 1.4, paddingRight: 12 }}>{fq.q}</span>
+                  <span style={{ fontSize: 16, color: B.indigo, transform: openIdx === i ? "rotate(45deg)" : "rotate(0deg)", transition: "transform 0.3s", flexShrink: 0 }}>+</span>
+                </button>
+                <div style={{ maxHeight: openIdx === i ? 240 : 0, overflow: "hidden", transition: "max-height 0.4s ease" }}>
+                  <p style={{ fontFamily: f.b, fontSize: 13, color: B.textLight, lineHeight: 1.7, padding: "0 18px 14px", margin: 0 }}>{fq.a}</p>
                 </div>
-                
-                <div class="process-step">
-                    <div class="step-timeline">Week 1-2</div>
-                    <div class="step-number">2</div>
-                    <h3>Solution Design</h3>
-                    <p>Custom playbook with AI configurations tailored to your specific business requirements.</p>
-                    <span class="step-owner">We handle this</span>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-timeline">Week 2-3</div>
-                    <div class="step-number">3</div>
-                    <h3>Build & Integrate</h3>
-                    <p>Deploy your automation infrastructure with full integration into existing systems.</p>
-                    <span class="step-owner">We handle this</span>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-timeline">Ongoing</div>
-                    <div class="step-number">4</div>
-                    <h3>Optimize & Scale</h3>
-                    <p>Continuous refinement as we learn your business and expand automation coverage.</p>
-                    <span class="step-owner you">Your focus: closing deals</span>
-                </div>
-            </div>
+              </div>
+            </FI>
+          ))}
         </div>
+      </div>
     </section>
+  );
+}
 
-    <!-- Outcomes Section - ENHANCED with 4th metric -->
-    <section class="outcomes-section" id="outcomes">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Designed to Deliver</span>
-                <h2>Outcomes that <span class="gradient-text">move the needle</span></h2>
-            </div>
-            
-            <div class="outcomes-grid">
-                <div class="outcome-card">
-                    <div class="outcome-metric">70%</div>
-                    <div class="outcome-title">Faster RFP Responses</div>
-                    <div class="outcome-desc">Turn weeks into days with AI-assisted proposals</div>
-                </div>
-                
-                <div class="outcome-card">
-                    <div class="outcome-metric">10x</div>
-                    <div class="outcome-title">Content Output</div>
-                    <div class="outcome-desc">Generate months of content in hours</div>
-                </div>
-                
-                <div class="outcome-card">
-                    <div class="outcome-metric">20+</div>
-                    <div class="outcome-title">Hours Saved Weekly</div>
-                    <div class="outcome-desc">Reclaim time for high-value work</div>
-                </div>
-                
-                <!-- NEW 4th metric based on research -->
-                <div class="outcome-card">
-                    <div class="outcome-metric">60%</div>
-                    <div class="outcome-title">Less Than In-House</div>
-                    <div class="outcome-desc">Full automation at a fraction of hiring costs</div>
-                </div>
-            </div>
-        </div>
+// ─── Final CTA ───
+function CTA() {
+  return (
+    <section style={{ background: "linear-gradient(165deg, #1F2937, #243040)", padding: "80px 24px", position: "relative", overflow: "hidden" }}>
+      <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(79,70,229,0.15) 0%, transparent 65%)", pointerEvents: "none" }} />
+      <div style={{ maxWidth: 560, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
+        <FI>
+          <h2 style={{ fontFamily: f.d, fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 400, color: B.white, marginBottom: 14, lineHeight: 1.15 }}>
+            Ready to stop doing what<br /><span style={{ color: B.tealLight }}>AI can do better?</span></h2>
+        </FI>
+        <FI delay={0.06}><p style={{ fontFamily: f.b, fontSize: 15, color: "rgba(255,255,255,0.55)", lineHeight: 1.6, marginBottom: 28 }}>30 minutes. No pitch. We'll audit your workflows and show you exactly where automation moves the needle.</p></FI>
+        <FI delay={0.12}>
+          <a href="https://cal.com/verticaledgeai/discovery" target="_blank" rel="noopener noreferrer" style={{
+            display: "inline-block", background: B.indigo, color: B.white,
+            padding: "14px 34px", borderRadius: 10, textDecoration: "none", fontSize: 15,
+            fontWeight: 600, fontFamily: f.b, boxShadow: "0 4px 24px rgba(79,70,229,0.4)", transition: "all 0.25s",
+          }} onMouseEnter={e => { e.target.style.transform = "translateY(-2px)"; }} onMouseLeave={e => { e.target.style.transform = "translateY(0)"; }}>Get Your Free Audit →</a>
+        </FI>
+      </div>
     </section>
+  );
+}
 
-    <!-- Case Studies - NEW -->
-    <section class="case-studies-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Results</span>
-                <h2>Companies that <span class="teal-text">transformed operations</span></h2>
-            </div>
-            
-            <div class="case-studies-grid">
-                <div class="case-study-card">
-                    <div class="case-study-industry">Technology</div>
-                    <h3>SaaS company automates lead qualification and content production</h3>
-                    <div class="case-study-metrics">
-                        <div class="case-metric">
-                            <div class="case-metric-value">200%</div>
-                            <div class="case-metric-label">Pipeline increase</div>
-                        </div>
-                        <div class="case-metric">
-                            <div class="case-metric-value">15 hrs</div>
-                            <div class="case-metric-label">Saved weekly</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="case-study-card">
-                    <div class="case-study-industry">Healthcare</div>
-                    <h3>Medical device firm achieves HIPAA compliance readiness in 48 hours</h3>
-                    <div class="case-study-metrics">
-                        <div class="case-metric">
-                            <div class="case-metric-value">48 hrs</div>
-                            <div class="case-metric-label">To compliance</div>
-                        </div>
-                        <div class="case-metric">
-                            <div class="case-metric-value">$40K</div>
-                            <div class="case-metric-label">Audit cost avoided</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="case-study-card">
-                    <div class="case-study-industry">Professional Services</div>
-                    <h3>Consulting firm wins 3x more RFPs with automated response system</h3>
-                    <div class="case-study-metrics">
-                        <div class="case-metric">
-                            <div class="case-metric-value">3x</div>
-                            <div class="case-metric-label">RFP win rate</div>
-                        </div>
-                        <div class="case-metric">
-                            <div class="case-metric-value">70%</div>
-                            <div class="case-metric-label">Faster turnaround</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+// ─── Footer with Privacy/Terms modals ───
+function Footer() {
+  const [modal, setModal] = useState(null);
+  const privacy = `Vertical Edge AI LLC ("we," "us") respects your privacy. This policy describes how we collect, use, and protect information when you use our website and services.\n\nInformation We Collect: We collect contact information you voluntarily provide (name, email, company, job title) through our forms and booking system. We also collect standard web analytics data (page views, referral source, device type) via privacy-respecting analytics.\n\nHow We Use Information: To respond to inquiries and schedule consultations. To deliver audit reports and consulting services. To send relevant communications about our services (you may opt out at any time). We never sell, rent, or share your personal information with third parties for their marketing purposes.\n\nData Security: All data is encrypted in transit (TLS 1.3) and at rest. Our infrastructure supports HIPAA, SOC2, GDPR, CCPA, and ISO27001 compliance frameworks. Access to client data is restricted to authorized personnel only.\n\nYour Rights: You may request access to, correction of, or deletion of your personal data at any time by contacting us at cordero_ryan@verticaledgeai.ai. California residents have additional rights under the CCPA. EU residents have additional rights under the GDPR.\n\nCookies: We use essential cookies only. No third-party advertising trackers.\n\nChanges: We may update this policy periodically. The latest version will always be available on this page.\n\nContact: cordero_ryan@verticaledgeai.ai\nEffective Date: February 9, 2026`;
+
+  const terms = `These Terms of Service ("Terms") govern your use of the Vertical Edge AI LLC website and services.\n\nServices: Vertical Edge AI provides AI-powered business automation consulting services including workflow audits, system integration, content production, compliance assessment, and related services as described in individual engagement agreements.\n\nEngagement Terms: All consulting engagements are governed by separate Statements of Work (SOW) that specify scope, deliverables, timelines, and pricing. These Terms supplement but do not replace individual SOWs.\n\nIntellectual Property: All automation systems, workflows, and configurations developed during an engagement are licensed to the client for their use. Vertical Edge AI retains ownership of underlying methodologies, frameworks, and platform technology. Client data remains the property of the client at all times.\n\nConfidentiality: We treat all client information as confidential. We will not disclose client data, business processes, or engagement details without explicit consent, except as required by law.\n\nLimitation of Liability: Vertical Edge AI's liability for any claim arising from services is limited to the fees paid for the specific engagement giving rise to the claim. We are not liable for indirect, incidental, or consequential damages.\n\nTermination: Either party may terminate an engagement with 30 days written notice. Client remains responsible for fees for services delivered through the termination date.\n\nDispute Resolution: Any disputes will be resolved through good-faith negotiation. If unresolved, disputes will be subject to binding arbitration in the state of our principal office.\n\nGoverning Law: These Terms are governed by the laws of the United States and the state in which Vertical Edge AI LLC is registered.\n\nContact: cordero_ryan@verticaledgeai.ai\nEffective Date: February 9, 2026`;
+
+  return (
+    <>
+      <footer style={{ background: B.bgAlt, padding: "22px 24px", borderTop: `1px solid ${B.border}` }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <img src={VE_LOGO_DARK} alt="VE" style={{ height: 14, width: "auto", opacity: 0.5 }} />
+            <span style={{ fontFamily: f.b, fontSize: 11, color: B.textMuted }}>© 2026 Vertical Edge AI LLC. All rights reserved.</span>
+          </div>
+          <div style={{ display: "flex", gap: 16 }}>
+            <button onClick={() => setModal("privacy")} style={{ background: "none", border: "none", fontFamily: f.b, fontSize: 11, color: B.textMuted, cursor: "pointer", textDecoration: "underline", padding: 0 }}>Privacy Policy</button>
+            <button onClick={() => setModal("terms")} style={{ background: "none", border: "none", fontFamily: f.b, fontSize: 11, color: B.textMuted, cursor: "pointer", textDecoration: "underline", padding: 0 }}>Terms of Service</button>
+            <a href="mailto:cordero_ryan@verticaledgeai.ai" style={{ fontFamily: f.b, fontSize: 11, color: B.textMuted, textDecoration: "none" }}>Contact</a>
+          </div>
         </div>
-    </section>
+      </footer>
 
-    <!-- Verticals Section -->
-    <section class="verticals-section" id="verticals">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Industry Expertise</span>
-                <h2>Built for <span class="teal-text">your vertical</span></h2>
+      {/* Modal */}
+      {modal && (
+        <div style={{
+          position: "fixed", inset: 0, zIndex: 200,
+          background: "rgba(15,23,42,0.6)", backdropFilter: "blur(6px)",
+          display: "flex", alignItems: "center", justifyContent: "center", padding: 24,
+        }} onClick={() => setModal(null)}>
+          <div onClick={e => e.stopPropagation()} style={{
+            background: B.white, borderRadius: 16, maxWidth: 600, width: "100%",
+            maxHeight: "80vh", overflow: "auto", padding: "32px 28px",
+            boxShadow: "0 24px 80px rgba(0,0,0,0.3)",
+          }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
+              <h3 style={{ fontFamily: f.d, fontSize: 24, color: B.navy, margin: 0 }}>
+                {modal === "privacy" ? "Privacy Policy" : "Terms of Service"}</h3>
+              <button onClick={() => setModal(null)} style={{ background: B.bg, border: "none", width: 32, height: 32, borderRadius: 8, cursor: "pointer", fontSize: 16, color: B.textMuted }}>✕</button>
             </div>
-            
-            <div class="verticals-grid">
-                <div class="vertical-card">
-                    <div class="vertical-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                    </div>
-                    <h3>Technology</h3>
-                    <p>SaaS, IT Services, Software</p>
-                </div>
-                
-                <div class="vertical-card">
-                    <div class="vertical-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-                    </div>
-                    <h3>Healthcare</h3>
-                    <p>HIPAA-aware automation</p>
-                </div>
-                
-                <div class="vertical-card">
-                    <div class="vertical-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                    </div>
-                    <h3>Financial Services</h3>
-                    <p>SOC2-compliant workflows</p>
-                </div>
-                
-                <div class="vertical-card">
-                    <div class="vertical-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    </div>
-                    <h3>Professional Services</h3>
-                    <p>Consulting, Legal, Accounting</p>
-                </div>
+            <div style={{ fontFamily: f.b, fontSize: 13, color: B.text, lineHeight: 1.8, whiteSpace: "pre-line" }}>
+              {modal === "privacy" ? privacy : terms}
             </div>
+          </div>
         </div>
-    </section>
+      )}
+    </>
+  );
+}
 
-    <!-- Compliance Section -->
-    <section class="compliance-section">
-        <div class="container">
-            <div class="compliance-content">
-                <span class="section-label">Security & Compliance</span>
-                <h2>Enterprise-grade <span class="teal-text">compliance frameworks</span></h2>
-                <div class="compliance-badges">
-                    <div class="compliance-badge">
-                        <div class="compliance-badge-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        </div>
-                        <span>HIPAA</span>
-                    </div>
-                    <div class="compliance-badge">
-                        <div class="compliance-badge-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        </div>
-                        <span>SOC2</span>
-                    </div>
-                    <div class="compliance-badge">
-                        <div class="compliance-badge-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        </div>
-                        <span>GDPR</span>
-                    </div>
-                    <div class="compliance-badge">
-                        <div class="compliance-badge-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        </div>
-                        <span>CCPA</span>
-                    </div>
-                    <div class="compliance-badge">
-                        <div class="compliance-badge-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        </div>
-                        <span>ISO27001</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+function App() {
+  return (
+    <div style={{ background: B.white, minHeight: "100vh" }}>
+      <Hero />
+      <Integrations />
+      <Process />
+      <Platform />
+      <Pricing />
+      <ClientExp />
+      <FAQ />
+      <CTA />
+      <Footer />
+    </div>
+  );
+}
 
-    <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-        <div class="container">
-            <div class="cta-box">
-                <h2>Ready to stop doing what <span class="gradient-text">AI can do better?</span></h2>
-                <p>Let's explore how automation can transform your operations in 14 days.</p>
-                
-                <div class="cta-options">
-                    <div class="cta-option">
-                        <h3>Get Your Free Audit</h3>
-                        <p>30 minutes to audit your workflows and identify quick wins.</p>
-                        <a href="https://cal.com/verticaledgeai/discovery" class="btn btn-primary" target="_blank" style="width: 100%;">
-                            Schedule Now →
-                        </a>
-                    </div>
-                    
-                    <div class="cta-option">
-                        <h3>Send a Message</h3>
-                        <p>Tell us about your challenges — we'll respond within 24 hours.</p>
-                        <form class="contact-form" action="https://formspree.io/f/meekkqbp" method="POST">
-                            <input type="hidden" name="_subject" value="New contact from Vertical Edge AI">
-                            <input type="text" name="_gotcha" style="display:none">
-                            <input type="text" name="name" class="form-input" placeholder="Your name" required>
-                            <input type="email" name="email" class="form-input" placeholder="Work email" required>
-                            <textarea name="message" class="form-input" placeholder="What's your biggest operational challenge?" required></textarea>
-                            <button type="submit" class="btn btn-secondary" style="width: 100%;">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">Vertical<span>Edge</span> AI</div>
-                <div class="footer-tagline">Your AI Operations Partner</div>
-            </div>
-            <div class="footer-center">
-                <div class="footer-text">© 2026 Vertical Edge AI LLC. All rights reserved.</div>
-                <div class="footer-founder">Vertical Edge AI</div>
-            </div>
-            <div class="footer-links">
-                <a href="mailto:cordero_ryan@verticaledgeai.ai">Contact</a>
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
 </body>
 </html>

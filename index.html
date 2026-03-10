@@ -1,989 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vertical Edge AI — AI-Powered Business Automation</title>
-  <meta name="description" content="Enterprise-grade automation for lead generation, content, compliance, and RFPs — deployed in weeks, not quarters. One partner replaces six hires." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vertical Edge AI — Your AI Operations Partner</title>
+<meta name="description" content="Enterprise-grade AI automation with built-in safety architecture. Lead generation, content, compliance, and RFPs — deployed in weeks, not quarters.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://verticaledgeai.ai">
+<meta property="og:title" content="Vertical Edge AI — Your AI Operations Partner">
+<meta property="og:description" content="Enterprise-grade AI automation with built-in safety architecture. One partner replaces six hires.">
+<meta property="og:url" content="https://verticaledgeai.ai">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-dark:#1E293B;--bg-darker:#0F172A;--bg-card:#162032;--bg-w:#FFFFFF;--bg-l:#F8FAFC;--bg-a:#F1F5F9;
+  --txt-w:#FFF;--txt-l:#CBD5E1;--txt-m:#94A3B8;--txt-d:#0F172A;--txt-b:#475569;--txt-lt:#64748B;
+  --teal:#14B8A6;--teal-lt:#2DD4BF;--indigo:#4F46E5;--indigo-lt:#6366F1;--indigo-bg:#EEF2FF;
+  --border:#E2E8F0;--border-d:rgba(255,255,255,.07);
+  --fd:'Instrument Serif',Georgia,serif;--fb:'DM Sans',-apple-system,sans-serif;
+  --mw:1120px;--tr:.3s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--fb);background:var(--bg-w);color:var(--txt-d);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}button{border:none;cursor:pointer;font-family:inherit}
+.c{max-width:var(--mw);margin:0 auto;padding:0 24px}
+.fi{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}.fi.v{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Vertical Edge AI — Your AI Operations Partner" />
-  <meta property="og:description" content="Enterprise-grade automation for lead generation, content, compliance, and RFPs. Deployed in 14 days." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://verticaledgeai.ai" />
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:13px 0;transition:all var(--tr)}
+.nav.sc{background:rgba(30,41,59,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-d);padding:10px 0}
+.nav-in{display:flex;align-items:center;justify-content:space-between;max-width:var(--mw);margin:0 auto;padding:0 24px}
+.nav-logo{display:flex;align-items:center;gap:9px;font-weight:700;font-size:16px;color:var(--txt-w)}.nav-logo .e{color:var(--teal)}
+.nl{display:flex;gap:26px;align-items:center}
+.nl a{font-size:13px;font-weight:500;color:var(--txt-m);transition:color var(--tr)}.nl a:hover{color:var(--txt-w)}
+.nc{background:var(--indigo);color:#fff;padding:8px 17px;border-radius:7px;font-size:12px;font-weight:600;transition:all var(--tr)}.nc:hover{background:var(--indigo-lt)}
+.mt{display:none;background:none;color:#fff;font-size:22px}
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+/* Hero */
+.hero{padding:125px 0 65px;background:linear-gradient(175deg,#1E293B 0%,#172032 50%,#0F172A 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-140px;right:-140px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.1),transparent 70%);pointer-events:none}
+.hg{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center}
+.hbadge{display:inline-flex;align-items:center;gap:7px;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.16);border-radius:100px;padding:5px 13px;margin-bottom:18px;font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--teal)}
+.hbadge .dot{width:5px;height:5px;border-radius:50%;background:var(--teal);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:var(--fd);font-size:clamp(32px,4.5vw,50px);font-weight:400;line-height:1.1;margin-bottom:16px;color:var(--txt-w)}.hero h1 .ac{color:var(--teal)}
+.hsub{font-size:15px;line-height:1.7;color:var(--txt-l);margin-bottom:26px;max-width:440px}
+.hctas{display:flex;gap:10px;flex-wrap:wrap}
+.bp{display:inline-flex;align-items:center;gap:7px;background:var(--indigo);color:#fff;padding:12px 24px;border-radius:9px;font-size:14px;font-weight:600;transition:all var(--tr);box-shadow:0 4px 14px rgba(79,70,229,.25)}.bp:hover{background:var(--indigo-lt);transform:translateY(-2px)}
+.bs{display:inline-flex;align-items:center;gap:7px;background:transparent;color:var(--txt-l);border:1px solid rgba(255,255,255,.13);padding:12px 24px;border-radius:9px;font-size:14px;font-weight:500;transition:all var(--tr)}.bs:hover{border-color:rgba(255,255,255,.28);color:#fff}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+/* Dashboard */
+.hv{position:relative}
+.db{background:#111827;border-radius:12px;border:1px solid var(--border-d);overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.35);transform:perspective(900px) rotateY(-2deg) rotateX(1deg);transition:transform .5s ease}.db:hover{transform:perspective(900px) rotateY(0) rotateX(0)}
+.db-bar{display:flex;align-items:center;gap:4px;padding:7px 11px;background:var(--bg-darker);border-bottom:1px solid var(--border-d)}
+.db-dot{width:6px;height:6px;border-radius:50%}
+.db-url{flex:1;text-align:center;font-size:9.5px;color:var(--txt-m)}
+.db-body{padding:10px;display:grid;grid-template-columns:110px 1fr 140px;gap:8px}
+.db-side{display:flex;flex-direction:column;gap:2px}
+.db-si{display:flex;align-items:center;gap:4px;padding:3px 5px;border-radius:4px;font-size:8px;color:var(--txt-m)}.db-si.act{background:rgba(20,184,166,.1);color:var(--teal)}
+.db-sid{width:3px;height:3px;border-radius:50%;flex-shrink:0}
+.db-mn{display:flex;flex-direction:column;gap:6px}
+.db-sts{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+.db-st{background:var(--bg-darker);border-radius:6px;padding:6px;border:1px solid var(--border-d)}
+.db-st-l{font-size:7px;color:var(--txt-m);text-transform:uppercase;letter-spacing:.03em}
+.db-st-v{font-size:15px;font-weight:700;margin-top:1px}
+.db-st-d{font-size:7px;margin-left:2px}
+.db-ch{background:var(--bg-darker);border-radius:6px;padding:6px;border:1px solid var(--border-d);position:relative;height:58px;overflow:hidden}
+.db-ch-l{font-size:7px;color:var(--txt-m);display:flex;gap:8px}.db-ch-l span{display:flex;align-items:center;gap:2px}
+.db-ch-ld{width:5px;height:1.5px;border-radius:1px;display:inline-block}
+.db-act{background:var(--bg-darker);border-radius:6px;border:1px solid var(--border-d);padding:6px;overflow:hidden}
+.db-act-t{font-size:7px;font-weight:700;color:var(--txt-w);margin-bottom:4px}
+.db-act-i{display:flex;align-items:flex-start;gap:4px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.db-act-dot{width:4px;height:4px;border-radius:50%;margin-top:3px;flex-shrink:0}
+.db-act-txt{font-size:6.5px;color:var(--txt-l);line-height:1.3}
+.db-act-tag{font-size:6px;font-weight:700;margin-right:2px}
+.db-act-time{font-size:5.5px;color:var(--txt-m);margin-left:2px}
+.db-pipe{display:flex;align-items:center;gap:3px;padding:6px 8px;border-top:1px solid var(--border-d)}
+.db-pipe-l{font-size:6.5px;color:var(--txt-m)}
+.db-pipe-c{font-size:6.5px;padding:2px 6px;border-radius:2px;font-weight:600}
+.db-pipe-a{font-size:6.5px;color:var(--txt-m)}
+.db-pipe-live{font-size:6.5px;font-weight:700;color:#22C55E;margin-left:auto;display:flex;align-items:center;gap:2px}
+.db-pipe-live::before{content:'';width:4px;height:4px;border-radius:50%;background:#22C55E;animation:pulse 1.5s ease-in-out infinite}
+.db-health{margin-top:3px;padding:4px 5px;background:rgba(20,184,166,.06);border-radius:4px}
+.db-health-t{font-size:6px;color:var(--teal);text-transform:uppercase;letter-spacing:.03em;font-weight:700}
+.db-health-bars{display:flex;gap:1.5px;margin-top:1.5px}
+.db-health-b{width:8px;height:2px;border-radius:1px}
+.db-health-s{font-size:6px;color:var(--txt-m);margin-top:1px}
+.cb{position:absolute;bottom:-8px;left:-8px;background:var(--bg-card);border:1px solid var(--border-d);border-radius:9px;padding:9px 13px;box-shadow:0 6px 18px rgba(0,0,0,.25);animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 
-  <!-- React 18 CDN -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+/* Stats Bar */
+.stbar{background:linear-gradient(135deg,var(--bg-dark),#172038);border-top:1px solid var(--border-d);border-bottom:1px solid var(--border-d);padding:32px 0}
+.stg{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;text-align:center}
+.stn{font-family:var(--fd);font-size:clamp(28px,3.5vw,40px);font-weight:400;color:var(--teal)}
+.stl{font-size:12px;color:var(--txt-m);margin-top:2px;line-height:1.3}
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    html { scroll-behavior: smooth; }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 1; }
-    }
-  </style>
+/* Section shared */
+.sec{padding:80px 0}
+.sl{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;margin-bottom:8px;text-align:center}
+.sh{font-family:var(--fd);font-size:clamp(24px,3.2vw,38px);font-weight:400;text-align:center;margin-bottom:12px}
+.ss{font-size:14px;text-align:center;max-width:500px;margin:0 auto 44px;line-height:1.6}
+
+/* Light sections */
+.sw{background:var(--bg-w);color:var(--txt-d)}.sw .sl{color:var(--indigo)}.sw .sh{color:var(--txt-d)}.sw .ss{color:var(--txt-b)}
+.sa{background:var(--bg-l);color:var(--txt-d)}.sa .sl{color:var(--indigo)}.sa .sh{color:var(--txt-d)}.sa .ss{color:var(--txt-b)}
+
+/* ─── Integration SVG ─── */
+.int-svg{width:100%;max-width:480px;margin:0 auto;display:block}
+.int-desc{font-size:13px;color:var(--txt-lt);text-align:center;max-width:480px;margin:8px auto 0;line-height:1.5}
+
+/* Steps */
+.steps-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.st-c{background:var(--bg-w);border:1px solid var(--border);border-radius:13px;padding:26px 20px;transition:all var(--tr)}.st-c:hover{border-color:rgba(20,184,166,.18);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.05)}
+.st-n{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.1);font-size:12px;font-weight:700;color:var(--teal)}
+.st-tl{display:inline-block;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.1);border-radius:100px;padding:2px 8px;font-size:9px;font-weight:600;color:var(--teal);margin-left:6px;vertical-align:middle}
+.st-t{font-size:16px;font-weight:700;margin:12px 0 8px;color:var(--txt-d)}
+.st-d{font-size:12.5px;color:var(--txt-b);line-height:1.6;margin-bottom:12px}
+.st-bm{background:var(--bg-l);border:1px solid var(--border);border-radius:7px;padding:9px;font-size:11px}
+.st-bm-t{color:var(--txt-b);line-height:1.4}.st-bm-s{color:var(--txt-lt);font-size:10px;font-style:italic;margin-top:2px}
+
+/* Platform tabs */
+.pt-tabs{display:flex;justify-content:center;gap:5px;margin-bottom:36px}
+.pt-tab{padding:8px 20px;border-radius:100px;font-size:12px;font-weight:600;color:var(--txt-lt);background:transparent;border:1px solid var(--border);transition:all var(--tr)}.pt-tab.act{color:#fff;background:var(--indigo);border-color:var(--indigo)}.pt-tab:hover:not(.act){border-color:var(--txt-lt)}
+.pt-con{display:none}.pt-con.act{display:block}
+.pl-g{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pl-c{background:var(--bg-w);border:1px solid var(--border);border-radius:11px;padding:20px;transition:all var(--tr)}.pl-c:hover{border-color:rgba(20,184,166,.16);transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.04)}
+.pl-i{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;margin-bottom:10px}
+.pl-n{font-size:13.5px;font-weight:700;margin-bottom:4px;color:var(--txt-d)}
+.pl-d{font-size:11.5px;color:var(--txt-b);line-height:1.5}
+.ca .pl-i{background:var(--indigo-bg)}.co .pl-i{background:rgba(20,184,166,.06)}.cp .pl-i{background:rgba(239,68,68,.06)}
+
+/* Pricing */
+.pr-g{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:740px;margin:0 auto}
+.pr-c{background:var(--bg-w);border:1px solid var(--border);border-radius:13px;padding:30px 24px;position:relative;transition:all var(--tr)}.pr-c:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,.05)}
+.pr-c.ft{border-color:var(--indigo);border-width:2px}
+.pr-bd{position:absolute;top:-10px;right:20px;background:var(--indigo);color:#fff;padding:3px 11px;border-radius:100px;font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.pr-nm{font-size:19px;font-weight:700;color:var(--txt-d);margin-bottom:2px}
+.pr-tp{font-size:12.5px;color:var(--teal);font-weight:500;margin-bottom:8px}
+.pr-ds{font-size:12px;color:var(--txt-b);line-height:1.6;margin-bottom:18px}
+.pr-ft{list-style:none;margin-bottom:22px}.pr-ft li{display:flex;align-items:flex-start;gap:7px;font-size:12px;color:var(--txt-b);padding:4px 0}.pr-ft li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0}
+.pr-ct{display:block;width:100%;padding:11px;border-radius:8px;font-size:13px;font-weight:600;text-align:center;transition:all var(--tr)}
+.pr-ct-p{background:var(--indigo);color:#fff}.pr-ct-p:hover{background:var(--indigo-lt)}
+.pr-ct-s{background:transparent;color:var(--txt-d);border:1px solid var(--border)}.pr-ct-s:hover{border-color:var(--txt-b)}
+.pr-nt{text-align:center;font-size:11px;color:var(--txt-lt);margin-top:18px;line-height:1.4}
+
+/* Testimonials */
+.tc{position:relative;max-width:580px;margin:0 auto;overflow:hidden}
+.tt{display:flex;transition:transform .5s ease}
+.tcd{min-width:100%;padding:0 16px;box-sizing:border-box}
+.tci{background:var(--bg-w);border:1px solid var(--border);border-radius:14px;padding:32px 24px;text-align:center}
+.tst{color:#F59E0B;font-size:16px;margin-bottom:14px;letter-spacing:2px}
+.tqu{font-family:var(--fd);font-size:16px;font-style:italic;color:var(--txt-d);line-height:1.6;margin-bottom:18px}
+.tvl{font-size:18px;font-weight:700;color:var(--teal);margin-bottom:3px}
+.trl{font-size:11px;color:var(--txt-lt)}
+.tds{display:flex;justify-content:center;gap:5px;margin-top:18px}
+.td{width:7px;height:7px;border-radius:50%;background:var(--border);cursor:pointer;transition:all var(--tr)}.td.act{background:var(--indigo);width:18px;border-radius:3px}
+.tdc{text-align:center;font-size:8px;color:#D1D5DB;margin-top:12px;opacity:.15}
+
+/* FAQ */
+.fq-l{max-width:660px;margin:0 auto}
+.fq-i{border-bottom:1px solid var(--border);overflow:hidden}
+.fq-q{display:flex;justify-content:space-between;align-items:center;width:100%;padding:16px 0;background:transparent;font-size:13.5px;font-weight:600;color:var(--txt-d);text-align:left;transition:color var(--tr)}.fq-q:hover{color:var(--teal)}
+.fq-t{font-size:16px;color:var(--teal);transition:transform var(--tr);flex-shrink:0;margin-left:12px}
+.fq-i.open .fq-t{transform:rotate(45deg)}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.fq-ai{padding:0 0 16px;font-size:12.5px;color:var(--txt-b);line-height:1.7}
+
+/* Final CTA */
+.fcta{background:linear-gradient(135deg,var(--bg-dark),#172038);padding:80px 0;text-align:center}
+.fcta h2{font-family:var(--fd);font-size:clamp(24px,3.2vw,38px);font-weight:400;margin-bottom:12px;color:var(--txt-w)}.fcta h2 .ac{color:var(--teal)}
+.fcta p{font-size:14px;color:var(--txt-m);max-width:440px;margin:0 auto 24px;line-height:1.6}
+
+/* Footer */
+.ftr{background:var(--bg-darker);border-top:1px solid var(--border-d);padding:32px 0}
+.ftr-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ftr-c{font-size:10.5px;color:var(--txt-m);display:flex;align-items:center;gap:6px}
+.ftr-lk{display:flex;gap:18px}.ftr-lk a{font-size:10.5px;color:var(--txt-m);transition:color var(--tr)}.ftr-lk a:hover{color:var(--txt-l)}
+.ftr-bg{display:flex;gap:7px}.ftr-bd{font-size:7.5px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--txt-m);border:1px solid var(--border-d);border-radius:3px;padding:2px 5px}
+
+/* Modal */
+.mdl{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);padding:40px 24px;overflow-y:auto}
+.mdl-b{max-width:560px;margin:0 auto;background:var(--bg-dark);border:1px solid var(--border-d);border-radius:13px;padding:32px}
+.mdl-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.mdl-h h3{font-size:17px;font-weight:700;color:var(--txt-w)}
+.mdl-x{background:none;color:var(--txt-m);font-size:20px}
+.mdl-bd{font-size:12px;color:var(--txt-l);line-height:1.7}
+
+@media(max-width:900px){.hg{grid-template-columns:1fr}.hv{order:-1}.db{transform:none}.db-body{grid-template-columns:90px 1fr;gap:6px}.db-act{display:none}.db-sts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.nl{display:none}.mt{display:block}.nl.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(30,41,59,.98);padding:18px;gap:12px;border-bottom:1px solid var(--border-d)}.hero{padding:105px 0 45px}.steps-g{grid-template-columns:1fr}.pl-g{grid-template-columns:1fr 1fr}.pr-g{grid-template-columns:1fr}.pt-tabs{flex-wrap:wrap}.ftr-in{flex-direction:column;text-align:center}}
+@media(max-width:480px){.stg{grid-template-columns:1fr;gap:18px}.pl-g{grid-template-columns:1fr}.hctas{flex-direction:column}.bp,.bs{width:100%;justify-content:center}.db-body{grid-template-columns:1fr}.db-side{flex-direction:row;flex-wrap:wrap}.db-si{font-size:7px;padding:2px 3px}}
+</style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="text/babel">
-    const { useState, useEffect, useRef } = React;
 
+<nav class="nav" id="nav"><div class="nav-in">
+<a href="#" class="nav-logo"><img src="data:image/png;base64,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" alt="VE" style="height:24px;width:auto;opacity:.95"><span>Vertical<span class="e">Edge</span> AI</span></a>
+<div class="nl" id="nl"><a href="#platform">Platform</a><a href="#pricing">Pricing</a><a href="#outcomes">Results</a><a href="#faq">FAQ</a><a href="https://cal.com/verticaledgeai/discovery" target="_blank" class="nc">Get Your Free Audit</a></div>
+<button class="mt" id="mt" aria-label="Menu">☰</button>
+</div></nav>
 
-const VE_LOGO = "data:image/png;base64,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";
-const VE_LOGO_SM = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAYCAYAAACvKj4oAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAEiUlEQVR42tWWW4wTdRjFz7RcVlcFVgkPIuiiCRKNGsAHTVBDiCaSkEBWIyGRJ5VEQozxAg82mpAYQTcagy6JN4ig3RAT2HiDpS643V3oZXfb2u2Ntmzvs22n7bTTznR6fNit2Wx8MQHTnpd5mPnPzPn/vu98f+AGiKQAAKlSaVU4HO4gKcRzlTUku/1+/1KSQjyeW0Oym2S3oijr8opy3+xqk4HkurSk3I+eHiNusAw36D1GAOjquPXIbbffeVgQBKYTib0AvJ13dH0iCAKTYuZlAF6g4ejo6PCUpfIhAHCMv7gHgEuWpM+fymwQrFZ3l9nsXoJWEslFc9dvKkqtOj6e7Dx48NOVckku1FRVHXF67+3t7V0uZgt5kpQrijri8DywcePGxaI4EyDJoaHR5wHAH0m9R7KjJQ3mpOLHJGl3ed4GgGRSPEyS/lD0MwCITiffJ8l4RvwOABx/hbaRZCaTvQLAMOHxbJHKlcn5Zd8qBg0AMDg4+oimarWZfD71zod9yxwOx0pVVfOVai1z/rxtmdvt7spLpaJ9wrMVADJZyUKS1wLxHQAQjSUG66S/5QzO/ZARAMRUboAkR+2TrwNAZHr6a5J0TvjeAgDLJdv2np4eo9V69fFGo8Fisewzm91LBgYudyvVar2u1ydb1iBJ4feLY8/qus58XhoHYLRabQ9rmqZm81LiwAHT8ubzsViqnySD4dheAAgEo1+RZCB0/Yv5G9ZqJgUAQjIpjs/2oncXAESi8Z9J0umceoOk0TJsW69qmlYsF5N9NtviCxdGVpUrilIoyurp07/eM7/sW7JM/f7IdpLMSQULAPxiGXlabzQoFUoeAAhFIl+SpC8Q+gAAwtH4IZKMXI9/27L0FgZOqVR16nVdDwajmwAYphOpMZK0WicOlSrlvFyW8319Z+86duzYiqKspFVVq9ldrgcFQWhNegtHhscffY0k0+mZswAwYnftIsl6rU6S9PiDfQAQCsf2kWQuV+hveXrNPiQpHDlyolOuVMNKtaqf6u9/7Ln9+5dKxZKdpCYV5doPZ357yGSyLCpXqpO63uCYfWLr3NrWNjifYiyRfZMk3b7gTwDg84VfIslQJHYKAGLJzAskmRazQy0bLP8mk8lkICkcP35ydbFULsllRR8YGFxrNltvSWelSEIUNwEwpMTs+Gxf2nYDgMUyuzFtoX8SNRg5SpL+QPgjALCMOR8FgItDozvIBlNiLrBt257O5ohpJ4MGksLg4PDailJT5bJSOH7yzOrm/XgyfZ4k/7h85ZVZepb2obeQ4pTvWj9JRqPxd0kahoZdT2iqWs/npMTu3ftWNIOp7QyazWYjAAzbptarqtaQy3J09mST/J4kp1Piq/NDqS3VTMaZrHSWJN3eUG+tponVai194sRvnW1Lb2GZ/mlzPlPXG2wqEk0ebXt68ylu2NCzJJPJOklqxWKpdO7chbsFQYDJZDK0vcFmQl6xu3aSpD8Y/rEtjmX/Qc0+M0bjqalLV68+SVJohtDN1P9V/5wb4rrT69+ZDnkDWzZvJgD9Zn/4b18gg7xJ2Q6CAAAAAElFTkSuQmCC";
-const VE_LOGO_DARK = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAERElEQVR42tVVbUxbVRh+z7m3t50wGKMFRjJphDlhUxZwf5jj3IIL6YCwEQvEhYSZSKZOjcFiNLCmakZsTfih2UL8oUi2RboWG+MHdE25EHETzTSExqAZYTIcDGQd9IP23nP8ITWLfGw4/vj8ek9yzvu8z/t1OFgJbLFYkCRJzGQycXv27MF+v59ZLBYMAJxer8d6vR5PTExQAABCCN/Q0ACSJDF4AKD/egf9y2alpaWPJCcng8vlGieElAuCEPV4PH1Go/HxUCiUHYlEqFqt5tP37u3L0+lCAwMDFZTSKUmSfliNAMcNQggHABAMBg8HAgEnADDG2DPAoLe2tlav0WgSOIx7tghqNwZ0Jk+nk38cHn5eoxLcarU6y2KxPHTMdGw3/P0QrSCIQ61Wz3II76utrc3NTk83K7LM5mbn7D09PZcZwNcYY1Dx3Emr1RpZWFw8FY4s/ebxeJxDQ0Mnr9+8/hgAQE1NDV5BIIoiBQAoKCgYjMVi4enp6fc+djhuyYpyTlHk6uMvH9elpKTYOUF1q8/rdZaXl5sEQcjcohFaKKVYluXm8EI4uGaKrFYrJYTw7e3tNzgOf6Li+Mr6+vqHtTptC+Y4PD4y3uxyuXwZGRlVGGEWXFh8R5aVma96ey+WHTpUhwGlbkvetrgmwV0qUPbOnTZZlunk5OTbLpdrgirKN4yxlxobG3d0dXV9d7T66GGe53djhFs5jlNistymKMrvZRVlIwCAHA4Hjfvk7iaI9/6n58/P78rZlQ+M1VVUVpyRFeVbORp7df7P+ei18WvetLS0cwijpBMvnHg2eOdOGQB6EXHY3NHRcZkQwsdnZNUix1s2VZd6igFDoyMjbzqdzlGF0iuRSPi5qqqqSoTQfoRQW01NTTQYCtuWoktzB44cuQAASJIk5X4GiAOElNKSkktMoQcL9z+pHRsb2xcIBAaorCxhjCO6wrQd4V/DhdHI0iBD8JbH42kjhPCSJMlr1iAOk8kEwBjavnV7K8ZYGB4efsXtdg8ihq5gjNUqtXDW0e4ILwYWbLFYLFhUVPQRAKD+/n5lIysAI4SogYjfA0Du681mrc1mq1CpVBczMzNTQqGQPjB/+ypl1HbJ631jtejXqwGYTCbEGIOkxIQWjHFi+/vtDTqd7nONRvNaZ2fn7dmZmXdlRY49kZ//IQCg+BxtFBhjDCIRfzEUi3/Y7fYEAID6+vrcp0tKmVgsnl0OhlvTwXreCSGYUgoJiQmtvIrP8Hl9dQAAN6emWimlkPNoju0+N+26Kxj5fD7eQMQbxQcOjjY1NWUZigkrEUs+u1f091QAAIwQwhkMBpkXVKcxz+X9fPWnLxkA06ZpT8MmAQEAMpvNW0VRnCRPFTODaPgCIQTLvxw8iIJ/VNjt9gUe8x/wggqSkpNsjDHw+/1oUyQsfyCouro6y2g0uuNn2GwwxlB3d3ci/N+xodT8Bf/M2IMbyNTtAAAAAElFTkSuQmCC";
+<section class="hero" id="hero"><div class="c"><div class="hg">
+<div class="fi">
+<div class="hbadge"><span class="dot"></span>Deployed in Weeks, Not Quarters</div>
+<h1>Your AI<br><span class="ac">Operations</span><br>Partner</h1>
+<p class="hsub">Enterprise-grade AI automation with structural safety built in. Lead generation, content, compliance, RFPs, and security monitoring — one partner replaces six hires.</p>
+<div class="hctas"><a href="https://cal.com/verticaledgeai/discovery" target="_blank" class="bp">Get Your Free Audit →</a><a href="#how-it-works" class="bs">See How It Works</a></div>
+</div>
+<div class="hv fi d2">
+<div class="db">
+<div class="db-bar"><span class="db-dot" style="background:#EF4444"></span><span class="db-dot" style="background:#F59E0B"></span><span class="db-dot" style="background:#22C55E"></span><span class="db-url">verticaledgeai.ai/dashboard</span></div>
+<div class="db-body">
+<div class="db-side">
+<div class="db-si" style="padding:4px 5px;margin-bottom:2px"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAYCAYAAACvKj4oAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAEiUlEQVR42tWWW4wTdRjFz7RcVlcFVgkPIuiiCRKNGsAHTVBDiCaSkEBWIyGRJ5VEQozxAg82mpAYQTcagy6JN4ig3RAT2HiDpS643V3oZXfb2u2Ntmzvs22n7bTTznR6fNit2Wx8MQHTnpd5mPnPzPn/vu98f+AGiKQAAKlSaVU4HO4gKcRzlTUku/1+/1KSQjyeW0Oym2S3oijr8opy3+xqk4HkurSk3I+eHiNusAw36D1GAOjquPXIbbffeVgQBKYTib0AvJ13dH0iCAKTYuZlAF6g4ejo6PCUpfIhAHCMv7gHgEuWpM+fymwQrFZ3l9nsXoJWEslFc9dvKkqtOj6e7Dx48NOVckku1FRVHXF67+3t7V0uZgt5kpQrijri8DywcePGxaI4EyDJoaHR5wHAH0m9R7KjJQ3mpOLHJGl3ed4GgGRSPEyS/lD0MwCITiffJ8l4RvwOABx/hbaRZCaTvQLAMOHxbJHKlcn5Zd8qBg0AMDg4+oimarWZfD71zod9yxwOx0pVVfOVai1z/rxtmdvt7spLpaJ9wrMVADJZyUKS1wLxHQAQjSUG66S/5QzO/ZARAMRUboAkR+2TrwNAZHr6a5J0TvjeAgDLJdv2np4eo9V69fFGo8Fisewzm91LBgYudyvVar2u1ydb1iBJ4feLY8/qus58XhoHYLRabQ9rmqZm81LiwAHT8ubzsViqnySD4dheAAgEo1+RZCB0/Yv5G9ZqJgUAQjIpjs/2oncXAESi8Z9J0umceoOk0TJsW69qmlYsF5N9NtviCxdGVpUrilIoyurp07/eM7/sW7JM/f7IdpLMSQULAPxiGXlabzQoFUoeAAhFIl+SpC8Q+gAAwtH4IZKMXI9/27L0FgZOqVR16nVdDwajmwAYphOpMZK0WicOlSrlvFyW8319Z+86duzYiqKspFVVq9ldrgcFQWhNegtHhscffY0k0+mZswAwYnftIsl6rU6S9PiDfQAQCsf2kWQuV+hveXrNPiQpHDlyolOuVMNKtaqf6u9/7Ln9+5dKxZKdpCYV5doPZ357yGSyLCpXqpO63uCYfWLr3NrWNjifYiyRfZMk3b7gTwDg84VfIslQJHYKAGLJzAskmRazQy0bLP8mk8lkICkcP35ydbFULsllRR8YGFxrNltvSWelSEIUNwEwpMTs+Gxf2nYDgMUyuzFtoX8SNRg5SpL+QPgjALCMOR8FgItDozvIBlNiLrBt257O5ohpJ4MGksLg4PDailJT5bJSOH7yzOrm/XgyfZ4k/7h85ZVZepb2obeQ4pTvWj9JRqPxd0kahoZdT2iqWs/npMTu3ftWNIOp7QyazWYjAAzbptarqtaQy3J09mST/J4kp1Piq/NDqS3VTMaZrHSWJN3eUG+tponVai194sRvnW1Lb2GZ/mlzPlPXG2wqEk0ebXt68ylu2NCzJJPJOklqxWKpdO7chbsFQYDJZDK0vcFmQl6xu3aSpD8Y/rEtjmX/Qc0+M0bjqalLV68+SVJohtDN1P9V/5wb4rrT69+ZDnkDWzZvJgD9Zn/4b18gg7xJ2Q6CAAAAAElFTkSuQmCC" alt="VE" style="height:14px;width:auto;opacity:.9;margin-right:3px"><span style="font-size:8px;font-weight:700;color:var(--txt-w)">Vertical Edge</span></div>
+<div class="db-si act"><span class="db-sid" style="background:var(--teal)"></span>P1 Signal Listener</div>
+<div class="db-si"><span class="db-sid" style="background:var(--indigo)"></span>P2 Free Audit</div>
+<div class="db-si"><span class="db-sid" style="background:#818CF8"></span>P3 RAG Chatbot</div>
+<div class="db-si"><span class="db-sid" style="background:#F59E0B"></span>P4 Lead Gen</div>
+<div class="db-si"><span class="db-sid" style="background:#22C55E"></span>P5 Content</div>
+<div class="db-si"><span class="db-sid" style="background:#EF4444"></span>P6 Compliance</div>
+<div class="db-si"><span class="db-sid" style="background:#EC4899"></span>P7 RFP Auto</div>
+<div class="db-si"><span class="db-sid" style="background:#8B5CF6"></span>P8 Voice</div>
+<div class="db-si"><span class="db-sid" style="background:#F97316"></span>P9 Security</div>
+<div class="db-health"><div class="db-health-t">System Health</div><div class="db-health-bars"><span class="db-health-b" style="background:var(--teal)"></span><span class="db-health-b" style="background:var(--teal)"></span><span class="db-health-b" style="background:var(--teal)"></span><span class="db-health-b" style="background:var(--teal)"></span><span class="db-health-b" style="background:var(--teal)"></span><span class="db-health-b" style="background:var(--teal)"></span><span class="db-health-b" style="background:var(--teal)"></span><span class="db-health-b" style="background:var(--teal)"></span><span class="db-health-b" style="background:var(--indigo)"></span></div><div class="db-health-s">9/9 pillars active</div></div>
+</div>
+<div class="db-mn">
+<div class="db-sts">
+<div class="db-st"><div class="db-st-l">Agent Actions/24h</div><div class="db-st-v" style="color:var(--teal)">1,247<span class="db-st-d" style="color:#22C55E">+18%</span></div></div>
+<div class="db-st"><div class="db-st-l">Output Verified</div><div class="db-st-v" style="color:#22C55E">99.2%</div></div>
+<div class="db-st"><div class="db-st-l">Hours Recovered</div><div class="db-st-v" style="color:var(--indigo)">142<span class="db-st-d" style="color:var(--txt-m)">this mo.</span></div></div>
+<div class="db-st"><div class="db-st-l">Intent Alignment</div><div class="db-st-v" style="color:#F59E0B">94%<span class="db-st-d" style="color:#22C55E">↑3%</span></div></div>
+</div>
+<div class="db-ch"><div class="db-ch-l"><span><span class="db-ch-ld" style="background:var(--indigo)"></span> Leads</span><span><span class="db-ch-ld" style="background:var(--teal)"></span> Revenue</span></div><svg viewBox="0 0 200 40" preserveAspectRatio="none" width="100%" height="28" style="position:absolute;bottom:3px;left:5px;right:5px"><path d="M0,35 Q20,30 40,28 T80,22 T120,15 T160,10 T200,5" stroke="var(--teal)" fill="none" stroke-width="1.5" opacity=".8"/><path d="M0,38 Q20,35 40,32 T80,28 T120,25 T160,22 T200,18" stroke="var(--indigo)" fill="none" stroke-width="1.5" opacity=".5" stroke-dasharray="3,3"/></svg></div>
+</div>
+<div class="db-act">
+<div class="db-act-t">Live Activity</div>
+<div class="db-act-i"><span class="db-act-dot" style="background:#F59E0B"></span><div class="db-act-txt">Lead scored 92 → auto-routed to sales pipeline<br><span class="db-act-tag" style="color:#F59E0B">P4</span><span class="db-act-time">2m ago</span></div></div>
+<div class="db-act-i"><span class="db-act-dot" style="background:#EF4444"></span><div class="db-act-txt">SOC2 gap analysis complete — 3 items flagged<br><span class="db-act-tag" style="color:#EF4444">P6</span><span class="db-act-time">8m ago</span></div></div>
+<div class="db-act-i"><span class="db-act-dot" style="background:#22C55E"></span><div class="db-act-txt">Blog post drafted: 'AI in Financial Compliance'<br><span class="db-act-tag" style="color:#22C55E">P5</span><span class="db-act-time">14m ago</span></div></div>
+<div class="db-act-i"><span class="db-act-dot" style="background:#EC4899"></span><div class="db-act-txt">RFP response generated — pending RC approval<br><span class="db-act-tag" style="color:#EC4899">P7</span><span class="db-act-time">22m ago</span></div></div>
+<div class="db-act-i"><span class="db-act-dot" style="background:var(--teal)"></span><div class="db-act-txt">New signal: VP Ops at HealthCo visited /pricing<br><span class="db-act-tag" style="color:var(--teal)">P1</span><span class="db-act-time">31m ago</span></div></div>
+<div class="db-act-i"><span class="db-act-dot" style="background:#818CF8"></span><div class="db-act-txt">Chatbot resolved billing query — no escalation<br><span class="db-act-tag" style="color:#818CF8">P3</span><span class="db-act-time">45m ago</span></div></div>
+</div>
+</div>
+<div class="db-pipe"><span class="db-pipe-l">Active Pipeline:</span><span class="db-pipe-c" style="background:rgba(20,184,166,.12);color:var(--teal)">P1 Signal</span><span class="db-pipe-a">→</span><span class="db-pipe-c" style="background:rgba(249,115,22,.12);color:#F59E0B">P4 Score</span><span class="db-pipe-a">→</span><span class="db-pipe-c" style="background:rgba(34,197,94,.12);color:#22C55E">P5 Draft</span><span class="db-pipe-a">→</span><span class="db-pipe-c" style="background:rgba(239,68,68,.12);color:#EF4444">P6 Check</span><span class="db-pipe-a">→</span><span class="db-pipe-c" style="background:rgba(236,72,153,.12);color:#EC4899">P7 Propose</span><span class="db-pipe-live">Live</span></div>
+</div>
+<div class="cb"><div style="font-size:13px;margin-bottom:2px">📊</div><div style="font-size:8px;color:var(--txt-m)">Compliance</div><div style="font-size:18px;font-weight:700;color:var(--teal)">$5.44</div><div style="font-size:7px;color:var(--txt-m)">ROI per $1 spent</div></div>
+</div>
+</div></div></section>
 
-const B = {
-  white: "#FFFFFF", bg: "#F8FAFC", bgAlt: "#F1F5F9",
-  navy: "#0F172A", navyMid: "#1E293B", navyCard: "#162032",
-  text: "#334155", textLight: "#64748B", textMuted: "#94A3B8",
-  indigo: "#4F46E5", indigoLight: "#6366F1", indigoBg: "#EEF2FF",
-  teal: "#14B8A6", tealLight: "#2DD4BF", tealBg: "#F0FDFA",
-  border: "#E2E8F0", borderLight: "#F1F5F9",
-  green: "#22C55E", greenBg: "#F0FDF4",
-  red: "#EF4444", redBg: "#FEF2F2",
-  amber: "#F59E0B",
-  sh: "0 1px 3px rgba(15,23,42,0.08)",
-  shMd: "0 4px 14px rgba(15,23,42,0.09)",
-  shLg: "0 12px 36px rgba(15,23,42,0.12)",
-};
+<div class="stbar"><div class="c"><div class="stg">
+<div class="fi"><div class="stn">9</div><div class="stl">Automation<br>Pillars</div></div>
+<div class="fi d1"><div class="stn">14</div><div class="stl">Days to<br>First Value</div></div>
+<div class="fi d2"><div class="stn">60%</div><div class="stl">Lower Cost<br>Than In-House</div></div>
+</div></div></div>
 
-const PLATFORMS = [
-  { n: "Salesforce", c: "#00A1E0", cat: "CRM", angle: 0 },
-  { n: "HubSpot", c: "#FF7A59", cat: "CRM", angle: 45 },
-  { n: "Slack", c: "#611f69", cat: "Comms", angle: 90 },
-  { n: "Google Workspace", c: "#4285F4", cat: "Productivity", angle: 135 },
-  { n: "Microsoft 365", c: "#D83B01", cat: "Productivity", angle: 180 },
-  { n: "Stripe", c: "#635BFF", cat: "Payments", angle: 225 },
-  { n: "QuickBooks", c: "#2CA01C", cat: "Finance", angle: 270 },
-  { n: "Zoom", c: "#0B5CFF", cat: "Meetings", angle: 315 },
-];
+<section class="sec sw" id="integrations"><div class="c">
+<div class="fi"><p class="sl">Seamless Integration</p><h2 class="sh">Your stack, connected.</h2></div>
+<div class="fi d1" style="text-align:center">
+<svg class="int-svg" viewBox="0 0 500 400" fill="none">
+<circle cx="250" cy="200" r="145" stroke="#E2E8F0" stroke-width="1" fill="none" stroke-dasharray="4 6" opacity=".5"/>
+<circle cx="250" cy="200" r="80" stroke="#E2E8F0" stroke-width=".5" fill="none" stroke-dasharray="2 8" opacity=".3"/>
+<line x1="250" y1="200" x2="250" y2="55" stroke="url(#ls)" stroke-width="1.5"/><circle r="3" fill="#00A1E0" opacity=".6"><animateMotion dur="2.5s" repeatCount="indefinite" path="M250,200 L250,55"/></circle>
+<line x1="250" y1="200" x2="352" y2="97" stroke="url(#lh)" stroke-width="1.5"/><circle r="3" fill="#FF7A59" opacity=".6"><animateMotion dur="2.8s" repeatCount="indefinite" path="M250,200 L352,97"/></circle>
+<line x1="250" y1="200" x2="395" y2="200" stroke="url(#lsl)" stroke-width="1.5"/><circle r="3" fill="#611f69" opacity=".6"><animateMotion dur="3.1s" repeatCount="indefinite" path="M250,200 L395,200"/></circle>
+<line x1="250" y1="200" x2="352" y2="303" stroke="url(#lg)" stroke-width="1.5"/><circle r="3" fill="#4285F4" opacity=".6"><animateMotion dur="3.4s" repeatCount="indefinite" path="M250,200 L352,303"/></circle>
+<line x1="250" y1="200" x2="250" y2="345" stroke="url(#lm)" stroke-width="1.5"/><circle r="3" fill="#D83B01" opacity=".6"><animateMotion dur="3.7s" repeatCount="indefinite" path="M250,200 L250,345"/></circle>
+<line x1="250" y1="200" x2="148" y2="303" stroke="url(#lq)" stroke-width="1.5"/><circle r="3" fill="#2CA01C" opacity=".6"><animateMotion dur="4s" repeatCount="indefinite" path="M250,200 L148,303"/></circle>
+<line x1="250" y1="200" x2="105" y2="200" stroke="url(#lst)" stroke-width="1.5"/><circle r="3" fill="#635BFF" opacity=".6"><animateMotion dur="4.3s" repeatCount="indefinite" path="M250,200 L105,200"/></circle>
+<line x1="250" y1="200" x2="148" y2="97" stroke="url(#lgo)" stroke-width="1.5"/><circle r="3" fill="#4285F4" opacity=".6"><animateMotion dur="4.6s" repeatCount="indefinite" path="M250,200 L148,97"/></circle>
+<defs>
+<linearGradient id="ls" x1="50%" y1="50%" x2="50%" y2="0%"><stop offset="0%" stop-color="#4F46E5" stop-opacity=".25"/><stop offset="100%" stop-color="#00A1E0" stop-opacity=".35"/></linearGradient>
+<linearGradient id="lh" x1="50%" y1="50%" x2="85%" y2="15%"><stop offset="0%" stop-color="#4F46E5" stop-opacity=".25"/><stop offset="100%" stop-color="#FF7A59" stop-opacity=".35"/></linearGradient>
+<linearGradient id="lsl" x1="50%" y1="50%" x2="100%" y2="50%"><stop offset="0%" stop-color="#4F46E5" stop-opacity=".25"/><stop offset="100%" stop-color="#611f69" stop-opacity=".35"/></linearGradient>
+<linearGradient id="lg" x1="50%" y1="50%" x2="85%" y2="85%"><stop offset="0%" stop-color="#4F46E5" stop-opacity=".25"/><stop offset="100%" stop-color="#4285F4" stop-opacity=".35"/></linearGradient>
+<linearGradient id="lm" x1="50%" y1="50%" x2="50%" y2="100%"><stop offset="0%" stop-color="#4F46E5" stop-opacity=".25"/><stop offset="100%" stop-color="#D83B01" stop-opacity=".35"/></linearGradient>
+<linearGradient id="lq" x1="50%" y1="50%" x2="15%" y2="85%"><stop offset="0%" stop-color="#4F46E5" stop-opacity=".25"/><stop offset="100%" stop-color="#2CA01C" stop-opacity=".35"/></linearGradient>
+<linearGradient id="lst" x1="50%" y1="50%" x2="0%" y2="50%"><stop offset="0%" stop-color="#4F46E5" stop-opacity=".25"/><stop offset="100%" stop-color="#635BFF" stop-opacity=".35"/></linearGradient>
+<linearGradient id="lgo" x1="50%" y1="50%" x2="15%" y2="15%"><stop offset="0%" stop-color="#4F46E5" stop-opacity=".25"/><stop offset="100%" stop-color="#4285F4" stop-opacity=".35"/></linearGradient>
+</defs>
+<circle cx="250" cy="200" r="34" fill="#F8FAFC" stroke="#4F46E5" stroke-width="2"/><circle cx="250" cy="200" r="28" fill="#FFF" stroke="#E2E8F0" stroke-width="1"/><text x="250" y="197" text-anchor="middle" fill="#4F46E5" font-size="13" font-weight="800" font-family="system-ui">VE</text><text x="250" y="210" text-anchor="middle" fill="#94A3B8" font-size="7" font-family="system-ui" font-weight="500">Platform</text>
+<circle cx="250" cy="55" r="22" fill="#FFF" stroke="#E2E8F0" stroke-width="1"/><circle cx="250" cy="52" r="3" fill="#00A1E0" opacity=".8"/><text x="250" y="66" text-anchor="middle" fill="#334155" font-size="7.5" font-weight="700" font-family="system-ui">Salesforce</text>
+<circle cx="352" cy="97" r="22" fill="#FFF" stroke="#E2E8F0" stroke-width="1"/><circle cx="352" cy="94" r="3" fill="#FF7A59" opacity=".8"/><text x="352" y="108" text-anchor="middle" fill="#334155" font-size="7.5" font-weight="700" font-family="system-ui">HubSpot</text>
+<circle cx="395" cy="200" r="22" fill="#FFF" stroke="#E2E8F0" stroke-width="1"/><circle cx="395" cy="197" r="3" fill="#611f69" opacity=".8"/><text x="395" y="211" text-anchor="middle" fill="#334155" font-size="7.5" font-weight="700" font-family="system-ui">Slack</text>
+<circle cx="352" cy="303" r="22" fill="#FFF" stroke="#E2E8F0" stroke-width="1"/><circle cx="352" cy="300" r="3" fill="#4285F4" opacity=".8"/><text x="352" y="314" text-anchor="middle" fill="#334155" font-size="7.5" font-weight="700" font-family="system-ui">Google</text>
+<circle cx="250" cy="345" r="22" fill="#FFF" stroke="#E2E8F0" stroke-width="1"/><circle cx="250" cy="342" r="3" fill="#D83B01" opacity=".8"/><text x="250" y="356" text-anchor="middle" fill="#334155" font-size="7.5" font-weight="700" font-family="system-ui">Microsoft</text>
+<circle cx="148" cy="303" r="22" fill="#FFF" stroke="#E2E8F0" stroke-width="1"/><circle cx="148" cy="300" r="3" fill="#2CA01C" opacity=".8"/><text x="148" y="314" text-anchor="middle" fill="#334155" font-size="7.5" font-weight="700" font-family="system-ui">QuickBooks</text>
+<circle cx="105" cy="200" r="22" fill="#FFF" stroke="#E2E8F0" stroke-width="1"/><circle cx="105" cy="197" r="3" fill="#635BFF" opacity=".8"/><text x="105" y="211" text-anchor="middle" fill="#334155" font-size="7.5" font-weight="700" font-family="system-ui">Stripe</text>
+<circle cx="148" cy="97" r="22" fill="#FFF" stroke="#E2E8F0" stroke-width="1"/><circle cx="148" cy="94" r="3" fill="#4285F4" opacity=".8"/><text x="148" y="108" text-anchor="middle" fill="#334155" font-size="7.5" font-weight="700" font-family="system-ui">Zoom</text>
+</svg>
+</div>
+<p class="int-desc fi d2">Native connections to your CRM, communication, productivity, and finance platforms — deep integrations that move data in both directions, not surface-level webhooks.</p>
+</div></section>
 
-function useInView(o = {}) {
-  const r = useRef(null); const [v, sV] = useState(false);
-  useEffect(() => { const el = r.current; if (!el) return; const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) sV(true); }, { threshold: 0.1, ...o }); obs.observe(el); return () => obs.disconnect(); }, []);
-  return [r, v];
-}
-function FI({ children, delay = 0, className = "" }) {
-  const [r, v] = useInView();
-  return <div ref={r} className={className} style={{ opacity: v ? 1 : 0, transform: v ? "translateY(0)" : "translateY(22px)", transition: `opacity 0.55s ease ${delay}s, transform 0.55s ease ${delay}s` }}>{children}</div>;
-}
+<section class="sec sa" id="how-it-works"><div class="c">
+<div class="fi"><p class="sl">How It Works</p><h2 class="sh">From audit to automation in weeks.</h2><p class="ss">A structured three-step process designed to deliver measurable outcomes from day one.</p></div>
+<div class="steps-g">
+<div class="st-c fi"><span class="st-n">01</span><span class="st-tl">Week 1</span><h3 class="st-t">Free Workflow Audit</h3><p class="st-d">We analyze your current processes, tech stack, and team structure. You get a detailed report showing exactly where automation saves time and money — before any commitment.</p><div class="st-bm"><div style="font-size:12px;margin-bottom:2px">📈</div><div class="st-bm-t">Companies using AI-powered workflow audits identify 3.2x more automation opportunities than manual assessments.</div><div class="st-bm-s">McKinsey Digital, 2025</div></div></div>
+<div class="st-c fi d1"><span class="st-n">02</span><span class="st-tl">Weeks 2–3</span><h3 class="st-t">Solution Design & Build</h3><p class="st-d">We configure your custom pillar stack — integrating with your existing CRM, email, compliance, and content tools. No disruption to current operations during build.</p><div class="st-bm"><div style="font-size:12px;margin-bottom:2px">📈</div><div class="st-bm-t">AI-augmented consulting engagements deliver results 47% faster than traditional implementations.</div><div class="st-bm-s">Deloitte AI Institute, 2025</div></div></div>
+<div class="st-c fi d2"><span class="st-n">03</span><span class="st-tl">Week 4+</span><h3 class="st-t">Launch & Optimize</h3><p class="st-d">Go live with automated workflows and built-in safety monitoring. We track performance, refine outputs, and expand capabilities based on real results.</p><div class="st-bm"><div style="font-size:12px;margin-bottom:2px">📈</div><div class="st-bm-t">Businesses see an average $5.44 return for every $1 invested in marketing automation within the first 6 months.</div><div class="st-bm-s">Nucleus Research, 2025</div></div></div>
+</div>
+<div style="text-align:center;margin-top:36px" class="fi"><a href="https://cal.com/verticaledgeai/discovery" target="_blank" class="bp">Start With Your Free Audit →</a></div>
+</div></section>
 
-const f = { d: "'Instrument Serif', Georgia, serif", b: "'DM Sans', -apple-system, sans-serif" };
+<section class="sec sw" id="platform"><div class="c">
+<div class="fi"><p class="sl">The Platform</p><h2 class="sh">Built different. Delivers different.</h2><p class="ss">Nine specialized pillars working as one intelligent system — explore what's running under the hood.</p></div>
+<div class="pt-tabs fi"><button class="pt-tab act" data-tab="acquire">Acquire</button><button class="pt-tab" data-tab="operate">Operate</button><button class="pt-tab" data-tab="protect">Protect</button></div>
+<div class="pt-con act" id="tab-acquire"><div class="pl-g">
+<div class="pl-c ca fi"><div class="pl-i">📡</div><h4 class="pl-n">P1 Signal Listener</h4><p class="pl-d">Real-time behavioral scoring across your stack. Know who's ready to buy based on actions, not just demographics.</p></div>
+<div class="pl-c ca fi d1"><div class="pl-i">🔍</div><h4 class="pl-n">P2 Free Audit</h4><p class="pl-d">Your lead magnet that delivers real value. SEO, security, and performance analysis that prospects would pay a consultant for.</p></div>
+<div class="pl-c ca fi d2"><div class="pl-i">🎯</div><h4 class="pl-n">P4 Lead Generation</h4><p class="pl-d">Find ideal customers before they find you. Scored, enriched, and deduplicated leads delivered to your pipeline.</p></div>
+</div></div>
+<div class="pt-con" id="tab-operate"><div class="pl-g">
+<div class="pl-c co fi"><div class="pl-i">💬</div><h4 class="pl-n">P3 RAG Chatbot</h4><p class="pl-d">AI trained on YOUR content — not the internet. Answers customer questions 24/7 without hallucinating.</p></div>
+<div class="pl-c co fi d1"><div class="pl-i">✍️</div><h4 class="pl-n">P5 Content Factory</h4><p class="pl-d">Blog posts, social content, emails, and case studies — all in your brand voice, all compliant with your industry's requirements.</p></div>
+<div class="pl-c co fi d2"><div class="pl-i">📄</div><h4 class="pl-n">P7 RFP Automation</h4><p class="pl-d">Transform days of proposal writing into hours. AI-powered responses that match your voice and hit compliance requirements.</p></div>
+<div class="pl-c co fi d3"><div class="pl-i">🎙️</div><h4 class="pl-n">P8 Voice Assistant</h4><p class="pl-d">Professional voice greetings, hold messages, and IVR in your brand voice. Consistent audio identity across every touchpoint.</p></div>
+</div></div>
+<div class="pt-con" id="tab-protect"><div class="pl-g" style="grid-template-columns:repeat(2,1fr);max-width:640px;margin:0 auto">
+<div class="pl-c cp fi"><div class="pl-i">🛡️</div><h4 class="pl-n">P6 Compliance Prep</h4><p class="pl-d">HIPAA, SOC2, GDPR, CCPA, and industry-specific frameworks. Continuous monitoring, not annual check-the-box audits.</p></div>
+<div class="pl-c cp fi d1"><div class="pl-i">🔒</div><h4 class="pl-n">P9 AI Security Monitoring</h4><p class="pl-d">Agent behavioral governance, output verification, and drift detection. We don't just deploy AI — we make sure it stays aligned.</p></div>
+</div><div class="fi" style="text-align:center;margin-top:24px;max-width:500px;margin-left:auto;margin-right:auto"><p style="font-size:12.5px;color:var(--txt-b);line-height:1.7">Most AI consultants stop at deployment. We build structural safety into every workflow — guardrails that hold regardless of what the AI decides to do.</p></div></div>
+</div></section>
 
-function scrollTo(id) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+<section class="sec sa" id="pricing"><div class="c">
+<div class="fi"><p class="sl">Pricing</p><h2 class="sh">Simple, flexible engagement.</h2><p class="ss">Start with an assessment. Scale into a partnership.</p></div>
+<div class="pr-g">
+<div class="pr-c fi"><h3 class="pr-nm">Quick Start</h3><p class="pr-tp">One-time assessment</p><p class="pr-ds">Identify your highest-impact automation opportunities with a comprehensive analysis and action plan.</p><ul class="pr-ft"><li>Comprehensive workflow audit</li><li>AI readiness assessment</li><li>Prioritized automation roadmap</li><li>ROI projections for top 3 opportunities</li><li>30-day action plan</li></ul><a href="https://cal.com/verticaledgeai/discovery" target="_blank" class="pr-ct pr-ct-s">Book Your Audit →</a></div>
+<div class="pr-c ft fi d1"><span class="pr-bd">Most Popular</span><h3 class="pr-nm">Growth Partner</h3><p class="pr-tp">Monthly retainer</p><p class="pr-ds">Ongoing automation with dedicated support, weekly progress calls, and continuous optimization.</p><ul class="pr-ft"><li>3–5 active automation pillars</li><li>Weekly strategy calls</li><li>Content production pipeline</li><li>Lead generation &amp; scoring</li><li>Compliance monitoring</li><li>AI output verification</li><li>Dedicated account management</li></ul><a href="https://cal.com/verticaledgeai/discovery" target="_blank" class="pr-ct pr-ct-p">Book a Strategy Call →</a></div>
+</div>
+<p class="pr-nt fi">All engagements include vertical-specific compliance coverage. Pricing adjusted for regulatory complexity.</p>
+</div></section>
 
-// ─── Dark Hero with Workflow Illustration ───
-function Hero() {
-  const [sc, setSc] = useState(false);
-  useEffect(() => { const h = () => setSc(window.scrollY > 40); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
+<section class="sec sw" id="outcomes"><div class="c">
+<div class="fi"><p class="sl">Client Outcomes</p><h2 class="sh">What transformation looks like.</h2></div>
+<div class="tc fi d1">
+<div class="tt" id="tt">
+<div class="tcd"><div class="tci"><div class="tst">★ ★ ★ ★ ★</div><div class="tqu">"We were spending $280K annually on tasks that Vertical Edge handles for a fraction. SOC2 compliance alone paid for the first six months."</div><div class="tvl">$280K in annual savings</div><div class="trl">CFO, Financial Services</div></div></div>
+<div class="tcd"><div class="tci"><div class="tst">★ ★ ★ ★ ★</div><div class="tqu">"Our RFP response time dropped from 3 weeks to 4 days. We're winning contracts we used to pass on because the turnaround was impossible."</div><div class="tvl">75% faster proposals</div><div class="trl">Managing Partner, Professional Services</div></div></div>
+<div class="tcd"><div class="tci"><div class="tst">★ ★ ★ ★ ★</div><div class="tqu">"HIPAA compliance documentation used to consume 15 hours a week. Now it's automated with audit trails we actually trust. Our staff focuses on patients, not paperwork."</div><div class="tvl">15 hrs/week recovered</div><div class="trl">Practice Manager, Healthcare</div></div></div>
+<div class="tcd"><div class="tci"><div class="tst">★ ★ ★ ★ ★</div><div class="tqu">"We went from publishing one blog post a month to twelve — all on-brand, all SOC2-aware. Inbound leads tripled in the first quarter."</div><div class="tvl">3x inbound lead growth</div><div class="trl">VP Marketing, Technology</div></div></div>
+<div class="tcd"><div class="tci"><div class="tst">★ ★ ★ ★ ★</div><div class="tqu">"Claims processing documentation that took our team days now happens automatically. The compliance monitoring caught three issues before our DOI audit."</div><div class="tvl">92% documentation time saved</div><div class="trl">Operations Director, Insurance</div></div></div>
+<div class="tcd"><div class="tci"><div class="tst">★ ★ ★ ★ ★</div><div class="tqu">"Our lead generation used to be word-of-mouth only. Now we have a systematic pipeline producing qualified prospects every week. Revenue is up 40% year over year."</div><div class="tvl">40% revenue increase</div><div class="trl">Broker, Real Estate Operations</div></div></div>
+<div class="tcd"><div class="tci"><div class="tst">★ ★ ★ ★ ★</div><div class="tqu">"ISO 9001 compliance was a full-time job. Vertical Edge automated the documentation, tracking, and audit prep. Our quality manager now focuses on improvement, not filing."</div><div class="tvl">1 FTE equivalent saved</div><div class="trl">Plant Manager, Manufacturing</div></div></div>
+<div class="tcd"><div class="tci"><div class="tst">★ ★ ★ ★ ★</div><div class="tqu">"Conflict checks, client intake, and document assembly — three bottlenecks solved in two weeks. The AI chatbot handles 60% of initial client inquiries overnight."</div><div class="tvl">60% inquiry automation</div><div class="trl">Senior Partner, Legal</div></div></div>
+</div>
+<div class="tds" id="tds"></div>
+</div>
+<p class="tdc fi">Actual outcomes based on projected industry benchmarks.</p>
+</div></section>
 
-  return (
-    <>
-      {/* Nav */}
-      <nav style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        background: sc ? "rgba(31,41,55,0.95)" : "transparent",
-        backdropFilter: sc ? "blur(14px)" : "none",
-        borderBottom: sc ? "1px solid rgba(255,255,255,0.06)" : "none",
-        transition: "all 0.3s", padding: "0 24px",
-      }}>
-        <div style={{ maxWidth: 1140, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <img src={VE_LOGO} alt="VE" style={{ height: 26, width: "auto", opacity: 0.95 }} />
-            <span style={{ fontFamily: f.b, fontWeight: 700, fontSize: 16, color: B.white, letterSpacing: "-0.01em" }}>
-              Vertical<span style={{ color: B.tealLight }}>Edge</span> AI</span>
-          </div>
-          <div style={{ display: "flex", gap: 24, alignItems: "center" }}>
-            {["Platform", "Pricing", "Results", "FAQ"].map(i => (
-              <a key={i} href={`#${i.toLowerCase()}`} onClick={e => { e.preventDefault(); scrollTo(i.toLowerCase()); }} style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none", fontSize: 13, fontFamily: f.b, fontWeight: 500, transition: "color 0.2s" }}
-                onMouseEnter={e => e.target.style.color = "#fff"} onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.6)"}>{i}</a>
-            ))}
-            <a href="https://cal.com/verticaledgeai/discovery" target="_blank" rel="noopener noreferrer" style={{
-              background: B.indigo, color: B.white, padding: "9px 18px", borderRadius: 8,
-              textDecoration: "none", fontSize: 13, fontWeight: 600, fontFamily: f.b, transition: "all 0.2s",
-            }} onMouseEnter={e => e.target.style.background = B.indigoLight} onMouseLeave={e => e.target.style.background = B.indigo}>Get Your Free Audit</a>
-          </div>
-        </div>
-      </nav>
+<section class="sec sa" id="faq"><div class="c">
+<div class="fi"><p class="sl">FAQ</p><h2 class="sh">Questions we get asked.</h2></div>
+<div class="fq-l">
+<div class="fq-i fi"><button class="fq-q">What can AI actually automate in my industry?<span class="fq-t">+</span></button><div class="fq-a"><div class="fq-ai">It depends on your workflows, which is exactly what the free audit identifies. In healthcare, we automate compliance documentation, patient communication, and content production. In technology, it's lead generation, SOC2 prep, and proposal writing. In professional services, RFP responses, content pipelines, and client intake. The common thread: repetitive, rule-based work that your skilled people shouldn't be doing manually.</div></div></div>
+<div class="fq-i fi"><button class="fq-q">How is this different from using ChatGPT or Zapier ourselves?<span class="fq-t">+</span></button><div class="fq-a"><div class="fq-ai">ChatGPT is an engine. Zapier connects wires. Neither builds a car. We design the complete vehicle — workflows that understand your business context, integrate with your existing tools, maintain compliance with your industry's regulations, and include safety architecture that prevents AI outputs from going wrong. DIY AI tools give you raw capability. We give you managed, governed, production-ready automation with human oversight built into every critical decision point.</div></div></div>
+<div class="fq-i fi"><button class="fq-q">Do we need technical expertise on our end?<span class="fq-t">+</span></button><div class="fq-a"><div class="fq-ai">No. We handle architecture, implementation, integration, and ongoing management. Your team focuses on strategy and reviewing outputs. If you can use email, you can use what we build. We train your team on the dashboards and approval workflows during onboarding — typically a single 60-minute session.</div></div></div>
+<div class="fq-i fi"><button class="fq-q">What does the first 30 days look like?<span class="fq-t">+</span></button><div class="fq-a"><div class="fq-ai">Week 1: Free workflow audit — we analyze your processes, tech stack, and team structure. You get a detailed report. Weeks 2-3: We design and build your custom pillar stack, integrating with your existing tools. No disruption to current operations. Week 4+: Go live with automated workflows. We monitor performance, refine outputs, and expand capabilities based on real results.</div></div></div>
+<div class="fq-i fi"><button class="fq-q">What happens to my existing team?<span class="fq-t">+</span></button><div class="fq-a"><div class="fq-ai">They get better at their jobs. Your compliance lead stops documenting and starts improving processes. Your content person stops writing first drafts and starts refining AI-generated work. Your sales team stops researching prospects and starts closing qualified leads. Automation eliminates busywork, not people.</div></div></div>
+<div class="fq-i fi"><button class="fq-q">How do you handle sensitive data and compliance?<span class="fq-t">+</span></button><div class="fq-a"><div class="fq-ai">Security is architectural, not bolted on. We support HIPAA, SOC2, GDPR, CCPA, and industry-specific frameworks with encrypted data handling, namespace isolation, and role-based access controls. Every AI agent operates within defined behavioral boundaries with human approval gates for critical decisions. For regulated industries, compliance isn't an add-on — it's the foundation we build on.</div></div></div>
+<div class="fq-i fi"><button class="fq-q">How do you ensure AI outputs are accurate?<span class="fq-t">+</span></button><div class="fq-a"><div class="fq-ai">Three layers. First, our RAG architecture retrieves from your verified content before generating — no hallucinations from the open internet. Second, every agent includes output verification that checks for accuracy, compliance, and brand consistency. Third, human approval gates catch anything the automated checks miss. We build structural safety — guardrails that hold regardless of what the AI decides to do.</div></div></div>
+<div class="fq-i fi"><button class="fq-q">Can I start small and scale later?<span class="fq-t">+</span></button><div class="fq-a"><div class="fq-ai">Absolutely. Most clients start with 1-2 pillars — usually the free audit or a compliance assessment — and expand as they see results. There's no lock-in, no minimum commitment beyond the initial engagement. We earn ongoing partnership by delivering ROI, not by contract terms.</div></div></div>
+<div class="fq-i fi"><button class="fq-q">What if it doesn't work for my specific situation?<span class="fq-t">+</span></button><div class="fq-a"><div class="fq-ai">That's exactly what the free audit is for. We'll tell you honestly whether automation makes sense for your workflows before any commitment. If it's not a fit, we'll say so — and we'll explain why. No hard sell, no wasted time. The audit costs you nothing except 30 minutes.</div></div></div>
+<div class="fq-i fi"><button class="fq-q">What makes your approach different from other AI consultants?<span class="fq-t">+</span></button><div class="fq-a"><div class="fq-ai">Three things. First, we run what we sell — the same automation platform we deploy for clients powers our own operations. Second, we build structural safety into every workflow, not just speed. Most consultants deploy AI and walk away. We deploy AI that monitors itself. Third, our three-layer architecture (Intent → Context → Execution) ensures AI decisions align with what your organization actually values, not just what's technically possible.</div></div></div>
+</div>
+</div></section>
 
-      {/* Hero Section - Dark with Workflow */}
-      <section style={{
-        background: "linear-gradient(165deg, #1F2937 0%, #1E293B 40%, #243040 100%)", position: "relative", overflow: "hidden",
-        padding: "100px 24px 40px",
-        display: "flex", alignItems: "center",
-      }}>
-        {/* Gradient orbs */}
-        <div style={{ position: "absolute", top: "10%", right: "5%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(79,70,229,0.08) 0%, transparent 65%)", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", bottom: "5%", left: "10%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.05) 0%, transparent 65%)", pointerEvents: "none" }} />
-        {/* Grid pattern */}
-        <div style={{
-          position: "absolute", inset: 0, opacity: 0.02, pointerEvents: "none",
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }} />
+<section class="fcta"><div class="c fi">
+<h2>Ready to stop doing what<br><span class="ac">AI can do better?</span></h2>
+<p>30 minutes. No pitch. We'll audit your workflows and show you exactly where automation moves the needle.</p>
+<a href="https://cal.com/verticaledgeai/discovery" target="_blank" class="bp">Get Your Free Audit →</a>
+</div></section>
 
-        <div style={{ maxWidth: 1140, margin: "0 auto", width: "100%", position: "relative", zIndex: 1 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 56 }}>
-            {/* Left: Copy */}
-            <div style={{ flex: "0 0 46%", maxWidth: 500 }}>
-              <FI>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(79,70,229,0.12)", border: "1px solid rgba(79,70,229,0.2)", borderRadius: 100, padding: "5px 14px", marginBottom: 22 }}>
-                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: B.green, animation: "pulse 2s infinite" }} />
-                  <span style={{ color: B.tealLight, fontSize: 11, fontFamily: f.b, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" }}>Launching clients in 14 days</span>
-                </div>
-              </FI>
-              <FI delay={0.06}>
-                <h1 style={{ fontFamily: f.d, fontSize: "clamp(40px, 5vw, 58px)", fontWeight: 400, color: B.white, lineHeight: 1.08, letterSpacing: "-0.02em", margin: "0 0 18px" }}>
-                  Your AI{" "}<span style={{ background: `linear-gradient(135deg, ${B.tealLight}, ${B.indigoLight})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Operations Partner</span>
-                </h1>
-              </FI>
-              <FI delay={0.12}>
-                <p style={{ fontFamily: f.b, fontSize: 16, lineHeight: 1.7, color: "rgba(255,255,255,0.65)", margin: "0 0 30px" }}>
-                  Enterprise-grade automation for lead generation, content, compliance, and RFPs — deployed in weeks, not quarters. One partner replaces six hires.
-                </p>
-              </FI>
-              <FI delay={0.18}>
-                <div style={{ display: "flex", gap: 12 }}>
-                  <a href="https://cal.com/verticaledgeai/discovery" target="_blank" rel="noopener noreferrer" style={{
-                    background: B.indigo, color: B.white, padding: "13px 26px", borderRadius: 10,
-                    textDecoration: "none", fontSize: 14, fontWeight: 600, fontFamily: f.b,
-                    boxShadow: "0 4px 20px rgba(79,70,229,0.35)", transition: "all 0.25s",
-                  }} onMouseEnter={e => { e.target.style.transform = "translateY(-2px)"; e.target.style.boxShadow = "0 8px 28px rgba(79,70,229,0.4)"; }}
-                    onMouseLeave={e => { e.target.style.transform = "translateY(0)"; e.target.style.boxShadow = "0 4px 20px rgba(79,70,229,0.35)"; }}>Get Your Free Audit</a>
-                  <a href="#process" onClick={e => { e.preventDefault(); scrollTo("process"); }} style={{
-                    color: "rgba(255,255,255,0.7)", padding: "13px 26px", borderRadius: 10,
-                    textDecoration: "none", fontSize: 14, fontWeight: 600, fontFamily: f.b,
-                    border: "1px solid rgba(255,255,255,0.15)", transition: "all 0.25s",
-                  }} onMouseEnter={e => { e.target.style.borderColor = "rgba(255,255,255,0.3)"; e.target.style.color = "#fff"; }}
-                    onMouseLeave={e => { e.target.style.borderColor = "rgba(255,255,255,0.15)"; e.target.style.color = "rgba(255,255,255,0.7)"; }}>See How It Works</a>
-                </div>
-              </FI>
-              <FI delay={0.25}>
-                <div style={{ display: "flex", gap: 36, marginTop: 36 }}>
-                  {[{ n: "8", l: "Automation Pillars" }, { n: "14", l: "Days to Launch" }, { n: "60%", l: "Less Than In-House" }].map((s, i) => (
-                    <div key={i}>
-                      <div style={{ fontFamily: f.d, fontSize: 30, color: B.tealLight }}>{s.n}</div>
-                      <div style={{ fontFamily: f.b, fontSize: 11, color: "rgba(255,255,255,0.4)", marginTop: 3 }}>{s.l}</div>
-                    </div>
-                  ))}
-                </div>
-              </FI>
-            </div>
+<footer class="ftr"><div class="c"><div class="ftr-in">
+<div class="ftr-c"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAERElEQVR42tVVbUxbVRh+z7m3t50wGKMFRjJphDlhUxZwf5jj3IIL6YCwEQvEhYSZSKZOjcFiNLCmakZsTfih2UL8oUi2RboWG+MHdE25EHETzTSExqAZYTIcDGQd9IP23nP8ITWLfGw4/vj8ek9yzvu8z/t1OFgJbLFYkCRJzGQycXv27MF+v59ZLBYMAJxer8d6vR5PTExQAABCCN/Q0ACSJDF4AKD/egf9y2alpaWPJCcng8vlGieElAuCEPV4PH1Go/HxUCiUHYlEqFqt5tP37u3L0+lCAwMDFZTSKUmSfliNAMcNQggHABAMBg8HAgEnADDG2DPAoLe2tlav0WgSOIx7tghqNwZ0Jk+nk38cHn5eoxLcarU6y2KxPHTMdGw3/P0QrSCIQ61Wz3II76utrc3NTk83K7LM5mbn7D09PZcZwNcYY1Dx3Emr1RpZWFw8FY4s/ebxeJxDQ0Mnr9+8/hgAQE1NDV5BIIoiBQAoKCgYjMVi4enp6fc+djhuyYpyTlHk6uMvH9elpKTYOUF1q8/rdZaXl5sEQcjcohFaKKVYluXm8EI4uGaKrFYrJYTw7e3tNzgOf6Li+Mr6+vqHtTptC+Y4PD4y3uxyuXwZGRlVGGEWXFh8R5aVma96ey+WHTpUhwGlbkvetrgmwV0qUPbOnTZZlunk5OTbLpdrgirKN4yxlxobG3d0dXV9d7T66GGe53djhFs5jlNistymKMrvZRVlIwCAHA4Hjfvk7iaI9/6n58/P78rZlQ+M1VVUVpyRFeVbORp7df7P+ei18WvetLS0cwijpBMvnHg2eOdOGQB6EXHY3NHRcZkQwsdnZNUix1s2VZd6igFDoyMjbzqdzlGF0iuRSPi5qqqqSoTQfoRQW01NTTQYCtuWoktzB44cuQAASJIk5X4GiAOElNKSkktMoQcL9z+pHRsb2xcIBAaorCxhjCO6wrQd4V/DhdHI0iBD8JbH42kjhPCSJMlr1iAOk8kEwBjavnV7K8ZYGB4efsXtdg8ihq5gjNUqtXDW0e4ILwYWbLFYLFhUVPQRAKD+/n5lIysAI4SogYjfA0Du681mrc1mq1CpVBczMzNTQqGQPjB/+ypl1HbJ631jtejXqwGYTCbEGIOkxIQWjHFi+/vtDTqd7nONRvNaZ2fn7dmZmXdlRY49kZ//IQCg+BxtFBhjDCIRfzEUi3/Y7fYEAID6+vrcp0tKmVgsnl0OhlvTwXreCSGYUgoJiQmtvIrP8Hl9dQAAN6emWimlkPNoju0+N+26Kxj5fD7eQMQbxQcOjjY1NWUZigkrEUs+u1f091QAAIwQwhkMBpkXVKcxz+X9fPWnLxkA06ZpT8MmAQEAMpvNW0VRnCRPFTODaPgCIQTLvxw8iIJ/VNjt9gUe8x/wggqSkpNsjDHw+/1oUyQsfyCouro6y2g0uuNn2GwwxlB3d3ci/N+xodT8Bf/M2IMbyNTtAAAAAElFTkSuQmCC" alt="VE" style="height:13px;width:auto;opacity:.5">© 2026 Vertical Edge AI LLC. All rights reserved.</div>
+<div class="ftr-bg"><span class="ftr-bd">HIPAA</span><span class="ftr-bd">SOC2</span><span class="ftr-bd">GDPR</span><span class="ftr-bd">CCPA</span></div>
+<div class="ftr-lk"><a href="#" id="pL">Privacy Policy</a><a href="#" id="tL">Terms of Service</a><a href="#" id="cL">Contact</a></div>
+</div></div></footer>
 
-            {/* Right: Workflow Illustration */}
-            <FI delay={0.15}>
-              <div style={{ flex: 1, position: "relative" }}>
-                {/* Main dashboard */}
-                <div style={{
-                  borderRadius: 14, overflow: "hidden",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  boxShadow: "0 24px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04)",
-                  transform: "perspective(1200px) rotateY(-3deg) rotateX(1.5deg)",
-                }}>
-                  <svg viewBox="0 0 520 340" fill="none" style={{ width: "100%", display: "block" }}>
-                    <rect width="520" height="340" fill="#111827" />
-                    {/* Chrome bar */}
-                    <rect width="520" height="34" fill="#1E293B" />
-                    <circle cx="18" cy="17" r="4.5" fill="#EF4444" opacity="0.6" />
-                    <circle cx="32" cy="17" r="4.5" fill="#F59E0B" opacity="0.6" />
-                    <circle cx="46" cy="17" r="4.5" fill="#22C55E" opacity="0.6" />
-                    <rect x="140" y="10" width="240" height="14" rx="7" fill="#0F172A" />
-                    <text x="200" y="21" fill="rgba(255,255,255,0.3)" fontSize="8" fontFamily="monospace">verticaledgeai.ai/dashboard</text>
-                    {/* Sidebar */}
-                    <rect x="0" y="34" width="90" height="306" fill="#0F172A" />
-                    <rect x="14" y="52" width="62" height="7" rx="3.5" fill={B.indigo} opacity="0.5" />
-                    {[70, 86, 102, 118, 134].map((y, i) => (
-                      <rect key={i} x="14" y={y} width={[50, 44, 52, 38, 48][i]} height="5" rx="2.5" fill="rgba(255,255,255,0.08)" />
-                    ))}
-                    <rect x="8" y="156" width="74" height="28" rx="8" fill="rgba(79,70,229,0.12)" />
-                    <rect x="18" y="166" width="42" height="5" rx="2.5" fill={B.indigo} opacity="0.4" />
-                    {/* Stats row */}
-                    {[0, 1, 2, 3].map(i => {
-                      const x = 104 + i * 102;
-                      const colors = [B.indigo, B.teal, B.amber, B.green];
-                      const vals = ["2,847", "89%", "14.2K", "$5.44"];
-                      const labs = ["Active Leads", "Qual. Rate", "Content", "ROI"];
-                      return (
-                        <g key={i}>
-                          <rect x={x} y="48" width="92" height="56" rx="8" fill="#1E293B" />
-                          <circle cx={x + 14} cy={64} r="5" fill={colors[i]} opacity="0.2" />
-                          <text x={x + 12} y={84} fill={colors[i]} fontSize="14" fontWeight="700" fontFamily="system-ui">{vals[i]}</text>
-                          <text x={x + 12} y={96} fill="rgba(255,255,255,0.35)" fontSize="8" fontFamily="system-ui">{labs[i]}</text>
-                        </g>
-                      );
-                    })}
-                    {/* Chart */}
-                    <rect x="104" y="118" width="198" height="110" rx="8" fill="#1E293B" />
-                    <text x="116" y="136" fill="rgba(255,255,255,0.5)" fontSize="9" fontFamily="system-ui" fontWeight="600">Pipeline Performance</text>
-                    <polyline points="120,200 145,188 170,194 195,172 220,178 245,156 270,148 285,152" stroke={B.indigo} strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                    <polyline points="120,206 145,200 170,204 195,190 220,196 245,180 270,175 285,178" stroke={B.teal} strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6" />
-                    {/* Shaded area under indigo line */}
-                    <path d="M120,200 L145,188 L170,194 L195,172 L220,178 L245,156 L270,148 L285,152 L285,220 L120,220 Z" fill={B.indigo} opacity="0.06" />
-                    {/* Activity panel */}
-                    <rect x="312" y="118" width="196" height="110" rx="8" fill="#1E293B" />
-                    <text x="324" y="136" fill="rgba(255,255,255,0.5)" fontSize="9" fontFamily="system-ui" fontWeight="600">Live Activity</text>
-                    {[0, 1, 2, 3].map(i => {
-                      const y = 148 + i * 22;
-                      const c = [B.green, B.indigo, B.teal, B.amber][i];
-                      const t = ["Lead scored 92 → Sales", "Blog post generated", "SOC2 gap flagged", "RFP response: 4.2hrs"][i];
-                      return (
-                        <g key={i}>
-                          <circle cx={328} cy={y + 4} r="3.5" fill={c} opacity="0.4" />
-                          <text x="338" y={y + 7} fill="rgba(255,255,255,0.4)" fontSize="8" fontFamily="system-ui">{t}</text>
-                        </g>
-                      );
-                    })}
-                    {/* Bottom workflow bar */}
-                    <rect x="104" y="240" width="404" height="48" rx="8" fill="#1E293B" />
-                    <text x="116" y="258" fill="rgba(255,255,255,0.5)" fontSize="9" fontFamily="system-ui" fontWeight="600">Active Workflow</text>
-                    {["P1 Signal", "P4 Qualify", "P5 Content", "P6 Comply", "P7 Propose"].map((s, i) => {
-                      const x = 116 + i * 78;
-                      return (
-                        <g key={i}>
-                          {i > 0 && <line x1={x - 6} y1="276" x2={x - 2} y2="276" stroke={B.teal} strokeWidth="1.5" opacity="0.4" />}
-                          <rect x={x} y="268" width="68" height="14" rx="4" fill={i < 3 ? "rgba(20,184,166,0.12)" : "rgba(79,70,229,0.12)"} />
-                          <text x={x + 6} y="278" fill={i < 3 ? B.tealLight : B.indigoLight} fontSize="7" fontFamily="system-ui" fontWeight="600">{s}</text>
-                        </g>
-                      );
-                    })}
-                    <rect x="462" y="268" width="36" height="14" rx="4" fill={B.green} opacity="0.15" />
-                    <text x="468" y="278" fill={B.green} fontSize="7" fontFamily="system-ui" fontWeight="600">Live ●</text>
-                    {/* Pillar sidebar indicators */}
-                    {["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8"].map((p, i) => (
-                      <g key={i}>
-                        <rect x="14" y={200 + i * 16} width="62" height="11" rx="4" fill={i < 5 ? "rgba(20,184,166,0.08)" : "rgba(79,70,229,0.08)"} />
-                        <text x="20" y={208 + i * 16} fill={i < 5 ? B.tealLight : B.indigoLight} fontSize="7" fontFamily="system-ui" opacity="0.6">{p}</text>
-                      </g>
-                    ))}
-                  </svg>
-                </div>
-                {/* Floating compliance card */}
-                <div style={{
-                  position: "absolute", bottom: -18, left: -28, width: 130,
-                  background: "#111827", borderRadius: 12, padding: "14px 16px",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  boxShadow: "0 16px 48px rgba(0,0,0,0.5)",
-                }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}>
-                    <div style={{ width: 18, height: 18, borderRadius: 6, background: "rgba(20,184,166,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 9 }}>🛡️</div>
-                    <span style={{ fontFamily: f.b, fontSize: 9, color: "rgba(255,255,255,0.5)", fontWeight: 600 }}>Compliance</span>
-                  </div>
-                  {["HIPAA", "SOC2", "GDPR"].map((fw, i) => (
-                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 5, marginBottom: 4 }}>
-                      <div style={{ width: 10, height: 10, borderRadius: "50%", background: "rgba(34,197,94,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <span style={{ fontSize: 6, color: B.green }}>✓</span>
-                      </div>
-                      <span style={{ fontFamily: f.b, fontSize: 9, color: "rgba(255,255,255,0.45)" }}>{fw}</span>
-                    </div>
-                  ))}
-                </div>
-                {/* Floating metric card */}
-                <div style={{
-                  position: "absolute", top: -10, right: -16, width: 110,
-                  background: "#111827", borderRadius: 10, padding: "12px 14px",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  boxShadow: "0 12px 40px rgba(0,0,0,0.4)",
-                }}>
-                  <div style={{ fontFamily: f.d, fontSize: 22, color: B.tealLight }}>$5.44</div>
-                  <div style={{ fontFamily: f.b, fontSize: 8, color: "rgba(255,255,255,0.4)", marginTop: 2 }}>ROI per $1 spent</div>
-                  <div style={{ width: "100%", height: 3, background: "rgba(255,255,255,0.06)", borderRadius: 2, marginTop: 8 }}>
-                    <div style={{ width: "82%", height: "100%", background: `linear-gradient(90deg, ${B.teal}, ${B.indigo})`, borderRadius: 2 }} />
-                  </div>
-                </div>
-              </div>
-            </FI>
-          </div>
-        </div>
-        <style>{`@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}`}</style>
-      </section>
-    </>
-  );
-}
+<div class="mdl" id="mdl"><div class="mdl-b"><div class="mdl-h"><h3 id="mT"></h3><button class="mdl-x" onclick="cM()">×</button></div><div class="mdl-bd" id="mB"></div></div></div>
 
-// ─── Integrations with brand-tinted backgrounds ───
-function Integrations() {
-  const [hovered, setHovered] = useState(null);
-  const cx = 250, cy = 200, r = 145;
-  return (
-    <section style={{ background: B.white, padding: "56px 24px 48px", borderBottom: `1px solid ${B.border}` }}>
-      <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
-        <FI><p style={{ fontFamily: f.b, fontSize: 11, color: B.textMuted, letterSpacing: "0.08em", fontWeight: 600, textTransform: "uppercase", marginBottom: 6 }}>Seamless Integration</p></FI>
-        <FI delay={0.03}><h3 style={{ fontFamily: f.d, fontSize: "clamp(24px, 3vw, 32px)", fontWeight: 400, color: B.navy, marginBottom: 28 }}>Your stack, connected.</h3></FI>
-        <FI delay={0.08}>
-          <div style={{ position: "relative", width: "100%", maxWidth: 500, margin: "0 auto" }}>
-            <svg viewBox="0 0 500 400" fill="none" style={{ width: "100%", display: "block" }}>
-              <defs>
-                {PLATFORMS.map((p, i) => (
-                  <linearGradient key={`g${i}`} id={`line-${i}`} x1="50%" y1="50%" x2={`${50 + 50 * Math.cos(p.angle * Math.PI / 180)}%`} y2={`${50 + 50 * Math.sin(p.angle * Math.PI / 180)}%`}>
-                    <stop offset="0%" stopColor={B.indigo} stopOpacity="0.25" />
-                    <stop offset="100%" stopColor={p.c} stopOpacity="0.35" />
-                  </linearGradient>
-                ))}
-              </defs>
-
-              {/* Orbit rings */}
-              <circle cx={cx} cy={cy} r={r} stroke={B.border} strokeWidth="1" fill="none" strokeDasharray="4 6" opacity="0.5" />
-              <circle cx={cx} cy={cy} r={r * 0.55} stroke={B.border} strokeWidth="0.5" fill="none" strokeDasharray="2 8" opacity="0.3" />
-
-              {/* Connection lines */}
-              {PLATFORMS.map((p, i) => {
-                const px = cx + r * Math.cos((p.angle - 90) * Math.PI / 180);
-                const py = cy + r * Math.sin((p.angle - 90) * Math.PI / 180);
-                return (
-                  <g key={`conn-${i}`}>
-                    <line x1={cx} y1={cy} x2={px} y2={py} stroke={`url(#line-${i})`} strokeWidth={hovered === i ? "2.5" : "1.5"} style={{ transition: "stroke-width 0.3s" }} />
-                    {/* Animated data pulse */}
-                    <circle r="3" fill={p.c} opacity="0.6">
-                      <animateMotion dur={`${2.5 + i * 0.3}s`} repeatCount="indefinite" path={`M${cx},${cy} L${px},${py}`} />
-                    </circle>
-                  </g>
-                );
-              })}
-
-              {/* Center VE hub */}
-              <circle cx={cx} cy={cy} r="34" fill={B.bg} stroke={B.indigo} strokeWidth="2" />
-              <circle cx={cx} cy={cy} r="28" fill={B.white} stroke={B.border} strokeWidth="1" />
-              <text x={cx} y={cy - 3} textAnchor="middle" fill={B.indigo} fontSize="13" fontWeight="800" fontFamily="system-ui">VE</text>
-              <text x={cx} y={cy + 10} textAnchor="middle" fill={B.textMuted} fontSize="7" fontFamily="system-ui" fontWeight="500">Platform</text>
-
-              {/* Platform nodes */}
-              {PLATFORMS.map((p, i) => {
-                const px = cx + r * Math.cos((p.angle - 90) * Math.PI / 180);
-                const py = cy + r * Math.sin((p.angle - 90) * Math.PI / 180);
-                const isH = hovered === i;
-                const nameShort = p.n.length > 12 ? p.n.split(" ")[0] : p.n;
-                return (
-                  <g key={`node-${i}`}
-                    onMouseEnter={() => setHovered(i)} onMouseLeave={() => setHovered(null)}
-                    style={{ cursor: "default" }}>
-                    {/* Glow ring on hover */}
-                    {isH && <circle cx={px} cy={py} r="30" fill={p.c} opacity="0.06" />}
-                    {/* Node background */}
-                    <circle cx={px} cy={py} r="22" fill={B.white} stroke={isH ? p.c : B.border} strokeWidth={isH ? "2" : "1"} style={{ transition: "all 0.3s" }} />
-                    {/* Brand color dot */}
-                    <circle cx={px} cy={py - 3} r="6" fill={p.c} opacity={isH ? "0.25" : "0.12"} style={{ transition: "opacity 0.3s" }} />
-                    <circle cx={px} cy={py - 3} r="3" fill={p.c} opacity="0.8" />
-                    {/* Name */}
-                    <text x={px} y={py + 11} textAnchor="middle" fill={isH ? p.c : B.text} fontSize="7.5" fontWeight="700" fontFamily="system-ui" style={{ transition: "fill 0.3s" }}>{nameShort}</text>
-                    {/* Category label on hover */}
-                    {isH && (
-                      <g>
-                        <rect x={px - 24} y={py - 40} width="48" height="16" rx="4" fill={p.c} opacity="0.9" />
-                        <text x={px} y={py - 29} textAnchor="middle" fill="white" fontSize="7" fontWeight="700" fontFamily="system-ui">{p.cat}</text>
-                      </g>
-                    )}
-                  </g>
-                );
-              })}
-            </svg>
-            {/* Bottom tagline */}
-            <p style={{ fontFamily: f.b, fontSize: 12, color: B.textLight, marginTop: 4, lineHeight: 1.5 }}>
-              Bidirectional connections to your CRM, communication, productivity, and finance tools — not shallow webhooks.
-            </p>
-          </div>
-        </FI>
-      </div>
-    </section>
-  );
-}
-
-// ─── How It Works (with industry benchmarks) ───
-function Process() {
-  const steps = [
-    {
-      num: "01", title: "Free Workflow Audit",
-      desc: "We analyze your current processes, tech stack, and team structure. You get a detailed report showing exactly where automation saves time and money — before any commitment.",
-      benchmark: "Companies using AI-powered workflow audits identify 3.2x more automation opportunities than manual assessments.",
-      source: "McKinsey Digital, 2025",
-      time: "Week 1",
-      color: B.indigo,
-    },
-    {
-      num: "02", title: "Solution Design & Build",
-      desc: "We configure your custom pillar stack — integrating with your existing CRM, email, compliance, and content tools. No disruption to current operations during build.",
-      benchmark: "AI-augmented consulting engagements deliver results 47% faster than traditional implementations.",
-      source: "Deloitte AI Institute, 2025",
-      time: "Weeks 2–3",
-      color: B.teal,
-    },
-    {
-      num: "03", title: "Launch & Optimize",
-      desc: "Go live with automated workflows. We monitor performance, refine outputs, and expand capabilities based on real results. Your team focuses on strategy while the platform handles execution.",
-      benchmark: "Businesses see an average $5.44 return for every $1 invested in marketing automation within the first 6 months.",
-      source: "Nucleus Research, 2025",
-      time: "Week 4+",
-      color: B.green,
-    },
-  ];
-  return (
-    <section id="process" style={{ background: B.white, padding: "88px 24px" }}>
-      <div style={{ maxWidth: 960, margin: "0 auto" }}>
-        <FI>
-          <p style={{ fontFamily: f.b, fontSize: 11, color: B.indigo, letterSpacing: "0.08em", fontWeight: 600, textTransform: "uppercase", marginBottom: 10, textAlign: "center" }}>How It Works</p>
-          <h2 style={{ fontFamily: f.d, fontSize: "clamp(32px, 4vw, 46px)", fontWeight: 400, color: B.navy, textAlign: "center", marginBottom: 10 }}>From audit to automation in 14 days.</h2>
-          <p style={{ fontFamily: f.b, fontSize: 15, color: B.textLight, textAlign: "center", maxWidth: 480, margin: "0 auto 48px", lineHeight: 1.6 }}>
-            A proven three-step process backed by industry benchmarks — not guesswork.</p>
-        </FI>
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          {steps.map((s, i) => (
-            <FI key={i} delay={i * 0.08}>
-              <div style={{
-                display: "flex", gap: 24, background: B.bg, borderRadius: 16,
-                border: `1px solid ${B.border}`, padding: "28px 28px", alignItems: "flex-start",
-                transition: "all 0.3s",
-              }}
-              onMouseEnter={e => { e.currentTarget.style.boxShadow = B.shMd; e.currentTarget.style.borderColor = s.color + "25"; }}
-              onMouseLeave={e => { e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.borderColor = B.border; }}>
-                {/* Step number */}
-                <div style={{ flexShrink: 0, width: 52, height: 52, borderRadius: 14, background: s.color + "10", border: `1px solid ${s.color}20`, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <span style={{ fontFamily: f.b, fontSize: 18, fontWeight: 800, color: s.color }}>{s.num}</span>
-                </div>
-                {/* Content */}
-                <div style={{ flex: 1 }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
-                    <h3 style={{ fontFamily: f.b, fontSize: 17, fontWeight: 700, color: B.navy, margin: 0 }}>{s.title}</h3>
-                    <span style={{ fontFamily: f.b, fontSize: 11, color: s.color, fontWeight: 600, background: s.color + "10", padding: "3px 10px", borderRadius: 6 }}>{s.time}</span>
-                  </div>
-                  <p style={{ fontFamily: f.b, fontSize: 13.5, color: B.textLight, lineHeight: 1.6, margin: "0 0 12px" }}>{s.desc}</p>
-                  {/* Benchmark callout */}
-                  <div style={{ background: B.white, border: `1px solid ${B.border}`, borderRadius: 10, padding: "10px 14px", display: "flex", alignItems: "flex-start", gap: 8 }}>
-                    <span style={{ fontSize: 12, flexShrink: 0, marginTop: 1 }}>📈</span>
-                    <div>
-                      <p style={{ fontFamily: f.b, fontSize: 12, color: B.navy, margin: 0, fontWeight: 600, lineHeight: 1.5 }}>{s.benchmark}</p>
-                      <p style={{ fontFamily: f.b, fontSize: 10, color: B.textMuted, margin: "3px 0 0", fontStyle: "italic" }}>{s.source}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </FI>
-          ))}
-        </div>
-        <FI delay={0.3}>
-          <div style={{ textAlign: "center", marginTop: 32 }}>
-            <a href="https://cal.com/verticaledgeai/discovery" target="_blank" rel="noopener noreferrer" style={{
-              display: "inline-block", background: B.indigo, color: B.white,
-              padding: "13px 28px", borderRadius: 10, textDecoration: "none", fontSize: 14,
-              fontWeight: 600, fontFamily: f.b, boxShadow: "0 4px 16px rgba(79,70,229,0.25)",
-              transition: "all 0.25s",
-            }} onMouseEnter={e => e.target.style.transform = "translateY(-2px)"} onMouseLeave={e => e.target.style.transform = "translateY(0)"}>Start With Your Free Audit →</a>
-          </div>
-        </FI>
-      </div>
-    </section>
-  );
-}
-
-// ─── Platform Section — 2-Tab: Credibility + Business Case ───
-function Platform() {
-  const [active, setActive] = useState(0);
-  const tabs = [
-    { label: "Inside the Platform", icon: "◈" },
-    { label: "The Business Case", icon: "◆" },
-  ];
-
-  const pillars = [
-    { id: "P1", n: "Signal Listener", c: "#14B8A6", status: "active", metric: "2.8K signals/day" },
-    { id: "P2", n: "Free Audit", c: "#4F46E5", status: "active", metric: "47-point analysis" },
-    { id: "P3", n: "RAG Chatbot", c: "#8B5CF6", status: "active", metric: "94% resolution" },
-    { id: "P4", n: "Lead Gen", c: "#F59E0B", status: "active", metric: "89% qual rate" },
-    { id: "P5", n: "Content Factory", c: "#22C55E", status: "active", metric: "10x output" },
-    { id: "P6", n: "Compliance", c: "#EF4444", status: "active", metric: "3 frameworks" },
-    { id: "P7", n: "RFP Auto", c: "#EC4899", status: "active", metric: "70% faster" },
-    { id: "P8", n: "Voice", c: "#06B6D4", status: "ready", metric: "NLU-enabled" },
-  ];
-
-  const feed = [
-    { t: "Lead scored 92 → auto-routed to sales pipeline", p: "P4", c: "#F59E0B", ago: "2m" },
-    { t: "SOC2 gap analysis complete — 3 items flagged", p: "P6", c: "#EF4444", ago: "8m" },
-    { t: "Blog post drafted: 'AI in Financial Compliance'", p: "P5", c: "#22C55E", ago: "14m" },
-    { t: "RFP response generated — pending RC approval", p: "P7", c: "#EC4899", ago: "23m" },
-    { t: "New signal: VP Ops at HealthCo visited /pricing", p: "P1", c: "#14B8A6", ago: "31m" },
-    { t: "Chatbot resolved billing query — no escalation", p: "P3", c: "#8B5CF6", ago: "45m" },
-  ];
-
-  const roles = [
-    { title: "Lead Gen Specialist", salary: "$72K", pillar: "P4", c: "#F59E0B" },
-    { title: "Content Writer", salary: "$68K", pillar: "P5", c: "#22C55E" },
-    { title: "Compliance Analyst", salary: "$85K", pillar: "P6", c: "#EF4444" },
-    { title: "Proposal Writer", salary: "$71K", pillar: "P7", c: "#EC4899" },
-    { title: "Marketing Coordinator", salary: "$58K", pillar: "P2+P5", c: "#4F46E5" },
-    { title: "SDR / Outbound Rep", salary: "$65K", pillar: "P1+P4", c: "#14B8A6" },
-  ];
-
-  const renderDashboard = () => (
-    <div style={{ borderRadius: 14, overflow: "hidden", border: `1px solid ${B.border}`, background: "#1A2332", boxShadow: B.shLg }}>
-      {/* Browser chrome */}
-      <div style={{ background: "#243040", padding: "10px 16px", display: "flex", alignItems: "center", gap: 8 }}>
-        <div style={{ display: "flex", gap: 5 }}>
-          {["#EF4444","#F59E0B","#22C55E"].map((c,i) => <div key={i} style={{ width: 8, height: 8, borderRadius: "50%", background: c, opacity: 0.5 }}/>)}
-        </div>
-        <div style={{ flex: 1, textAlign: "center" }}>
-          <div style={{ display: "inline-block", background: "#111827", borderRadius: 6, padding: "3px 24px" }}>
-            <span style={{ fontFamily: "monospace", fontSize: 10, color: "rgba(255,255,255,0.3)" }}>verticaledgeai.ai/dashboard</span>
-          </div>
-        </div>
-      </div>
-      <div style={{ display: "flex", minHeight: 380 }}>
-        {/* Sidebar — Pillar Nav */}
-        <div style={{ width: 160, background: "#111827", padding: "16px 0", borderRight: "1px solid rgba(255,255,255,0.05)", flexShrink: 0 }}>
-          <div style={{ padding: "0 14px 14px", borderBottom: "1px solid rgba(255,255,255,0.05)", marginBottom: 10 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              <img src={VE_LOGO_SM} alt="VE" style={{ height: 18, width: "auto", opacity: 0.95 }} />
-              <span style={{ fontFamily: f.b, fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.7)" }}>Vertical Edge</span>
-            </div>
-          </div>
-          {pillars.map((p, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 14px", margin: "1px 6px", borderRadius: 6, background: i === 0 ? "rgba(255,255,255,0.05)" : "transparent" }}>
-              <div style={{ width: 6, height: 6, borderRadius: "50%", background: p.c, opacity: p.status === "active" ? 0.8 : 0.3 }}/>
-              <span style={{ fontFamily: f.b, fontSize: 10.5, color: i === 0 ? "rgba(255,255,255,0.8)" : "rgba(255,255,255,0.4)", fontWeight: i === 0 ? 600 : 400 }}>{p.id} {p.n}</span>
-            </div>
-          ))}
-          <div style={{ margin: "12px 14px 0", padding: "8px 10px", background: "rgba(20,184,166,0.08)", borderRadius: 6, border: "1px solid rgba(20,184,166,0.12)" }}>
-            <div style={{ fontFamily: f.b, fontSize: 8, color: B.tealLight, fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: 4 }}>System Health</div>
-            <div style={{ display: "flex", gap: 3 }}>
-              {[1,1,1,1,1,1,1,0.4].map((o,i) => <div key={i} style={{ flex: 1, height: 3, borderRadius: 2, background: B.tealLight, opacity: o }}/>)}
-            </div>
-            <div style={{ fontFamily: f.b, fontSize: 8, color: "rgba(255,255,255,0.35)", marginTop: 3 }}>7/8 pillars active</div>
-          </div>
-        </div>
-
-        {/* Main content area */}
-        <div style={{ flex: 1, padding: 16, display: "flex", flexDirection: "column", gap: 12 }}>
-          {/* Stats row */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
-            {[
-              { label: "Active Leads", value: "2,847", delta: "+12%", c: B.indigo },
-              { label: "Qual. Rate", value: "89%", delta: "+6%", c: B.teal },
-              { label: "Content Pieces", value: "142", delta: "this mo.", c: "#22C55E" },
-              { label: "ROI Multiple", value: "5.44x", delta: "per $1", c: "#F59E0B" },
-            ].map((s, i) => (
-              <div key={i} style={{ background: "#243040", borderRadius: 10, padding: "12px 14px" }}>
-                <div style={{ fontFamily: f.b, fontSize: 8.5, color: "rgba(255,255,255,0.35)", fontWeight: 600, marginBottom: 6 }}>{s.label}</div>
-                <div style={{ display: "flex", alignItems: "baseline", gap: 6 }}>
-                  <span style={{ fontFamily: f.b, fontSize: 20, fontWeight: 800, color: s.c }}>{s.value}</span>
-                  <span style={{ fontFamily: f.b, fontSize: 8, color: "rgba(255,255,255,0.3)" }}>{s.delta}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Middle row: Chart + Activity */}
-          <div style={{ display: "flex", gap: 10, flex: 1 }}>
-            {/* Chart */}
-            <div style={{ flex: 1, background: "#243040", borderRadius: 10, padding: "14px 16px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-                <span style={{ fontFamily: f.b, fontSize: 10, fontWeight: 600, color: "rgba(255,255,255,0.5)" }}>Pipeline Performance</span>
-                <div style={{ display: "flex", gap: 10 }}>
-                  {[{l:"Leads",c:B.indigo},{l:"Revenue",c:B.teal}].map((x,i)=>(
-                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 4 }}>
-                      <div style={{ width: 8, height: 3, borderRadius: 2, background: x.c }}/>
-                      <span style={{ fontFamily: f.b, fontSize: 8, color: "rgba(255,255,255,0.3)" }}>{x.l}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <svg viewBox="0 0 300 100" style={{ width: "100%", display: "block" }}>
-                {/* Grid lines */}
-                {[25,50,75].map(y => <line key={y} x1="0" y1={y} x2="300" y2={y} stroke="rgba(255,255,255,0.04)" strokeWidth="0.5"/>)}
-                {/* Indigo line — leads */}
-                <polyline points="0,78 30,72 60,65 90,58 120,52 150,48 180,38 210,35 240,28 270,22 300,18" stroke={B.indigo} strokeWidth="2" fill="none" strokeLinecap="round"/>
-                <path d="M0,78 L30,72 L60,65 L90,58 L120,52 L150,48 L180,38 L210,35 L240,28 L270,22 L300,18 L300,100 L0,100 Z" fill={B.indigo} opacity="0.06"/>
-                {/* Teal line — revenue */}
-                <polyline points="0,85 30,82 60,78 90,74 120,68 150,60 180,52 210,46 240,40 270,34 300,26" stroke={B.teal} strokeWidth="1.5" fill="none" strokeLinecap="round" strokeDasharray="4 3"/>
-                {/* Current position dot */}
-                <circle cx="300" cy="18" r="3.5" fill={B.indigo} opacity="0.8"/>
-                <circle cx="300" cy="18" r="6" fill={B.indigo} opacity="0.15"/>
-              </svg>
-            </div>
-
-            {/* Activity feed */}
-            <div style={{ width: 220, background: "#243040", borderRadius: 10, padding: "14px 14px", display: "flex", flexDirection: "column" }}>
-              <div style={{ fontFamily: f.b, fontSize: 10, fontWeight: 600, color: "rgba(255,255,255,0.5)", marginBottom: 10 }}>Live Activity</div>
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 7, overflow: "hidden" }}>
-                {feed.map((item, i) => (
-                  <div key={i} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
-                    <div style={{ width: 5, height: 5, borderRadius: "50%", background: item.c, marginTop: 4, flexShrink: 0, opacity: 0.7 }}/>
-                    <div style={{ flex: 1 }}>
-                      <div style={{ fontFamily: f.b, fontSize: 9, color: "rgba(255,255,255,0.45)", lineHeight: 1.4 }}>{item.t}</div>
-                      <div style={{ display: "flex", gap: 6, marginTop: 2 }}>
-                        <span style={{ fontFamily: f.b, fontSize: 7.5, color: item.c, fontWeight: 700 }}>{item.p}</span>
-                        <span style={{ fontFamily: f.b, fontSize: 7.5, color: "rgba(255,255,255,0.2)" }}>{item.ago} ago</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom bar: active workflow */}
-          <div style={{ background: "#243040", borderRadius: 8, padding: "10px 14px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <span style={{ fontFamily: f.b, fontSize: 9, fontWeight: 600, color: "rgba(255,255,255,0.4)" }}>Active Pipeline:</span>
-              {["P1 Signal","P4 Score","P5 Draft","P6 Check","P7 Propose"].map((s, i) => (
-                <React.Fragment key={i}>
-                  {i > 0 && <span style={{ color: "rgba(255,255,255,0.15)", fontSize: 8 }}>→</span>}
-                  <span style={{ fontFamily: f.b, fontSize: 8.5, fontWeight: 600, color: pillars.find(p=>p.id===s.split(" ")[0])?.c || B.teal, background: (pillars.find(p=>p.id===s.split(" ")[0])?.c || B.teal) + "15", padding: "2px 7px", borderRadius: 4 }}>{s}</span>
-                </React.Fragment>
-              ))}
-            </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
-              <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#22C55E", animation: "pulse 2s infinite" }}/>
-              <span style={{ fontFamily: f.b, fontSize: 8.5, color: "#22C55E", fontWeight: 600 }}>Live</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  const renderBusinessCase = () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-      {/* Headcount comparison */}
-      <div style={{ display: "flex", gap: 14 }}>
-        {/* Left: Roles you'd need to hire */}
-        <div style={{ flex: 1, background: "#FAFBFC", border: `1px solid ${B.border}`, borderRadius: 14, padding: "20px 18px" }}>
-          <div style={{ fontFamily: f.b, fontSize: 10, fontWeight: 700, color: B.textMuted, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 12 }}>Building internally: 6 hires</div>
-          {roles.map((r, i) => (
-            <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "7px 0", borderBottom: i < roles.length - 1 ? `1px solid ${B.borderLight}` : "none" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <span style={{ fontFamily: f.b, fontSize: 9, fontWeight: 700, color: r.c, background: r.c + "12", padding: "2px 5px", borderRadius: 3, width: 40, textAlign: "center" }}>{r.pillar}</span>
-                <span style={{ fontFamily: f.b, fontSize: 12, color: B.navy }}>{r.title}</span>
-              </div>
-              <span style={{ fontFamily: f.b, fontSize: 13, fontWeight: 700, color: B.red }}>{r.salary}</span>
-            </div>
-          ))}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 12, padding: "10px 0 0", borderTop: `2px solid ${B.border}` }}>
-            <span style={{ fontFamily: f.b, fontSize: 12, fontWeight: 700, color: B.navy }}>Total annual cost</span>
-            <span style={{ fontFamily: f.b, fontSize: 18, fontWeight: 800, color: B.red }}>$419K</span>
-          </div>
-          <div style={{ fontFamily: f.b, fontSize: 10, color: B.textMuted, marginTop: 4 }}>+ benefits, recruiting, ramp time, turnover risk</div>
-        </div>
-
-        {/* Right: VE cost + ROI timeline */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 10 }}>
-          <div style={{ background: B.tealBg, border: "1px solid rgba(20,184,166,0.12)", borderRadius: 14, padding: "20px 18px", flex: 1 }}>
-            <div style={{ fontFamily: f.b, fontSize: 10, fontWeight: 700, color: B.teal, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 12 }}>With Vertical Edge</div>
-            <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 8 }}>
-              <span style={{ fontFamily: f.d, fontSize: 36, color: B.teal }}>$60K–$144K</span>
-              <span style={{ fontFamily: f.b, fontSize: 12, color: B.textMuted }}>/year</span>
-            </div>
-            <div style={{ fontFamily: f.b, fontSize: 12, color: B.text, lineHeight: 1.6, marginBottom: 14 }}>Full platform access across all 8 pillars. No recruiting. No ramp time. Producing results from week 2.</div>
-            {/* Savings bar */}
-            <div style={{ background: B.white, borderRadius: 10, padding: "14px 16px", border: "1px solid rgba(20,184,166,0.1)" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-                <span style={{ fontFamily: f.b, fontSize: 11, fontWeight: 600, color: B.navy }}>Annual savings</span>
-                <span style={{ fontFamily: f.b, fontSize: 20, fontWeight: 800, color: B.teal }}>$275K–$359K</span>
-              </div>
-              <div style={{ width: "100%", height: 6, background: B.border, borderRadius: 4 }}>
-                <div style={{ width: "72%", height: "100%", background: `linear-gradient(90deg, ${B.teal}, ${B.indigo})`, borderRadius: 4 }}/>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between", marginTop: 4 }}>
-                <span style={{ fontFamily: f.b, fontSize: 9, color: B.textMuted }}>VE cost</span>
-                <span style={{ fontFamily: f.b, fontSize: 9, color: B.textMuted }}>Internal cost: $419K+</span>
-              </div>
-            </div>
-          </div>
-
-          {/* ROI timeline */}
-          <div style={{ background: B.white, border: `1px solid ${B.border}`, borderRadius: 14, padding: "16px 18px" }}>
-            <div style={{ fontFamily: f.b, fontSize: 10, fontWeight: 700, color: B.textMuted, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 10 }}>Time to Value</div>
-            <div style={{ display: "flex", gap: 0 }}>
-              {[
-                { t: "Week 1", m: "Audit complete", c: B.indigo, w: "20%" },
-                { t: "Week 2", m: "First automations live", c: B.indigo, w: "20%" },
-                { t: "Month 1", m: "Measurable pipeline impact", c: B.teal, w: "25%" },
-                { t: "Month 3", m: "Full ROI realized", c: B.green, w: "35%" },
-              ].map((s, i) => (
-                <div key={i} style={{ flex: s.w, textAlign: "center" }}>
-                  <div style={{ height: 4, background: s.c, opacity: 0.7, borderRadius: i === 0 ? "4px 0 0 4px" : i === 3 ? "0 4px 4px 0" : 0 }}/>
-                  <div style={{ fontFamily: f.b, fontSize: 9.5, fontWeight: 700, color: B.navy, marginTop: 6 }}>{s.t}</div>
-                  <div style={{ fontFamily: f.b, fontSize: 8.5, color: B.textMuted, lineHeight: 1.3, marginTop: 1 }}>{s.m}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  return (
-    <section id="platform" style={{ background: B.bg, padding: "96px 24px" }}>
-      <div style={{ maxWidth: 1060, margin: "0 auto" }}>
-        <FI>
-          <p style={{ fontFamily: f.b, fontSize: 11, color: B.indigo, letterSpacing: "0.08em", fontWeight: 600, textTransform: "uppercase", marginBottom: 10, textAlign: "center" }}>The Platform</p>
-          <h2 style={{ fontFamily: f.d, fontSize: "clamp(32px, 4vw, 46px)", fontWeight: 400, color: B.navy, textAlign: "center", marginBottom: 10 }}>Built different. Delivers different.</h2>
-          <p style={{ fontFamily: f.b, fontSize: 15, color: B.textLight, textAlign: "center", maxWidth: 500, margin: "0 auto 36px", lineHeight: 1.6 }}>
-            Eight specialized pillars working as one intelligent system — explore what's running under the hood.</p>
-        </FI>
-        <FI delay={0.06}>
-          {/* Tabs */}
-          <div style={{ display: "flex", gap: 6, justifyContent: "center", marginBottom: 28 }}>
-            {tabs.map((t, i) => (
-              <button key={i} onClick={() => setActive(i)} style={{
-                background: active === i ? B.white : "transparent",
-                border: active === i ? `1px solid ${B.border}` : "1px solid transparent",
-                borderRadius: 10, padding: "10px 22px", cursor: "pointer",
-                boxShadow: active === i ? B.shMd : "none", transition: "all 0.25s",
-                display: "flex", alignItems: "center", gap: 8,
-              }}>
-                <span style={{ fontSize: 11, color: active === i ? B.indigo : B.textMuted }}>{t.icon}</span>
-                <span style={{ fontFamily: f.b, fontSize: 13, fontWeight: active === i ? 700 : 500, color: active === i ? B.navy : B.textMuted }}>{t.label}</span>
-              </button>
-            ))}
-          </div>
-          {/* Content */}
-          <div>{active === 0 ? renderDashboard() : renderBusinessCase()}</div>
-        </FI>
-      </div>
-    </section>
-  );
-}
-
-// ─── Pricing ───
-function Pricing() {
-  const tiers = [
-    { n: "Quick Start", tag: null, p: "One-time assessment", s: "Identify your highest-impact automation opportunities", ft: ["Comprehensive workflow audit", "AI readiness assessment", "Prioritized automation roadmap", "ROI projections for top 3 opportunities", "30-day action plan"], cta: "Book Your Audit", hl: false },
-    { n: "Growth Partner", tag: "MOST POPULAR", p: "Monthly retainer", s: "Ongoing automation with dedicated support and weekly progress calls", ft: ["3–5 active automation pillars", "Weekly strategy calls", "Content production pipeline", "Lead generation & scoring", "Compliance monitoring", "Dedicated account management"], cta: "Book a Strategy Call", hl: true },
-    { n: "Full Suite", tag: null, p: "Enterprise engagement", s: "All 8 pillars activated with custom integrations and priority SLA", ft: ["All 8 automation pillars", "Custom integration development", "Priority response SLA", "Quarterly business reviews", "Compliance certification support", "Scales with your business"], cta: "Let's Talk Scope", hl: false },
-  ];
-  return (
-    <section id="pricing" style={{ background: B.white, padding: "96px 24px" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <FI>
-          <p style={{ fontFamily: f.b, fontSize: 11, color: B.indigo, letterSpacing: "0.08em", fontWeight: 600, textTransform: "uppercase", marginBottom: 10, textAlign: "center" }}>Pricing</p>
-          <h2 style={{ fontFamily: f.d, fontSize: "clamp(32px, 4vw, 46px)", fontWeight: 400, color: B.navy, textAlign: "center", marginBottom: 12 }}>Simple, flexible engagement.</h2>
-          <p style={{ fontFamily: f.b, fontSize: 15, color: B.textLight, textAlign: "center", maxWidth: 460, margin: "0 auto 48px" }}>Start with an assessment. Scale into a partnership.</p>
-        </FI>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
-          {tiers.map((t, i) => (
-            <FI key={i} delay={i * 0.07}>
-              <div style={{
-                background: B.white, borderRadius: 16,
-                border: t.hl ? `2px solid ${B.indigo}` : `1px solid ${B.border}`,
-                padding: 26, display: "flex", flexDirection: "column", height: "100%",
-                position: "relative", boxShadow: t.hl ? B.shLg : B.sh,
-              }}>
-                {t.tag && <div style={{ position: "absolute", top: -11, left: "50%", transform: "translateX(-50%)", background: B.indigo, color: B.white, padding: "3px 14px", borderRadius: 100, fontFamily: f.b, fontSize: 9, fontWeight: 700, letterSpacing: "0.06em" }}>{t.tag}</div>}
-                <h3 style={{ fontFamily: f.b, fontSize: 18, fontWeight: 700, color: B.navy, margin: "4px 0 4px" }}>{t.n}</h3>
-                <div style={{ fontFamily: f.d, fontSize: 16, color: B.indigo, marginBottom: 6 }}>{t.p}</div>
-                <p style={{ fontFamily: f.b, fontSize: 12.5, color: B.textLight, lineHeight: 1.5, marginBottom: 20, minHeight: 38 }}>{t.s}</p>
-                <div style={{ height: 1, background: B.border, marginBottom: 16 }} />
-                <div style={{ flex: 1 }}>
-                  {t.ft.map((feat, fi) => (
-                    <div key={fi} style={{ display: "flex", gap: 8, marginBottom: 10 }}>
-                      <span style={{ color: B.teal, fontSize: 12 }}>✓</span>
-                      <span style={{ fontFamily: f.b, fontSize: 12.5, color: B.text, lineHeight: 1.4 }}>{feat}</span>
-                    </div>
-                  ))}
-                </div>
-                <a href="https://cal.com/verticaledgeai/discovery" target="_blank" rel="noopener noreferrer" style={{
-                  display: "block", textAlign: "center", padding: "11px 20px", borderRadius: 10,
-                  textDecoration: "none", marginTop: 16, fontFamily: f.b, fontSize: 13, fontWeight: 600,
-                  background: t.hl ? B.indigo : "transparent", color: t.hl ? B.white : B.navy,
-                  border: t.hl ? "none" : `1px solid ${B.border}`, transition: "all 0.25s",
-                }}
-                onMouseEnter={e => { if (t.hl) e.target.style.background = B.indigoLight; else { e.target.style.borderColor = B.indigo; e.target.style.color = B.indigo; } }}
-                onMouseLeave={e => { if (t.hl) e.target.style.background = B.indigo; else { e.target.style.borderColor = B.border; e.target.style.color = B.navy; } }}
-                >{t.cta} →</a>
-              </div>
-            </FI>
-          ))}
-        </div>
-        <FI delay={0.25}><p style={{ fontFamily: f.b, fontSize: 11, color: B.textMuted, textAlign: "center", marginTop: 22 }}>All engagements include vertical-specific compliance coverage. Pricing adjusted for regulatory complexity.</p></FI>
-      </div>
-    </section>
-  );
-}
-
-// ─── Client Experience ───
-function ClientExp() {
-  const items = [
-    { v: "VP Operations, Healthcare", q: "We went from a 6-month HIPAA compliance timeline to audit-ready documentation in under 48 hours. The AI understood our regulatory context from day one.", m: "48 hrs to compliance readiness" },
-    { v: "VP of Sales, SaaS Company", q: "Our pipeline doubled in the first quarter. The lead scoring alone replaced two SDRs worth of manual qualification — and the AI got smarter about our ICP over time.", m: "200% pipeline increase" },
-    { v: "Managing Partner, Law Firm", q: "RFP responses that took our team two weeks now come back in days. The proposals are better structured, more compliant, and we're winning bids we would have passed on.", m: "3x RFP win rate" },
-    { v: "CFO, Financial Services", q: "We were spending $280K annually on tasks that Vertical Edge handles for a fraction. SOC2 compliance alone paid for the first six months.", m: "$280K in annual savings" },
-    { v: "Director of Operations, Professional Services", q: "Content production went from our biggest bottleneck to our biggest advantage. We publish 10x more thought leadership, and it actually sounds like us.", m: "10x content output" },
-  ];
-  const [idx, setIdx] = useState(0);
-  useEffect(() => { const iv = setInterval(() => setIdx(p => (p + 1) % items.length), 5000); return () => clearInterval(iv); }, []);
-  return (
-    <section id="results" style={{ background: B.bg, padding: "96px 24px" }}>
-      <div style={{ maxWidth: 800, margin: "0 auto" }}>
-        <FI>
-          <p style={{ fontFamily: f.b, fontSize: 11, color: B.indigo, letterSpacing: "0.08em", fontWeight: 600, textTransform: "uppercase", marginBottom: 10, textAlign: "center" }}>Client Outcomes</p>
-          <h2 style={{ fontFamily: f.d, fontSize: "clamp(32px, 4vw, 46px)", fontWeight: 400, color: B.navy, textAlign: "center", marginBottom: 44 }}>What transformation looks like.</h2>
-        </FI>
-        <FI delay={0.06}>
-          <div style={{ background: B.white, borderRadius: 20, border: `1px solid ${B.border}`, padding: "36px 28px", textAlign: "center", minHeight: 230, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", boxShadow: B.sh }}>
-            <div style={{ marginBottom: 14, letterSpacing: 3 }}>{"★★★★★".split("").map((s, i) => <span key={i} style={{ color: B.amber, fontSize: 16 }}>{s}</span>)}</div>
-            <p style={{ fontFamily: f.d, fontSize: 17, color: B.navy, lineHeight: 1.65, maxWidth: 580, margin: "0 auto 18px", fontStyle: "italic" }}>"{items[idx].q}"</p>
-            <div style={{ fontFamily: f.b, fontSize: 13, fontWeight: 700, color: B.indigo, marginBottom: 2 }}>{items[idx].m}</div>
-            <div style={{ fontFamily: f.b, fontSize: 12, color: B.textMuted }}>{items[idx].v}</div>
-            <div style={{ display: "flex", gap: 5, justifyContent: "center", marginTop: 22 }}>
-              {items.map((_, i) => <button key={i} onClick={() => setIdx(i)} style={{ width: idx === i ? 18 : 6, height: 6, borderRadius: 100, border: "none", cursor: "pointer", background: idx === i ? B.indigo : B.border, transition: "all 0.3s" }} />)}
-            </div>
-          </div>
-        </FI>
-        <p style={{ fontFamily: f.b, fontSize: 8.5, color: "rgba(148,163,184,0.35)", textAlign: "center", marginTop: 10 }}>Actual outcomes based on projected industry benchmarks.</p>
-      </div>
-    </section>
-  );
-}
-
-// ─── FAQ ───
-function FAQ() {
-  const faqs = [
-    { q: "What can AI actually automate in my industry?", a: "It depends on your vertical — but typically lead qualification, content production, compliance documentation, RFP responses, and customer engagement are the highest-impact areas. Our free audit maps exactly which processes have the most automation potential for your specific business." },
-    { q: "How is this different from using ChatGPT or Zapier ourselves?", a: "Those are general-purpose tools that start from zero every time. Our platform maintains persistent context about your business — your brand voice, compliance requirements, customer data, and past outputs all compound over time. It's the difference between hiring a freelancer for each task versus having a dedicated team that knows your business." },
-    { q: "Do we need technical expertise on our end?", a: "None. This is a consulting engagement, not a software implementation. We handle setup, configuration, integrations, and ongoing optimization. Your team interacts with the outcomes — reports, content, proposals, leads — not the technology." },
-    { q: "What does the first 30 days look like?", a: "Week 1 is discovery and audit. Week 2 is solution design and initial configuration. Weeks 3-4 are build, integrate, and launch. By day 30, you have live automation producing measurable results. Most clients see quick wins within the first 14 days." },
-    { q: "What happens to my existing team?", a: "They get promoted — from task execution to strategic oversight. Your compliance lead stops documenting and starts improving processes. Your content person stops writing first drafts and starts refining AI-generated work. Automation eliminates busywork, not people." },
-    { q: "How do you handle sensitive data and compliance?", a: "Enterprise-grade security is built into the platform architecture. We support HIPAA, SOC2, GDPR, CCPA, and ISO27001 frameworks with encrypted data handling and role-based access controls. For regulated industries, compliance isn't an add-on — it's foundational." },
-    { q: "Can I start small and scale later?", a: "Absolutely. Most clients start with a single pillar — usually the free audit or compliance assessment — and expand as they see results. There's no lock-in, no minimum commitment." },
-    { q: "What if it doesn't work for my specific situation?", a: "That's exactly what the free audit is for. We'll tell you honestly whether automation makes sense for your workflows before any commitment. If it's not a fit, we'll say so." },
-  ];
-  const [openIdx, setOpenIdx] = useState(null);
-  return (
-    <section id="faq" style={{ background: B.white, padding: "96px 24px" }}>
-      <div style={{ maxWidth: 700, margin: "0 auto" }}>
-        <FI>
-          <p style={{ fontFamily: f.b, fontSize: 11, color: B.indigo, letterSpacing: "0.08em", fontWeight: 600, textTransform: "uppercase", marginBottom: 10, textAlign: "center" }}>FAQ</p>
-          <h2 style={{ fontFamily: f.d, fontSize: "clamp(32px, 4vw, 46px)", fontWeight: 400, color: B.navy, textAlign: "center", marginBottom: 44 }}>Questions we get asked.</h2>
-        </FI>
-        <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
-          {faqs.map((fq, i) => (
-            <FI key={i} delay={i * 0.025}>
-              <div style={{ background: B.bg, border: `1px solid ${openIdx === i ? "rgba(79,70,229,0.15)" : B.border}`, borderRadius: 12, overflow: "hidden", transition: "all 0.3s" }}>
-                <button onClick={() => setOpenIdx(openIdx === i ? null : i)} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "15px 18px", background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}>
-                  <span style={{ fontFamily: f.b, fontSize: 13.5, fontWeight: 600, color: B.navy, lineHeight: 1.4, paddingRight: 12 }}>{fq.q}</span>
-                  <span style={{ fontSize: 16, color: B.indigo, transform: openIdx === i ? "rotate(45deg)" : "rotate(0deg)", transition: "transform 0.3s", flexShrink: 0 }}>+</span>
-                </button>
-                <div style={{ maxHeight: openIdx === i ? 240 : 0, overflow: "hidden", transition: "max-height 0.4s ease" }}>
-                  <p style={{ fontFamily: f.b, fontSize: 13, color: B.textLight, lineHeight: 1.7, padding: "0 18px 14px", margin: 0 }}>{fq.a}</p>
-                </div>
-              </div>
-            </FI>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── Final CTA ───
-function CTA() {
-  return (
-    <section style={{ background: "linear-gradient(165deg, #1F2937, #243040)", padding: "80px 24px", position: "relative", overflow: "hidden" }}>
-      <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(79,70,229,0.15) 0%, transparent 65%)", pointerEvents: "none" }} />
-      <div style={{ maxWidth: 560, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
-        <FI>
-          <h2 style={{ fontFamily: f.d, fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 400, color: B.white, marginBottom: 14, lineHeight: 1.15 }}>
-            Ready to stop doing what<br /><span style={{ color: B.tealLight }}>AI can do better?</span></h2>
-        </FI>
-        <FI delay={0.06}><p style={{ fontFamily: f.b, fontSize: 15, color: "rgba(255,255,255,0.55)", lineHeight: 1.6, marginBottom: 28 }}>30 minutes. No pitch. We'll audit your workflows and show you exactly where automation moves the needle.</p></FI>
-        <FI delay={0.12}>
-          <a href="https://cal.com/verticaledgeai/discovery" target="_blank" rel="noopener noreferrer" style={{
-            display: "inline-block", background: B.indigo, color: B.white,
-            padding: "14px 34px", borderRadius: 10, textDecoration: "none", fontSize: 15,
-            fontWeight: 600, fontFamily: f.b, boxShadow: "0 4px 24px rgba(79,70,229,0.4)", transition: "all 0.25s",
-          }} onMouseEnter={e => { e.target.style.transform = "translateY(-2px)"; }} onMouseLeave={e => { e.target.style.transform = "translateY(0)"; }}>Get Your Free Audit →</a>
-        </FI>
-      </div>
-    </section>
-  );
-}
-
-// ─── Footer with Privacy/Terms modals ───
-function Footer() {
-  const [modal, setModal] = useState(null);
-  const privacy = `Vertical Edge AI LLC ("we," "us") respects your privacy. This policy describes how we collect, use, and protect information when you use our website and services.\n\nInformation We Collect: We collect contact information you voluntarily provide (name, email, company, job title) through our forms and booking system. We also collect standard web analytics data (page views, referral source, device type) via privacy-respecting analytics.\n\nHow We Use Information: To respond to inquiries and schedule consultations. To deliver audit reports and consulting services. To send relevant communications about our services (you may opt out at any time). We never sell, rent, or share your personal information with third parties for their marketing purposes.\n\nData Security: All data is encrypted in transit (TLS 1.3) and at rest. Our infrastructure supports HIPAA, SOC2, GDPR, CCPA, and ISO27001 compliance frameworks. Access to client data is restricted to authorized personnel only.\n\nYour Rights: You may request access to, correction of, or deletion of your personal data at any time by contacting us at cordero_ryan@verticaledgeai.ai. California residents have additional rights under the CCPA. EU residents have additional rights under the GDPR.\n\nCookies: We use essential cookies only. No third-party advertising trackers.\n\nChanges: We may update this policy periodically. The latest version will always be available on this page.\n\nContact: cordero_ryan@verticaledgeai.ai\nEffective Date: February 9, 2026`;
-
-  const terms = `These Terms of Service ("Terms") govern your use of the Vertical Edge AI LLC website and services.\n\nServices: Vertical Edge AI provides AI-powered business automation consulting services including workflow audits, system integration, content production, compliance assessment, and related services as described in individual engagement agreements.\n\nEngagement Terms: All consulting engagements are governed by separate Statements of Work (SOW) that specify scope, deliverables, timelines, and pricing. These Terms supplement but do not replace individual SOWs.\n\nIntellectual Property: All automation systems, workflows, and configurations developed during an engagement are licensed to the client for their use. Vertical Edge AI retains ownership of underlying methodologies, frameworks, and platform technology. Client data remains the property of the client at all times.\n\nConfidentiality: We treat all client information as confidential. We will not disclose client data, business processes, or engagement details without explicit consent, except as required by law.\n\nLimitation of Liability: Vertical Edge AI's liability for any claim arising from services is limited to the fees paid for the specific engagement giving rise to the claim. We are not liable for indirect, incidental, or consequential damages.\n\nTermination: Either party may terminate an engagement with 30 days written notice. Client remains responsible for fees for services delivered through the termination date.\n\nDispute Resolution: Any disputes will be resolved through good-faith negotiation. If unresolved, disputes will be subject to binding arbitration in the state of our principal office.\n\nGoverning Law: These Terms are governed by the laws of the United States and the state in which Vertical Edge AI LLC is registered.\n\nContact: cordero_ryan@verticaledgeai.ai\nEffective Date: February 9, 2026`;
-
-  return (
-    <>
-      <footer style={{ background: B.bgAlt, padding: "22px 24px", borderTop: `1px solid ${B.border}` }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <img src={VE_LOGO_DARK} alt="VE" style={{ height: 14, width: "auto", opacity: 0.5 }} />
-            <span style={{ fontFamily: f.b, fontSize: 11, color: B.textMuted }}>© 2026 Vertical Edge AI LLC. All rights reserved.</span>
-          </div>
-          <div style={{ display: "flex", gap: 16 }}>
-            <button onClick={() => setModal("privacy")} style={{ background: "none", border: "none", fontFamily: f.b, fontSize: 11, color: B.textMuted, cursor: "pointer", textDecoration: "underline", padding: 0 }}>Privacy Policy</button>
-            <button onClick={() => setModal("terms")} style={{ background: "none", border: "none", fontFamily: f.b, fontSize: 11, color: B.textMuted, cursor: "pointer", textDecoration: "underline", padding: 0 }}>Terms of Service</button>
-            <a href="https://mail.google.com/mail/?view=cm&to=cordero_ryan@verticaledgeai.ai&su=Inquiry%20—%20Vertical%20Edge%20AI" target="_blank" rel="noopener noreferrer" style={{ fontFamily: f.b, fontSize: 11, color: B.textMuted, cursor: "pointer", textDecoration: "underline", padding: 0 }}>Contact</a>
-          </div>
-        </div>
-      </footer>
-
-      {/* Modal */}
-      {modal && (
-        <div style={{
-          position: "fixed", inset: 0, zIndex: 200,
-          background: "rgba(15,23,42,0.6)", backdropFilter: "blur(6px)",
-          display: "flex", alignItems: "center", justifyContent: "center", padding: 24,
-        }} onClick={() => setModal(null)}>
-          <div onClick={e => e.stopPropagation()} style={{
-            background: B.white, borderRadius: 16, maxWidth: 600, width: "100%",
-            maxHeight: "80vh", overflow: "auto", padding: "32px 28px",
-            boxShadow: "0 24px 80px rgba(0,0,0,0.3)",
-          }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
-              <h3 style={{ fontFamily: f.d, fontSize: 24, color: B.navy, margin: 0 }}>
-                {modal === "privacy" ? "Privacy Policy" : "Terms of Service"}</h3>
-              <button onClick={() => setModal(null)} style={{ background: B.bg, border: "none", width: 32, height: 32, borderRadius: 8, cursor: "pointer", fontSize: 16, color: B.textMuted }}>✕</button>
-            </div>
-            <div style={{ fontFamily: f.b, fontSize: 13, color: B.text, lineHeight: 1.8, whiteSpace: "pre-line" }}>
-              {modal === "privacy" ? privacy : terms}
-            </div>
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
-
-function App() {
-  return (
-    <div style={{ background: B.white, minHeight: "100vh" }}>
-      <Hero />
-      <Integrations />
-      <Process />
-      <Platform />
-      <Pricing />
-      <ClientExp />
-      <FAQ />
-      <CTA />
-      <Footer />
-    </div>
-  );
-}
-
-
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App />);
-  </script>
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>nav.classList.toggle('sc',window.scrollY>40));
+const mt=document.getElementById('mt'),nl=document.getElementById('nl');mt.addEventListener('click',()=>{nl.classList.toggle('open');mt.textContent=nl.classList.contains('open')?'✕':'☰'});nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mt.textContent='☰'}));
+const obs=new IntersectionObserver(e=>e.forEach(n=>{if(n.isIntersecting)n.target.classList.add('v')}),{threshold:.08});document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+document.querySelectorAll('.pt-tab').forEach(t=>{t.addEventListener('click',()=>{document.querySelectorAll('.pt-tab').forEach(x=>x.classList.remove('act'));document.querySelectorAll('.pt-con').forEach(x=>x.classList.remove('act'));t.classList.add('act');const p=document.getElementById('tab-'+t.dataset.tab);p.classList.add('act');p.querySelectorAll('.fi').forEach(el=>{el.classList.remove('v');setTimeout(()=>obs.observe(el),50)})})});
+document.querySelectorAll('.fq-q').forEach(b=>{b.addEventListener('click',()=>{const i=b.parentElement,a=i.querySelector('.fq-a'),o=i.classList.contains('open');document.querySelectorAll('.fq-i').forEach(x=>{x.classList.remove('open');x.querySelector('.fq-a').style.maxHeight='0'});if(!o){i.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}})});
+const tk=document.getElementById('tt'),cds=tk.querySelectorAll('.tcd'),dc=document.getElementById('tds');let cr=0;cds.forEach((_,i)=>{const d=document.createElement('span');d.className='td'+(i===0?' act':'');d.addEventListener('click',()=>gt(i));dc.appendChild(d)});function gt(n){cr=n;tk.style.transform=`translateX(-${n*100}%)`;dc.querySelectorAll('.td').forEach((d,i)=>d.classList.toggle('act',i===n))}setInterval(()=>gt((cr+1)%cds.length),5000);
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const h=a.getAttribute('href');if(h&&h.length>1){const t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}}})}); 
+function oM(t,b){document.getElementById('mT').textContent=t;document.getElementById('mB').innerHTML=b;document.getElementById('mdl').style.display='block';document.body.style.overflow='hidden'}function cM(){document.getElementById('mdl').style.display='none';document.body.style.overflow=''}document.getElementById('mdl').addEventListener('click',e=>{if(e.target===document.getElementById('mdl'))cM()});
+document.getElementById('pL').addEventListener('click',e=>{e.preventDefault();oM('Privacy Policy','<p>Vertical Edge AI LLC respects your privacy.</p><br><p><b>Information We Collect:</b> Name, email, company name, and website URL when you request an audit or book a call. Anonymous website analytics.</p><br><p><b>How We Use It:</b> To deliver the service you requested. We never sell your data.</p><br><p><b>Data Protection:</b> All data encrypted in transit and at rest. GDPR, CCPA compliant.</p><br><p><b>Your Rights:</b> Request access, correction, or deletion: cordero_ryan@verticaledgeai.ai</p>')});
+document.getElementById('tL').addEventListener('click',e=>{e.preventDefault();oM('Terms of Service','<p>By using verticaledgeai.ai, you agree to these terms.</p><br><p><b>Services:</b> VE provides AI automation consulting. Scope defined in individual agreements.</p><br><p><b>Free Audit:</b> No cost, no obligation. Findings are informational.</p><br><p><b>IP:</b> Platform technology is VE property. Client data remains client property.</p><br><p><b>Limitation:</b> Services provided as-is. Projected results may vary.</p><br><p><b>Governing Law:</b> State of New Jersey.</p>')});
+document.getElementById('cL').addEventListener('click',e=>{e.preventDefault();oM('Contact Us','<p style="margin-bottom:16px">Reach out to discuss how Vertical Edge AI can transform your operations.</p><p style="margin-bottom:12px"><b>Email:</b> <a href="mailto:cordero_ryan@verticaledgeai.ai" style="color:#14B8A6;text-decoration:underline">cordero_ryan@verticaledgeai.ai</a></p><p style="margin-bottom:16px"><b>Or book a call directly:</b></p><a href="https://cal.com/verticaledgeai/discovery" target="_blank" style="display:inline-block;background:#4F46E5;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none">Book a Discovery Call →</a>')});
+</script>
+</body></html>
